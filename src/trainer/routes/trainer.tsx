@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { TrainGerman } from '../components/TrainGerman/TrainGerman';
+import { TrainGermanContainer } from '../components/TrainGerman/TrainGermanContainer';
 import { TrainPhoneticPersian } from '../components/TrainPhoneticPersian/TrainPhoneticPersian';
 
 
 export const trainer = [
   <Route key="train-german"
     path="/train/german"
-    component={TrainGerman}>
+    component={TrainGermanContainer}>
   </Route>,
   <Route key="train-phonetic-persian"
     path="/train/phonetic-persian"

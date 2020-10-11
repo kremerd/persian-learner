@@ -1,15 +1,9 @@
 import React from 'react';
 import { LearningUnit } from '../../model/learning-unit';
 
-export const unit: LearningUnit = {
-  type: 'noun',
-  de: 'de',
-  fa: 'fa',
-  faPh: 'ph'
-}
-
-export class TrainGerman extends React.Component {
+export class TrainGerman extends React.Component<{ unit: LearningUnit }> {
   render(): JSX.Element {
+    const { unit } = this.props;
     return (
       <form>
         <h2>Deutsch trainieren</h2>
