@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import './App.scss';
-import { Header } from './common/components/Header/Header';
-import { trainer } from './trainer/routes/trainer';
+import routes from '../routes';
+import { Header } from './Header';
 
 export class App extends React.Component {
   render(): JSX.Element {
@@ -12,7 +11,7 @@ export class App extends React.Component {
           <Header></Header>
         </header>
         <main className="container">
-          { trainer }
+          { routes }
         </main>
       </BrowserRouter>
     );

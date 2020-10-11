@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { LearningProgress, LearningUnit } from "./model/learning-unit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LearningProgress, LearningUnit } from '../model/learning-unit';
 
 const initialState: LearningUnit[] = [
   {
@@ -11,16 +11,16 @@ const initialState: LearningUnit[] = [
   }
 ];
 
-const trainerSlice = createSlice({
-  name: 'trainer',
+const slice = createSlice({
+  name: 'train',
   initialState,
   reducers: {
-    passDe: (state, { payload }: PayloadAction<{ id: number }>) => {
+    passDe: (state, { payload }: PayloadAction<{ id: number }>): void => {
       const progress = getProgress(state, payload.id);
       progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
       progress.lastCorrectDe = new Date();
     },
-    failDe: (state, { payload }: PayloadAction<{ id: number }>) => {
+    failDe: (state, { payload }: PayloadAction<{ id: number }>): void => {
       const progress = getProgress(state, payload.id);
       progress.scoreDe = Math.max(progress.scoreDe - 1, 0);
     }
@@ -44,5 +44,5 @@ const getProgress = (state: LearningUnit[], id: number): LearningProgress => {
   return unit.progress;
 };
 
-export const { passDe, failDe } = trainerSlice.actions;
-export default trainerSlice.reducer;
+export const { passDe, failDe } = slice.actions;
+export default slice.reducer;
