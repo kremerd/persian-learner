@@ -15,6 +15,6 @@ export type LearningUnitType =
 export interface LearningProgress {
   scoreDe: number;
   scoreFaPh: number;
-  lastCorrectDe: Date | null;
-  lastCorrectFaPh: Date | null;
+  lastCorrectDe: string | null;
+  lastCorrectFaPh: string | null;
 }

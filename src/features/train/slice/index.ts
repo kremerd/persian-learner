@@ -37,7 +37,7 @@ const slice = createSlice({
     passDe: ({ units, selectedIdDe }): void => {
       const progress = getProgress(units, selectedIdDe);
       progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
-      progress.lastCorrectDe = new Date();
+      progress.lastCorrectDe = new Date().toISOString();
     },
     failDe: ({ units, selectedIdDe }): void => {
       const progress = getProgress(units, selectedIdDe);
