@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { LearningUnit } from '../model/learningUnit';
+import { State } from '../slice';
 
-const selectSlice = (state: any): LearningUnit[] => state.train;
+const selectSlice = (state: any): State => state.train;
 
-export const selectFirstLearningUnit = createSelector(
+export const selectedDe = createSelector(
   [selectSlice],
-  train => train[0]
+  train => train.selectedDe
 );
 
 export default selectSlice;

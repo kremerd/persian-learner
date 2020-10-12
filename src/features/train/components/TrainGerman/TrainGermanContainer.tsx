@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
-import { selectFirstLearningUnit } from '../../selectors';
-import { failDe, passDe } from '../../slice';
+import { selectedDe } from '../../selectors';
+import { failDe, passDe, selectDe } from '../../slice';
 import { TrainGerman } from './TrainGerman';
 
 const mapStateToProps = (state: any): any => ({
-  unit: selectFirstLearningUnit(state)
+  unit: selectedDe(state)
 });
 
 const mapDispatchToProps = {
+  pass: passDe,
   fail: failDe,
-  pass: passDe
+  proceed: selectDe,
 };
 
 export const TrainGermanContainer =

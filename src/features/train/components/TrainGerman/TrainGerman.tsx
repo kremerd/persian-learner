@@ -8,26 +8,36 @@ export class TrainGerman extends React.Component<{
   proceed: () => void;
 },
 {
+  enteredTranslation: string;
   solved: boolean;
 }> {
   state = {
-    solved: false
+    enteredTranslation: '',
+    solved: false,
   };
 
-  private enteredTranslation = '';
   private resultReported = false;
 
   private submit(event: React.FormEvent): void {
     event.preventDefault();
     if (this.state.solved) {
-      this.props.proceed();
+      this.proceed();
     } else {
       this.check();
     }
   }
 
+  private proceed(): void {
+    this.props.proceed();
+    this.setState({
+      enteredTranslation: '',
+      solved: false
+    });
+    this.resultReported = false;
+  }
+
   private check(): void {
-    const pass = this.enteredTranslation === this.props.unit.de;
+    const pass = this.state.enteredTranslation === this.props.unit.de;
     this.setState({ solved: pass });
     this.reportResult(pass);
   }
@@ -82,7 +92,8 @@ export class TrainGerman extends React.Component<{
             id="german"
             className={this.state.solved ? 'form-control-plaintext' : 'form-control'}
             readOnly={this.state.solved}
-            onChange={(e): void => { this.enteredTranslation = e.target.value; }}
+            value={this.state.enteredTranslation}
+            onChange={(e): void => this.setState({ enteredTranslation: e.target.value })}
           >
           </input>
         </div>
