@@ -3,20 +3,20 @@ import { LearningUnit } from '../../model/learningUnit';
 
 export class TrainGerman extends React.Component<{
   unit: LearningUnit;
-  pass: (payload: { id: number }) => void;
-  fail: (payload: { id: number }) => void;
+  pass: () => void;
+  fail: () => void;
   proceed: () => void;
 },
 {
   enteredTranslation: string;
+  resultReported: boolean;
   solved: boolean;
 }> {
   state = {
     enteredTranslation: '',
+    resultReported: false,
     solved: false,
   };
-
-  private resultReported = false;
 
   private submit(event: React.FormEvent): void {
     event.preventDefault();
@@ -31,9 +31,9 @@ export class TrainGerman extends React.Component<{
     this.props.proceed();
     this.setState({
       enteredTranslation: '',
-      solved: false
+      resultReported: false,
+      solved: false,
     });
-    this.resultReported = false;
   }
 
   private check(): void {
@@ -48,15 +48,14 @@ export class TrainGerman extends React.Component<{
   }
 
   private reportResult(pass: boolean): void {
-    const id = this.props.unit.id;
-    if (this.resultReported) {
+    if (this.state.resultReported) {
       return;
     } else if (pass) {
-      this.props.pass({ id });
+      this.props.pass();
     } else {
-      this.props.fail({ id });
+      this.props.fail();
     }
-    this.resultReported = true;
+    this.setState({ resultReported: true });
   }
 
   render(): JSX.Element {

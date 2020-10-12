@@ -4,7 +4,7 @@ export interface LearningUnit {
   de: string;
   fa: string;
   faPh: string;
-  progress?: LearningProgress;
+  progress: LearningProgress;
 }
 
 export type LearningUnitType =
