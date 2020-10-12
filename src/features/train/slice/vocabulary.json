@@ -1,0 +1,146 @@
+[
+  {
+    "type": "unclassified",
+    "de": "ich",
+    "fa": "من",
+    "faPh": "mag"
+  },
+  {
+    "type": "unclassified",
+    "de": "du",
+    "fa": "تو",
+    "faPh": "tow"
+  },
+  {
+    "type": "verb",
+    "de": "mögen",
+    "fa": "میل داشتن",
+    "faPh": "meyl dâsht-an"
+  },
+  {
+    "type": "verb",
+    "de": "leben",
+    "fa": "زندگی کردن",
+    "faPh": "zendegi kard-an"
+  },
+  {
+    "type": "verb",
+    "de": "danken",
+    "fa": "تشکر کردن",
+    "faPh": "tashakkor kard-an"
+  },
+  {
+    "type": "verb",
+    "de": "haben",
+    "fa": "داشتن",
+    "faPh": "daasht-an"
+  },
+  {
+    "type": "noun",
+    "de": "Name",
+    "fa": "اسم",
+    "faPh": "esm"
+  },
+  {
+    "type": "noun",
+    "de": "Bruder",
+    "fa": "برادر",
+    "faPh": "baraadar"
+  },
+  {
+    "type": "noun",
+    "de": "Schwester",
+    "fa": "خواهر",
+    "faPh": "khaahar"
+  },
+  {
+    "type": "noun",
+    "de": "Mutter",
+    "fa": "مادر",
+    "faPh": "maadar"
+  },
+  {
+    "type": "noun",
+    "de": "Vater",
+    "fa": "پدر",
+    "faPh": "pedar"
+  },
+  {
+    "type": "unclassified",
+    "de": "Hallo",
+    "fa": "سلام",
+    "faPh": "salaam"
+  },
+  {
+    "type": "noun",
+    "de": "Tag",
+    "fa": "روز",
+    "faPh": "ruz"
+  },
+  {
+    "type": "noun",
+    "de": "Nachmittag",
+    "fa": "بعد از ظهر",
+    "faPh": "bad az zohr"
+  },
+  {
+    "type": "noun",
+    "de": "Nacht",
+    "fa": "شب",
+    "faPh": "shab"
+  },
+  {
+    "type": "noun",
+    "de": "Morgen",
+    "fa": "صبح",
+    "faPh": "sobh"
+  },
+  {
+    "type": "noun",
+    "de": "Katze",
+    "fa": "گربه",
+    "faPh": "gorbe"
+  },
+  {
+    "type": "noun",
+    "de": "Hobby",
+    "fa": "سرگرمی",
+    "faPh": "sargarmi"
+  },
+  {
+    "type": "noun",
+    "de": "Hund",
+    "fa": "سگ",
+    "faPh": "sag"
+  },
+  {
+    "type": "noun",
+    "de": "Auto",
+    "fa": "ماشین",
+    "faPh": "maashin"
+  },
+  {
+    "type": "noun",
+    "de": "Tee",
+    "fa": "چای",
+    "faPh": "chaay"
+  },
+  {
+    "type": "noun",
+    "de": "Kaffee",
+    "fa": "قهوه",
+    "faPh": "ghahveh"
+  },
+  {
+    "type": "noun",
+    "de": "Mineralwasser",
+    "fa": "آب معدنی",
+    "faPh": "aab ma'dani"
+  },
+  {
+    "type": "noun",
+    "de": "Saft",
+    "fa": "آبمیوه",
+    "faPh": "aab miveh"
+  }
+]

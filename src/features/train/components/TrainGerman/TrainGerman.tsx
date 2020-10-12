@@ -1,5 +1,5 @@
 import React from 'react';
-import { LearningUnit } from '../../model/learning-unit';
+import { LearningUnit } from '../../model/learningUnit';
 
 export class TrainGerman extends React.Component<{
   unit: LearningUnit;

@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { LearningUnit } from '../model/learning-unit';
+import { LearningUnit } from '../model/learningUnit';
 
 const selectSlice = (state: any): LearningUnit[] => state.train;
 

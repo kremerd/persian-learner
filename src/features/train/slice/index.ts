@@ -1,15 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { LearningProgress, LearningUnit } from '../model/learning-unit';
+import { LearningProgress, LearningUnit } from '../model/learningUnit';
+import vocabulary from './vocabulary.json';
 
-const initialState: LearningUnit[] = [
-  {
-    id: 1,
-    type: 'noun',
-    de: 'de',
-    fa: 'fa',
-    faPh: 'ph'
-  }
-];
+const initialState: LearningUnit[] = vocabulary.map((vocab, i) => ({
+  id: i,
+  ...(vocab as Omit<LearningUnit, 'id'>)
+}));
 
 const slice = createSlice({
   name: 'train',
