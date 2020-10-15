@@ -71,38 +71,45 @@ export class TrainGerman extends React.Component<{
       <form onSubmit={(e): void => this.submit(e)}>
         <h2>Deutsch trainieren</h2>
         <div className="mb-3">
-          <label htmlFor="phonetic-persian">
-            Persisch (phonetisch)
-          </label>
-          <div className="row">
-            <div className="col-10">
-              <input type="text"
-                id="phonetic-persian"
-                className="form-control-plaintext"
-                readOnly
-                value={unit.faPh}>
-              </input>
-            </div>
-            <div className="col-2">
-              <span className={'form-control-plaintext text-right' + (this.isCountingAsFailure() ? ' text-danger' : '')}>
-                {unit.progress.scoreDe}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="mb-3">
           <label htmlFor="persian">
             Persisch
           </label>
           <input type="text"
             id="persian"
-            className="form-control-plaintext"
+            className="form-control-plaintext text-large"
             readOnly
             value={unit.fa}>
           </input>
         </div>
         <div className="mb-3">
-          <label htmlFor="german">Deutsch</label>
+          <label htmlFor="romanized-persian">
+            Persisch (romanisiert)
+          </label>
+          <input type="text"
+            id="romanized-persian"
+            className="form-control-plaintext"
+            readOnly
+            value={unit.faRm}>
+          </input>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="score">
+            Fortschritt
+          </label>
+          <input type="text"
+            id="score"
+            className={'form-control-plaintext'
+              + (this.isCountingAsFailure() ? ' text-danger' : '')
+              + (this.isCountingAsSuccess() ? ' text-success' : '')
+            }
+            readOnly
+            value={unit.progress.scoreDe}>
+          </input>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="german">
+            {this.isShowSolution() ? 'Eingabe' : 'Deutsch'}
+          </label>
           <input type="text"
             id="german"
             className={this.renderInputClassNames()}
@@ -113,20 +120,30 @@ export class TrainGerman extends React.Component<{
           </input>
         </div>
         {this.isShowSolution() ? (
-          <div className="mb-3">
-            <label htmlFor="german-solution">Deutsch (korrekt)</label>
-            <input type="text"
-              id="german-solution"
-              className="form-control-plaintext text-success"
-              readOnly
-              value={unit.de}
-            >
-            </input>
-          </div>
+          <React.Fragment>
+            <div className="mb-3">
+              <label htmlFor="german-solution">Deutsch</label>
+              <input type="text"
+                id="german-solution"
+                className="form-control-plaintext text-success"
+                readOnly
+                value={unit.de}
+              >
+              </input>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="english">Englisch</label>
+              <input type="text"
+                id="english"
+                className="form-control-plaintext"
+                readOnly
+                value={unit.en}
+              >
+              </input>
+            </div>
+          </React.Fragment>
         ) : null}
-        <div className="row">
-          {this.renderButtons()}
-        </div>
+        {this.renderButtons()}
       </form>
     );
   }
@@ -161,38 +178,40 @@ export class TrainGerman extends React.Component<{
     } else {
       return (
         <React.Fragment>
+          <div className="row mb-2">
+            <div className="col-6 col-sm-4">
+              <button type="button"
+                className="btn btn-secondary btn-block"
+                key="solve-btn"
+                onClick={(): void => this.solve()}
+              >
+                Auflösen
+              </button>
+            </div>
+            <div className="col-6 col-sm-8">
+              <button type="submit"
+                className="btn btn-primary btn-block"
+                key="chck-btn"
+              >
+                Überprüfen
+              </button>
+            </div>
+          </div>
           {this.state.stage === TestStage.Initial
             ? (
-              <div className="col-6 col-sm-4">
-                <button type="button"
-                  className="btn btn-secondary btn-block"
-                  key="skip-btn"
-                  onClick={(): void => this.proceed()}
-                >
-                  Überspringen
-                </button>
+              <div className="row">
+                <div className="col">
+                  <button type="button"
+                    className="btn btn-link btn-block"
+                    key="skip-btn"
+                    onClick={(): void => this.proceed()}
+                  >
+                    Überspringen
+                  </button>
+                </div>
               </div>
-            )
-            : (
-              <div className="col-6 col-sm-4">
-                <button type="button"
-                  className="btn btn-secondary btn-block"
-                  key="solve-btn"
-                  onClick={(): void => this.solve()}
-                >
-                  Auflösen
-                </button>
-              </div>
-            )
+            ) : ''
           }
-          <div className="col-6 col-sm-8">
-            <button type="submit"
-              className="btn btn-primary btn-block"
-              key="chck-btn"
-            >
-              Überprüfen
-            </button>
-          </div>
         </React.Fragment>
       );
     }
@@ -211,6 +230,12 @@ export class TrainGerman extends React.Component<{
       TestStage.PassedOnRetry,
       TestStage.Retry,
       TestStage.Failed
+    ].includes(this.state.stage);
+  }
+
+  private isCountingAsSuccess(): boolean {
+    return [
+      TestStage.Passed
     ].includes(this.state.stage);
   }
 }

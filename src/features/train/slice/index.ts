@@ -10,7 +10,7 @@ export interface State {
 }
 
 const learningUnits = vocabulary.map((vocab, i) => ({
-  ...(vocab as Pick<LearningUnit, 'type' | 'de' | 'fa' | 'faPh'>),
+  ...(vocab as Pick<LearningUnit, 'type' | 'de' | 'en' | 'fa' | 'faRm'>),
   id: i,
   progress: {
     scoreDe: 0,

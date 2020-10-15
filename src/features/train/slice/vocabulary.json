@@ -1,146 +1,240 @@
 [
   {
-    "type": "unclassified",
-    "de": "ich",
-    "fa": "من",
-    "faPh": "mag"
+    "type": "noun",
+    "de": "Wasser",
+    "en": "water",
+    "fa": "آب",
+    "faRm": "oob"
+  },
+  {
+    "type": "noun",
+    "de": "Papa",
+    "en": "dad",
+    "fa": "بابا",
+    "faRm": "booboo"
   },
   {
     "type": "unclassified",
-    "de": "du",
-    "fa": "تو",
-    "faPh": "tow"
+    "de": "mit",
+    "en": "with",
+    "fa": "با",
+    "faRm": "boo"
+  },
+  {
+    "type": "noun",
+    "de": "Brot",
+    "en": "bread",
+    "fa": "نان",
+    "faRm": "naan"
+  },
+  {
+    "type": "noun",
+    "de": "Gebäude",
+    "en": "building",
+    "fa": "بَنا",
+    "faRm": "banoo"
+  },
+  {
+    "type": "unclassified",
+    "de": "das",
+    "en": "that",
+    "fa": "آن",
+    "faRm": "oon"
+  },
+  {
+    "type": "noun",
+    "de": "Wind",
+    "en": "wind",
+    "fa": "باد",
+    "faRm": "bood"
+  },
+  {
+    "type": "noun",
+    "de": "Körper",
+    "en": "body",
+    "fa": "بَدَن",
+    "faRm": "badan"
+  },
+  {
+    "type": "adjective",
+    "de": "schlecht",
+    "en": "bad",
+    "fa": "بَد",
+    "faRm": "bad"
+  },
+  {
+    "type": "noun",
+    "de": "Schrei",
+    "en": "shout",
+    "fa": "داد",
+    "faRm": "dood"
   },
   {
     "type": "verb",
-    "de": "mögen",
-    "fa": "میل داشتن",
-    "faPh": "meyl dâsht-an"
+    "de": "geben",
+    "en": "give",
+    "fa": "دادَن",
+    "faRm": "doodan"
+  },
+  {
+    "type": "noun",
+    "de": "Tür",
+    "en": "door",
+    "fa": "دَر",
+    "faRm": "dar"
+  },
+  {
+    "type": "noun",
+    "de": "Last",
+    "en": "load",
+    "fa": "بار",
+    "faRm": "boor"
   },
   {
     "type": "verb",
-    "de": "leben",
-    "fa": "زندگی کردن",
-    "faPh": "zendegi kard-an"
+    "de": "fahren",
+    "en": "drive",
+    "fa": "راندَن",
+    "faRm": "roondan"
   },
   {
-    "type": "verb",
-    "de": "danken",
-    "fa": "تشکر کردن",
-    "faPh": "tashakkor kard-an"
+    "type": "unclassified",
+    "de": "er / sie hat nicht",
+    "en": "he / she doesn't have",
+    "fa": "نَدارَد",
+    "faRm": "nadoorad"
   },
   {
-    "type": "verb",
-    "de": "haben",
-    "fa": "داشتن",
-    "faPh": "daasht-an"
+    "type": "noun",
+    "de": "Granatapfel",
+    "en": "pomegranate",
+    "fa": "اَنار",
+    "faRm": "aanoor"
+  },
+  {
+    "type": "noun",
+    "de": "Regen",
+    "en": "rain",
+    "fa": "باران",
+    "faRm": "booroon"
+  },
+  {
+    "type": "noun",
+    "de": "Mehl",
+    "en": "flour",
+    "fa": "آرد",
+    "faRm": "oord"
+  },
+  {
+    "type": "unclassified",
+    "de": "er / sie hat",
+    "en": "he / she has",
+    "fa": "دارَد",
+    "faRm": "doorad"
   },
   {
     "type": "noun",
     "de": "Name",
-    "fa": "اسم",
-    "faPh": "esm"
+    "en": "name",
+    "fa": "نام",
+    "faRm": "noom"
+  },
+  {
+    "type": "unclassified",
+    "de": "ich habe",
+    "en": "I have",
+    "fa": "دارَم",
+    "faRm": "dooram"
+  },
+  {
+    "type": "unclassified",
+    "de": "ich kam",
+    "en": "I came",
+    "fa": "آمَدَم",
+    "faRm": "oomadam"
+  },
+  {
+    "type": "unclassified",
+    "de": "er / sie kam",
+    "en": "he / she came",
+    "fa": "آمَد",
+    "faRm": "oomad"
   },
   {
     "type": "noun",
-    "de": "Bruder",
-    "fa": "برادر",
-    "faPh": "baraadar"
-  },
-  {
-    "type": "noun",
-    "de": "Schwester",
-    "fa": "خواهر",
-    "faPh": "khaahar"
+    "de": "Mandel",
+    "en": "almond",
+    "fa": "بادام",
+    "faRm": "boodoom"
   },
   {
     "type": "noun",
     "de": "Mutter",
-    "fa": "مادر",
-    "faPh": "maadar"
+    "en": "mother",
+    "fa": "مادَر",
+    "faRm": "moodar"
   },
   {
     "type": "noun",
-    "de": "Vater",
-    "fa": "پدر",
-    "faPh": "pedar"
+    "de": "Schlange",
+    "en": "snake",
+    "fa": "مار",
+    "faRm": "moor"
   },
   {
     "type": "unclassified",
-    "de": "Hallo",
-    "fa": "سلام",
-    "faPh": "salaam"
+    "de": "ich",
+    "en": "I",
+    "fa": "مَن",
+    "faRm": "man"
   },
   {
     "type": "noun",
-    "de": "Tag",
-    "fa": "روز",
-    "faPh": "ruz"
+    "de": "Mann",
+    "en": "man",
+    "fa": "مَرد",
+    "faRm": "mard"
   },
   {
     "type": "noun",
-    "de": "Nachmittag",
-    "fa": "بعد از ظهر",
-    "faPh": "bad az zohr"
+    "de": "Kopf",
+    "en": "head",
+    "fa": "سَر",
+    "faRm": "sar"
   },
   {
     "type": "noun",
-    "de": "Nacht",
-    "fa": "شب",
-    "faPh": "shab"
+    "de": "Kopfschmerzen",
+    "en": "headache",
+    "fa": "سَردَرد",
+    "faRm": "sardard"
   },
   {
     "type": "noun",
-    "de": "Morgen",
-    "fa": "صبح",
-    "faPh": "sobh"
+    "de": "Gift",
+    "en": "poison",
+    "fa": "سَم",
+    "faRm": "sam"
   },
   {
     "type": "noun",
-    "de": "Katze",
-    "fa": "گربه",
-    "faPh": "gorbe"
+    "de": "Sichel",
+    "en": "sickle",
+    "fa": "داس",
+    "faRm": "doos"
   },
   {
     "type": "noun",
-    "de": "Hobby",
-    "fa": "سرگرمی",
-    "faPh": "sargarmi"
+    "de": "Korb",
+    "en": "basket",
+    "fa": "سَبَد",
+    "faRm": "sabad"
   },
   {
     "type": "noun",
-    "de": "Hund",
-    "fa": "سگ",
-    "faPh": "sag"
-  },
-  {
-    "type": "noun",
-    "de": "Auto",
-    "fa": "ماشین",
-    "faPh": "maashin"
-  },
-  {
-    "type": "noun",
-    "de": "Tee",
-    "fa": "چای",
-    "faPh": "chaay"
-  },
-  {
-    "type": "noun",
-    "de": "Kaffee",
-    "fa": "قهوه",
-    "faPh": "ghahveh"
-  },
-  {
-    "type": "noun",
-    "de": "Mineralwasser",
-    "fa": "آب معدنی",
-    "faPh": "aab ma'dani"
-  },
-  {
-    "type": "noun",
-    "de": "Saft",
-    "fa": "آبمیوه",
-    "faPh": "aab miveh"
+    "de": "Pferd",
+    "en": "horse",
+    "fa": "اسب",
+    "faRm": "aasb"
   }
 ]
