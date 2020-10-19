@@ -23,7 +23,7 @@ export class Header extends React.Component {
           </span>
           <button type="button"
             className="navbar-toggler"
-            onClick={() => this.collapse?.toggle()}
+            onClick={(): void => this.collapse?.toggle()}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -36,7 +36,7 @@ export class Header extends React.Component {
               <li className="nav-item">
                 <Link className="nav-link"
                   to="/train/german"
-                  onClick={() => this.collapse?.hide()}
+                  onClick={(): void => this.collapse?.hide()}
                 >
                   Deutsch trainieren
                 </Link>
@@ -44,7 +44,7 @@ export class Header extends React.Component {
               <li className="nav-item">
                 <Link className="nav-link"
                   to="/train/phonetic-persian"
-                  onClick={() => this.collapse?.hide()}
+                  onClick={(): void => this.collapse?.hide()}
                 >
                   Persisch trainieren
                 </Link>
