@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/persian-learner/static/css/main.90e6086d.chunk.css",
-    "main.js": "/persian-learner/static/js/main.19c597d6.chunk.js",
-    "main.js.map": "/persian-learner/static/js/main.19c597d6.chunk.js.map",
+    "main.js": "/persian-learner/static/js/main.db051723.chunk.js",
+    "main.js.map": "/persian-learner/static/js/main.db051723.chunk.js.map",
     "runtime-main.js": "/persian-learner/static/js/runtime-main.3bd8ebc1.js",
     "runtime-main.js.map": "/persian-learner/static/js/runtime-main.3bd8ebc1.js.map",
-    "static/js/2.f2038e4b.chunk.js": "/persian-learner/static/js/2.f2038e4b.chunk.js",
-    "static/js/2.f2038e4b.chunk.js.map": "/persian-learner/static/js/2.f2038e4b.chunk.js.map",
+    "static/js/2.9bb4b209.chunk.js": "/persian-learner/static/js/2.9bb4b209.chunk.js",
+    "static/js/2.9bb4b209.chunk.js.map": "/persian-learner/static/js/2.9bb4b209.chunk.js.map",
     "index.html": "/persian-learner/index.html",
-    "precache-manifest.756203c9bc0db4c851d40c54304d4c18.js": "/persian-learner/precache-manifest.756203c9bc0db4c851d40c54304d4c18.js",
+    "precache-manifest.7529bc25c2d0f831ef6e5469150ddfe3.js": "/persian-learner/precache-manifest.7529bc25c2d0f831ef6e5469150ddfe3.js",
     "service-worker.js": "/persian-learner/service-worker.js",
     "static/css/main.90e6086d.chunk.css.map": "/persian-learner/static/css/main.90e6086d.chunk.css.map",
-    "static/js/2.f2038e4b.chunk.js.LICENSE.txt": "/persian-learner/static/js/2.f2038e4b.chunk.js.LICENSE.txt"
+    "static/js/2.9bb4b209.chunk.js.LICENSE.txt": "/persian-learner/static/js/2.9bb4b209.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3bd8ebc1.js",
-    "static/js/2.f2038e4b.chunk.js",
+    "static/js/2.9bb4b209.chunk.js",
     "static/css/main.90e6086d.chunk.css",
-    "static/js/main.19c597d6.chunk.js"
+    "static/js/main.db051723.chunk.js"
   ]
 }
