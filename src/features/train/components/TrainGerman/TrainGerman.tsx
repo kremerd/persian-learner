@@ -1,6 +1,7 @@
 import React from 'react';
 import { LearningUnit } from '../../model/learningUnit';
 import { TestStage } from '../../model/testStage';
+import { ToggleText } from '../ToggleText/ToggleText';
 
 export class TrainGerman extends React.Component<{
   unit: LearningUnit;
@@ -71,96 +72,71 @@ export class TrainGerman extends React.Component<{
       <form onSubmit={(e): void => this.submit(e)}>
         <h2>Deutsch trainieren</h2>
         <div className="mb-3">
-          <label htmlFor="persian">
-            Persisch
-          </label>
-          <input type="text"
-            id="persian"
-            className="form-control-plaintext text-large"
-            readOnly
-            value={unit.fa}>
-          </input>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="romanized-persian">
-            Persisch (romanisiert)
-          </label>
-          <input type="text"
-            id="romanized-persian"
-            className="form-control-plaintext"
-            readOnly
-            value={unit.faRm}>
-          </input>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="score">
+          <div>
             Fortschritt
-          </label>
-          <input type="text"
-            id="score"
-            className={'form-control-plaintext'
+          </div>
+          <div className={'form-control-plaintext'
               + (this.isCountingAsFailure() ? ' text-danger' : '')
               + (this.isCountingAsSuccess() ? ' text-success' : '')
-            }
-            readOnly
-            value={unit.progress.scoreDe}>
-          </input>
+          }>
+            {unit.progress.scoreDe}
+          </div>
         </div>
         <div className="mb-3">
-          <label htmlFor="german">
-            {this.isShowSolution() ? 'Eingabe' : 'Deutsch'}
-          </label>
-          <input type="text"
-            id="german"
-            className={this.renderInputClassNames()}
-            readOnly={this.isShowSolution()}
-            value={this.state.enteredTranslation}
-            onChange={(e): void => this.setState({ enteredTranslation: e.target.value })}
-          >
-          </input>
+          <div>
+            Persisch
+          </div>
+          <div className="form-control-plaintext text-large">
+            {unit.fa}
+          </div>
+          <div className="form-text">
+            <ToggleText title="Romanisierung" value={unit.faRm}></ToggleText>
+          </div>
         </div>
         {this.isShowSolution() ? (
           <React.Fragment>
             <div className="mb-3">
-              <label htmlFor="german-solution">Deutsch</label>
-              <input type="text"
-                id="german-solution"
-                className="form-control-plaintext text-success"
-                readOnly
-                value={unit.de}
-              >
-              </input>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="english">Englisch</label>
-              <input type="text"
-                id="english"
-                className="form-control-plaintext"
-                readOnly
-                value={unit.en}
-              >
-              </input>
+              <div>Deutsch</div>
+              <div className="form-control-plaintext">
+                {this.isCountingAsFailure()
+                  ? (
+                    <React.Fragment>
+                      <span className="text-danger text-decoration-line-through">
+                        {this.state.enteredTranslation}
+                      </span>
+                      <span> </span>
+                    </React.Fragment>
+                  ) : null
+                }
+                <span className="text-success">
+                  {unit.de}
+                </span>
+              </div>
+              <div className="form-text">
+                <ToggleText title="Englisch" value={unit.en}></ToggleText>
+              </div>
             </div>
           </React.Fragment>
-        ) : null}
+        ) : (
+          <div className="mb-3">
+            <label htmlFor="german">
+              Deutsch
+            </label>
+            <input type="text"
+              id="german"
+              className="form-control"
+              value={this.state.enteredTranslation}
+              onChange={(e): void => this.setState({ enteredTranslation: e.target.value })}
+            >
+            </input>
+            <div className="form-text">
+              &nbsp;
+            </div>
+          </div>
+        )}
         {this.renderButtons()}
       </form>
     );
-  }
-
-  private renderInputClassNames(): string {
-    switch (this.state.stage) {
-    case TestStage.Initial:
-      return 'form-control';
-    case TestStage.Retry:
-      return 'form-control';
-    case TestStage.Passed:
-      return 'form-control-plaintext text-success';
-    case TestStage.PassedOnRetry:
-      return 'form-control-plaintext text-success';
-    case TestStage.Failed:
-      return 'form-control-plaintext text-danger';
-    }
   }
 
   private renderButtons(): JSX.Element {
