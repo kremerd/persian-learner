@@ -6,7 +6,7 @@ import { Header } from './Header';
 export class App extends React.Component {
   render(): JSX.Element {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/persian-learner">
         <header>
           <Header></Header>
         </header>

@@ -5,10 +5,12 @@ import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { App } from './components/App';
+import decodeUrl from './decodeUrl';
 import './index.scss';
 import reducer from './reducers';
 import * as serviceWorker from './serviceWorker';
 
+decodeUrl();
 const store = configureStore({ reducer });
 const persistor = persistStore(store);
 
