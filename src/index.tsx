@@ -1,9 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { persistStore } from 'redux-persist';
+import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
+import storage from 'redux-persist/lib/storage';
 import { version } from '../package.json';
 import { App } from './components/App';
 import decodeUrl from './decodeUrl';
@@ -15,7 +16,20 @@ if (process.env.NODE_ENV === 'production') {
   decodeUrl();
 }
 
-const store = configureStore({ reducer });
+const persistedReducer = persistReducer({
+  key: 'root',
+  storage,
+  version: 1
+}, reducer);
+
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+    }
+  })
+});
 const persistor = persistStore(store);
 
 ReactDOM.render(
