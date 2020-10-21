@@ -4,7 +4,7 @@ import { failDe, passDe, selectDe } from '../../slice';
 import { TrainGerman } from './TrainGerman';
 
 const mapStateToProps = (state: any): any => ({
-  unit: selectedDe(state)
+  unit: selectedDe(state) // TODO: selection can be null
 });
 
 const mapDispatchToProps = {
