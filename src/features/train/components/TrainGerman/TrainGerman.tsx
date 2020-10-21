@@ -126,6 +126,9 @@ export class TrainGerman extends React.Component<{
               id="german"
               className="form-control"
               value={this.state.enteredTranslation}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
               onChange={(e): void => this.setState({ enteredTranslation: e.target.value })}
             >
             </input>
