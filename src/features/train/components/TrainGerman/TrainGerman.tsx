@@ -1,13 +1,16 @@
 import React from 'react';
-import { LearningUnit } from '../../model/learningUnit';
+import { LearningUnit } from '../../../lexicon/model/learningUnit';
+import { LearningProgress } from '../../model/learningProgress';
 import { TestStage } from '../../model/testStage';
 import { ToggleText } from '../ToggleText/ToggleText';
 
 export class TrainGerman extends React.Component<{
+  units: LearningUnit[];
   unit: LearningUnit;
+  progress: LearningProgress;
   pass: () => void;
   fail: () => void;
-  proceed: () => void;
+  proceed: (units: LearningUnit[]) => void;
 },
 {
   enteredTranslation: string;
@@ -28,7 +31,7 @@ export class TrainGerman extends React.Component<{
   }
 
   private proceed(): void {
-    this.props.proceed();
+    this.props.proceed(this.props.units);
     this.setState({
       enteredTranslation: '',
       stage: TestStage.Initial,
@@ -67,7 +70,7 @@ export class TrainGerman extends React.Component<{
   }
 
   render(): JSX.Element {
-    const { unit } = this.props;
+    const { progress, unit } = this.props;
     return (
       <form onSubmit={(e): void => this.submit(e)}>
         <h2>Deutsch trainieren</h2>
@@ -79,7 +82,7 @@ export class TrainGerman extends React.Component<{
               + (this.isCountingAsFailure() ? ' text-danger' : '')
               + (this.isCountingAsSuccess() ? ' text-success' : '')
           }>
-            {unit.progress.scoreDe}
+            {progress.scoreDe}
           </div>
         </div>
         <div className="mb-3">

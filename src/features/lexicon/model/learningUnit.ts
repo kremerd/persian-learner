@@ -5,7 +5,6 @@ export interface LearningUnit {
   en: string;
   fa: string;
   faRm: string;
-  progress: LearningProgress;
 }
 
 export type LearningUnitType =
@@ -13,10 +12,3 @@ export type LearningUnitType =
   'verb' |
   'adjective' |
   'unclassified';
-
-export interface LearningProgress {
-  scoreDe: number;
-  scoreFaPh: number;
-  lastCorrectDe: string | null;
-  lastCorrectFaPh: string | null;
-}

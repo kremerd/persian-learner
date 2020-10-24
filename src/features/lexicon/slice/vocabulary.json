@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "type": "noun",
     "de": "Wasser",
     "en": "water",
@@ -7,6 +8,7 @@
     "faRm": "oob"
   },
   {
+    "id": 1,
     "type": "noun",
     "de": "Papa",
     "en": "dad",
@@ -14,6 +16,7 @@
     "faRm": "booboo"
   },
   {
+    "id": 2,
     "type": "unclassified",
     "de": "mit",
     "en": "with",
@@ -21,6 +24,7 @@
     "faRm": "boo"
   },
   {
+    "id": 3,
     "type": "noun",
     "de": "Brot",
     "en": "bread",
@@ -28,6 +32,7 @@
     "faRm": "naan"
   },
   {
+    "id": 4,
     "type": "noun",
     "de": "Gebäude",
     "en": "building",
@@ -35,6 +40,7 @@
     "faRm": "banoo"
   },
   {
+    "id": 5,
     "type": "unclassified",
     "de": "das",
     "en": "that",
@@ -42,6 +48,7 @@
     "faRm": "oon"
   },
   {
+    "id": 6,
     "type": "noun",
     "de": "Wind",
     "en": "wind",
@@ -49,6 +56,7 @@
     "faRm": "bood"
   },
   {
+    "id": 7,
     "type": "noun",
     "de": "Körper",
     "en": "body",
@@ -56,6 +64,7 @@
     "faRm": "badan"
   },
   {
+    "id": 8,
     "type": "adjective",
     "de": "schlecht",
     "en": "bad",
@@ -63,6 +72,7 @@
     "faRm": "bad"
   },
   {
+    "id": 9,
     "type": "noun",
     "de": "Schrei",
     "en": "shout",
@@ -70,6 +80,7 @@
     "faRm": "dood"
   },
   {
+    "id": 10,
     "type": "verb",
     "de": "geben",
     "en": "give",
@@ -77,6 +88,7 @@
     "faRm": "doodan"
   },
   {
+    "id": 11,
     "type": "noun",
     "de": "Tür",
     "en": "door",
@@ -84,6 +96,7 @@
     "faRm": "dar"
   },
   {
+    "id": 12,
     "type": "noun",
     "de": "Last",
     "en": "load",
@@ -91,6 +104,7 @@
     "faRm": "boor"
   },
   {
+    "id": 13,
     "type": "verb",
     "de": "fahren",
     "en": "drive",
@@ -98,6 +112,7 @@
     "faRm": "roondan"
   },
   {
+    "id": 14,
     "type": "unclassified",
     "de": "er / sie hat nicht",
     "en": "he / she doesn't have",
@@ -105,6 +120,7 @@
     "faRm": "nadoorad"
   },
   {
+    "id": 15,
     "type": "noun",
     "de": "Granatapfel",
     "en": "pomegranate",
@@ -112,6 +128,7 @@
     "faRm": "aanoor"
   },
   {
+    "id": 16,
     "type": "noun",
     "de": "Regen",
     "en": "rain",
@@ -119,6 +136,7 @@
     "faRm": "booroon"
   },
   {
+    "id": 17,
     "type": "noun",
     "de": "Mehl",
     "en": "flour",
@@ -126,6 +144,7 @@
     "faRm": "oord"
   },
   {
+    "id": 18,
     "type": "unclassified",
     "de": "er / sie hat",
     "en": "he / she has",
@@ -133,6 +152,7 @@
     "faRm": "doorad"
   },
   {
+    "id": 19,
     "type": "noun",
     "de": "Name",
     "en": "name",
@@ -140,6 +160,7 @@
     "faRm": "noom"
   },
   {
+    "id": 20,
     "type": "unclassified",
     "de": "ich habe",
     "en": "I have",
@@ -147,6 +168,7 @@
     "faRm": "dooram"
   },
   {
+    "id": 21,
     "type": "unclassified",
     "de": "ich kam",
     "en": "I came",
@@ -154,6 +176,7 @@
     "faRm": "oomadam"
   },
   {
+    "id": 22,
     "type": "unclassified",
     "de": "er / sie kam",
     "en": "he / she came",
@@ -161,6 +184,7 @@
     "faRm": "oomad"
   },
   {
+    "id": 23,
     "type": "noun",
     "de": "Mandel",
     "en": "almond",
@@ -168,6 +192,7 @@
     "faRm": "boodoom"
   },
   {
+    "id": 24,
     "type": "noun",
     "de": "Mutter",
     "en": "mother",
@@ -175,6 +200,7 @@
     "faRm": "moodar"
   },
   {
+    "id": 25,
     "type": "noun",
     "de": "Schlange",
     "en": "snake",
@@ -182,6 +208,7 @@
     "faRm": "moor"
   },
   {
+    "id": 26,
     "type": "unclassified",
     "de": "ich",
     "en": "I",
@@ -189,6 +216,7 @@
     "faRm": "man"
   },
   {
+    "id": 27,
     "type": "noun",
     "de": "Mann",
     "en": "man",
@@ -196,6 +224,7 @@
     "faRm": "mard"
   },
   {
+    "id": 28,
     "type": "noun",
     "de": "Kopf",
     "en": "head",
@@ -203,6 +232,7 @@
     "faRm": "sar"
   },
   {
+    "id": 29,
     "type": "noun",
     "de": "Kopfschmerzen",
     "en": "headache",
@@ -210,6 +240,7 @@
     "faRm": "sardard"
   },
   {
+    "id": 30,
     "type": "noun",
     "de": "Gift",
     "en": "poison",
@@ -217,6 +248,7 @@
     "faRm": "sam"
   },
   {
+    "id": 31,
     "type": "noun",
     "de": "Sichel",
     "en": "sickle",
@@ -224,6 +256,7 @@
     "faRm": "doos"
   },
   {
+    "id": 32,
     "type": "noun",
     "de": "Korb",
     "en": "basket",
@@ -231,6 +264,7 @@
     "faRm": "sabad"
   },
   {
+    "id": 33,
     "type": "noun",
     "de": "Pferd",
     "en": "horse",

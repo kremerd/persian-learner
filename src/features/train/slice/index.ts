@@ -1,53 +1,58 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { differenceInSeconds } from 'date-fns';
-import { LearningProgress, LearningUnit } from '../model/learningUnit';
+import { LearningUnit } from '../../lexicon/model/learningUnit';
+import { LearningProgress } from '../model/learningProgress';
 import configuration from './configuration';
 import selectRandom from './selectRandom';
-import vocabulary from './vocabulary.json';
 
 export interface State {
-  units: LearningUnit[];
   selectedIdDe: number | null;
+  progress: Record<number, LearningProgress>;
 }
 
-const learningUnits = vocabulary.map((vocab, i) => ({
-  ...(vocab as Pick<LearningUnit, 'type' | 'de' | 'en' | 'fa' | 'faRm'>),
-  id: i,
-  progress: {
-    scoreDe: 0,
-    scoreFaPh: 0,
-    lastCorrectDe: null,
-    lastCorrectFaPh: null,
-  },
-}));
-
 const initialState: State = {
-  units: learningUnits,
   selectedIdDe: 0,
+  progress: {}
 };
 
 const slice = createSlice({
   name: 'train',
   initialState,
   reducers: {
-    selectDe: (state): void => {
-      const selectedUnit = selectRandom(state.units, unit => getPriorityDe(unit));
+    selectDe: (state, { payload: units }): void => {
+      const progress = state.progress;
+      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriorityDe(progress[unit.id]));
+      if (selectedUnit === null) {
+        throw new Error('Could not select a new unit');
+      }
       state.selectedIdDe = selectedUnit?.id ?? null;
     },
-    passDe: ({ units, selectedIdDe }): void => {
-      const progress = getProgress(units, selectedIdDe);
-      progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
-      progress.lastCorrectDe = new Date().toISOString();
+    passDe: ({ selectedIdDe, progress }): void => {
+      if (selectedIdDe === null) {
+        throw new Error('No learning unit selected');
+      }
+      const specProgress = progress[selectedIdDe] ?? buildNoProgress();
+      specProgress.scoreDe = Math.min(specProgress.scoreDe + 1, 5);
+      specProgress.lastCorrectDe = new Date().toISOString();
     },
-    failDe: ({ units, selectedIdDe }): void => {
-      const progress = getProgress(units, selectedIdDe);
-      progress.scoreDe = Math.max(progress.scoreDe - 1, 0);
+    failDe: ({ selectedIdDe, progress }): void => {
+      if (selectedIdDe === null) {
+        throw new Error('No learning unit selected');
+      }
+      const specProgress = progress[selectedIdDe] ?? buildNoProgress();
+      specProgress.scoreDe = Math.max(specProgress.scoreDe - 1, 0);
     }
   }
 });
 
-const getPriorityDe = (unit: LearningUnit): number => {
-  const { scoreDe, lastCorrectDe } = unit.progress;
+const buildNoProgress = (): LearningProgress => ({
+  scoreDe: 0,
+  scoreFaPh: 0,
+  lastCorrectDe: null,
+  lastCorrectFaPh: null,
+});
+
+const getPriorityDe = ({ scoreDe, lastCorrectDe }: LearningProgress = buildNoProgress()): number => {
   const config = configuration.find(c => c.score === scoreDe);
   const gap = getDifferenceFromNowInSeconds(lastCorrectDe);
 
@@ -64,14 +69,6 @@ const getDifferenceFromNowInSeconds = (date: string | null): number => {
   } else {
     return Number.POSITIVE_INFINITY;
   }
-};
-
-const getProgress = (state: LearningUnit[], id: number | null): LearningProgress => {
-  const unit = state.find(u => u.id === id);
-  if (!unit) {
-    throw new Error(`Learning unit with id ${id} does not exist.`);
-  }
-  return unit.progress;
 };
 
 export const { passDe, failDe, selectDe } = slice.actions;
