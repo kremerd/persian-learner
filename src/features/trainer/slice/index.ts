@@ -1,6 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { differenceInSeconds } from 'date-fns';
 import { LearningUnit } from '../../lexicon/model/learningUnit';
+import { selectLearningUnits } from '../../lexicon/selectors';
 import { LearningProgress } from '../model/learningProgress';
 import configuration from './configuration';
 import selectRandom from './selectRandom';
@@ -15,18 +16,15 @@ const initialState: State = {
   progress: {}
 };
 
+export const selectDe = createAsyncThunk(
+  'train/selectDe',
+  (_, { getState }) => selectLearningUnits(getState())
+);
+
 const slice = createSlice({
   name: 'train',
   initialState,
   reducers: {
-    selectDe: (state, { payload: units }): void => {
-      const progress = state.progress;
-      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriorityDe(progress[unit.id]));
-      if (selectedUnit === null) {
-        throw new Error('Could not select a new unit');
-      }
-      state.selectedIdDe = selectedUnit?.id ?? null;
-    },
     passDe: ({ selectedIdDe, progress }): void => {
       if (selectedIdDe === null) {
         throw new Error('No learning unit selected');
@@ -41,6 +39,16 @@ const slice = createSlice({
       }
       const specProgress = progress[selectedIdDe] ?? buildNoProgress();
       specProgress.scoreDe = Math.max(specProgress.scoreDe - 1, 0);
+    }
+  },
+  extraReducers: {
+    [selectDe.fulfilled.type]: (state, { payload: units }): void => {
+      const progress = state.progress;
+      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriorityDe(progress[unit.id]));
+      if (selectedUnit === null) {
+        throw new Error('Could not select a new unit');
+      }
+      state.selectedIdDe = selectedUnit?.id ?? null;
     }
   }
 });
@@ -71,5 +79,5 @@ const getDifferenceFromNowInSeconds = (date: string | null): number => {
   }
 };
 
-export const { passDe, failDe, selectDe } = slice.actions;
+export const { passDe, failDe } = slice.actions;
 export default slice.reducer;
