@@ -35,7 +35,7 @@ export class Header extends React.Component {
             <ul className="navbar-nav mr-auto mb-0">
               <li className="nav-item">
                 <Link className="nav-link"
-                  to="/train/german"
+                  to="/trainer/german"
                   onClick={(): void => this.collapse?.hide()}
                 >
                   Deutsch trainieren
@@ -43,7 +43,7 @@ export class Header extends React.Component {
               </li>
               <li className="nav-item">
                 <Link className="nav-link"
-                  to="/train/phonetic-persian"
+                  to="/trainer/persian"
                   onClick={(): void => this.collapse?.hide()}
                 >
                   Persisch trainieren

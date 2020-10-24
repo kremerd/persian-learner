@@ -5,11 +5,11 @@ import { TrainPhoneticPersian } from '../components/TrainPhoneticPersian/TrainPh
 
 export default [
   <Route key="train-german"
-    path="/train/german"
+    path="/trainer/german"
     component={TrainGermanContainer}>
   </Route>,
   <Route key="train-phonetic-persian"
-    path="/train/phonetic-persian"
+    path="/trainer/persian"
     component={TrainPhoneticPersian}>
   </Route>,
 ];

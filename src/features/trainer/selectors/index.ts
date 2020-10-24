@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { selectLearningUnits } from '../../lexicon/selectors';
 import { State } from '../slice';
 
-const selectSlice = (state: any): State => state.train;
+const selectSlice = (state: any): State => state.trainer;
 export default selectSlice;
 
 export const selectTrainingUnit = createSelector([selectSlice, selectLearningUnits], ({ selectedIdDe }, units) => {

@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import lexicon from '../features/lexicon/slice';
-import train from '../features/train/slice';
+import trainer from '../features/trainer/slice';
 
 const rootReducer = combineReducers({
   lexicon,
-  train
+  trainer
 });
 
 export default rootReducer;
