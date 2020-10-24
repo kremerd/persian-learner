@@ -3,11 +3,13 @@ import { LearningUnit } from '../model/learningUnit';
 import vocabulary from './vocabulary.json';
 
 export interface State {
-  units: LearningUnit[];
+  units: Record<number, LearningUnit>;
 }
 
 const initialState: State = {
-  units: vocabulary as LearningUnit[]
+  units: Object.fromEntries(
+    (vocabulary as LearningUnit[]).map(v => [v.id, v])
+  )
 };
 
 const slice = createSlice({
