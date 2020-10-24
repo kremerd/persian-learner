@@ -6,6 +6,7 @@ import { TrainingProgress } from '../model/trainingProgress';
 import { TrainingUnit } from '../model/trainingUnit';
 import configuration from './configuration';
 import selectRandom from './selectRandom';
+import { buildEmptyProgress } from './trainingProgress';
 
 export interface State {
   trainingUnit: TrainingUnit | null;
@@ -30,48 +31,38 @@ const slice = createSlice({
   name: 'train',
   initialState,
   reducers: {
-    passDe: ({ trainingUnit, trainingProgress }): void => {
-      const progress = getProgress(trainingUnit, trainingProgress);
+    passDe: (state: State): void => {
+      const progress = getProgress(state);
       progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
       progress.lastCorrectDe = new Date().toISOString();
     },
-    failDe: ({ trainingUnit, trainingProgress }): void => {
-      const progress = getProgress(trainingUnit, trainingProgress);
+    failDe: (state: State): void => {
+      const progress = getProgress(state);
       progress.scoreDe = Math.max(progress.scoreDe - 1, 0);
     }
   },
   extraReducers: {
     [selectDe.fulfilled.type]: (state, { payload: units }: { payload: LearningUnit[] }): void => {
       const { trainingProgress } = state;
-      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriorityDe(trainingProgress[unit.id]));
-      if (selectedUnit === null) {
-        state.trainingUnit = null;
-      } else {
-        state.trainingUnit = {
-          lang: 'de',
-          id: selectedUnit.id
-        };
-      }
+      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriority(trainingProgress[unit.id]));
+      state.trainingUnit = buildTrainingUnit(selectedUnit);
     }
   }
 });
 
-const getProgress = (trainingUnit: TrainingUnit | null, progress: Record<number, TrainingProgress>): TrainingProgress => {
-  if (trainingUnit !== null) {
-    return progress[trainingUnit.id] ?? buildNoProgress();
-  } else {
+const getProgress = ({ trainingUnit, trainingProgress }: State): TrainingProgress => {
+  if (trainingUnit === null) {
     throw new Error('No training unit selected');
   }
+
+  if (trainingProgress[trainingUnit.id] === undefined) {
+    trainingProgress[trainingUnit.id] = buildEmptyProgress();
+  }
+
+  return trainingProgress[trainingUnit.id];
 };
 
-const buildNoProgress = (): TrainingProgress => ({
-  scoreDe: 0,
-  scoreFa: 0,
-  lastCorrectDe: null,
-  lastCorrectFa: null,
-});
-
-const getPriorityDe = ({ scoreDe, lastCorrectDe }: TrainingProgress = buildNoProgress()): number => {
+const getPriority = ({ scoreDe, lastCorrectDe }: TrainingProgress = buildEmptyProgress()): number => {
   const config = configuration.find(c => c.score === scoreDe);
   const gap = getDifferenceFromNowInSeconds(lastCorrectDe);
 
@@ -87,6 +78,17 @@ const getDifferenceFromNowInSeconds = (date: string | null): number => {
     return differenceInSeconds(new Date(), new Date(date));
   } else {
     return Number.POSITIVE_INFINITY;
+  }
+};
+
+const buildTrainingUnit = (learningUnit: LearningUnit | null): TrainingUnit | null => {
+  if (learningUnit !== null) {
+    return {
+      id: learningUnit.id,
+      lang: 'de',
+    };
+  } else {
+    return null;
   }
 };
 
