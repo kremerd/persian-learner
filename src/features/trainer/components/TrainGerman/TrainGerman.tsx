@@ -1,12 +1,12 @@
 import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
-import { LearningProgress } from '../../model/learningProgress';
 import { TestStage } from '../../model/testStage';
+import { TrainingProgress } from '../../model/trainingProgress';
 import { ToggleText } from '../ToggleText/ToggleText';
 
 export class TrainGerman extends React.Component<{
   unit: LearningUnit;
-  progress: LearningProgress;
+  progress: TrainingProgress;
   pass: () => void;
   fail: () => void;
   proceed: () => void;

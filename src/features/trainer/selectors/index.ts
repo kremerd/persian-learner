@@ -1,21 +1,25 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getKey } from '../../../util/record';
-import { selectLearningUnits } from '../../lexicon/selectors';
+import { selectLearningUnitRecord } from '../../lexicon/selectors';
 import { State } from '../slice';
 
 const selectSlice = (state: any): State => state.trainer;
 export default selectSlice;
 
-export const selectTrainingUnit = createSelector([selectSlice, selectLearningUnits], ({ selectedIdDe }, units) => {
-  return getKey(selectedIdDe, units);
-});
+export const selectCurrentLanguage = createSelector([selectSlice], ({ trainingUnit }) => trainingUnit?.lang ?? null);
 
-export const selectTrainingProgress = createSelector([selectSlice], ({ selectedIdDe, progress }) => {
-  const specProgress = getKey(selectedIdDe, progress);
-  return specProgress ?? {
-    lastCorrectDe: null,
-    lastCorrectFaPh: null,
-    scoreDe: 0,
-    scoreFaPh: 0
-  };
-});
+export const selectCurrentLearningUnit = createSelector([selectSlice, selectLearningUnitRecord],
+  ({ trainingUnit }, units) => getKey(trainingUnit?.id, units)
+);
+
+export const selectCurrentTrainingProgress = createSelector([selectSlice],
+  ({ trainingUnit, trainingProgress }) => {
+    const progress = getKey(trainingUnit?.id, trainingProgress);
+    return progress ?? {
+      lastCorrectDe: null,
+      lastCorrectFa: null,
+      scoreDe: 0,
+      scoreFa: 0
+    };
+  }
+);

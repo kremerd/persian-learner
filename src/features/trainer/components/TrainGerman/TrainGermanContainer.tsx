@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { selectTrainingProgress, selectTrainingUnit } from '../../selectors';
+import { selectCurrentLearningUnit, selectCurrentTrainingProgress } from '../../selectors';
 import { failDe, passDe, selectDe } from '../../slice';
 import { TrainGerman } from './TrainGerman';
 
 const mapStateToProps = (state: any): any => ({
   // TODO: selection can be null
-  progress: selectTrainingProgress(state),
-  unit: selectTrainingUnit(state)
+  progress: selectCurrentTrainingProgress(state),
+  unit: selectCurrentLearningUnit(state),
 });
 
 const mapDispatchToProps = {

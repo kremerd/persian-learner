@@ -2,18 +2,23 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { differenceInSeconds } from 'date-fns';
 import { LearningUnit } from '../../lexicon/model/learningUnit';
 import { selectLearningUnits } from '../../lexicon/selectors';
-import { LearningProgress } from '../model/learningProgress';
+import { TrainingProgress } from '../model/trainingProgress';
+import { TrainingUnit } from '../model/trainingUnit';
 import configuration from './configuration';
 import selectRandom from './selectRandom';
 
 export interface State {
-  selectedIdDe: number | null;
-  progress: Record<number, LearningProgress>;
+  trainingUnit: TrainingUnit | null;
+  trainingProgress: Record<number, TrainingProgress>;
 }
 
 const initialState: State = {
-  selectedIdDe: 0,
-  progress: {}
+  // TODO: Set to null
+  trainingUnit: {
+    id: 0,
+    lang: 'de',
+  },
+  trainingProgress: {},
 };
 
 export const selectDe = createAsyncThunk(
@@ -25,42 +30,48 @@ const slice = createSlice({
   name: 'train',
   initialState,
   reducers: {
-    passDe: ({ selectedIdDe, progress }): void => {
-      if (selectedIdDe === null) {
-        throw new Error('No learning unit selected');
-      }
-      const specProgress = progress[selectedIdDe] ?? buildNoProgress();
-      specProgress.scoreDe = Math.min(specProgress.scoreDe + 1, 5);
-      specProgress.lastCorrectDe = new Date().toISOString();
+    passDe: ({ trainingUnit, trainingProgress }): void => {
+      const progress = getProgress(trainingUnit, trainingProgress);
+      progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
+      progress.lastCorrectDe = new Date().toISOString();
     },
-    failDe: ({ selectedIdDe, progress }): void => {
-      if (selectedIdDe === null) {
-        throw new Error('No learning unit selected');
-      }
-      const specProgress = progress[selectedIdDe] ?? buildNoProgress();
-      specProgress.scoreDe = Math.max(specProgress.scoreDe - 1, 0);
+    failDe: ({ trainingUnit, trainingProgress }): void => {
+      const progress = getProgress(trainingUnit, trainingProgress);
+      progress.scoreDe = Math.max(progress.scoreDe - 1, 0);
     }
   },
   extraReducers: {
-    [selectDe.fulfilled.type]: (state, { payload: units }): void => {
-      const progress = state.progress;
-      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriorityDe(progress[unit.id]));
+    [selectDe.fulfilled.type]: (state, { payload: units }: { payload: LearningUnit[] }): void => {
+      const { trainingProgress } = state;
+      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriorityDe(trainingProgress[unit.id]));
       if (selectedUnit === null) {
-        throw new Error('Could not select a new unit');
+        state.trainingUnit = null;
+      } else {
+        state.trainingUnit = {
+          lang: 'de',
+          id: selectedUnit.id
+        };
       }
-      state.selectedIdDe = selectedUnit?.id ?? null;
     }
   }
 });
 
-const buildNoProgress = (): LearningProgress => ({
+const getProgress = (trainingUnit: TrainingUnit | null, progress: Record<number, TrainingProgress>): TrainingProgress => {
+  if (trainingUnit !== null) {
+    return progress[trainingUnit.id] ?? buildNoProgress();
+  } else {
+    throw new Error('No training unit selected');
+  }
+};
+
+const buildNoProgress = (): TrainingProgress => ({
   scoreDe: 0,
-  scoreFaPh: 0,
+  scoreFa: 0,
   lastCorrectDe: null,
-  lastCorrectFaPh: null,
+  lastCorrectFa: null,
 });
 
-const getPriorityDe = ({ scoreDe, lastCorrectDe }: LearningProgress = buildNoProgress()): number => {
+const getPriorityDe = ({ scoreDe, lastCorrectDe }: TrainingProgress = buildNoProgress()): number => {
   const config = configuration.find(c => c.score === scoreDe);
   const gap = getDifferenceFromNowInSeconds(lastCorrectDe);
 
