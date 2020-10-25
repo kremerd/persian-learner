@@ -1,0 +1,14 @@
+.toastr {
+  position: fixed;
+  width: calc(100% - 1.5rem);
+  max-width: 350px;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(calc(-50% - .75rem), 0px);
+  margin: 0 .75rem .75rem .75rem;
+  z-index: 9999;
+
+  .toast {
+    width: 100%;
+  }
+}
