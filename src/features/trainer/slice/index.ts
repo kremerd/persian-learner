@@ -22,8 +22,8 @@ const initialState: State = {
   trainingProgress: {},
 };
 
-export const selectDe = createAsyncThunk(
-  'train/selectDe',
+export const select = createAsyncThunk(
+  'train/select',
   (_, { getState }) => selectLearningUnits(getState())
 );
 
@@ -31,18 +31,18 @@ const slice = createSlice({
   name: 'train',
   initialState,
   reducers: {
-    passDe: (state: State): void => {
+    pass: (state: State): void => {
       const progress = getProgress(state);
       progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
       progress.lastCorrectDe = new Date().toISOString();
     },
-    failDe: (state: State): void => {
+    fail: (state: State): void => {
       const progress = getProgress(state);
       progress.scoreDe = Math.max(progress.scoreDe - 1, 0);
     }
   },
   extraReducers: {
-    [selectDe.fulfilled.type]: (state, { payload: units }: { payload: LearningUnit[] }): void => {
+    [select.fulfilled.type]: (state, { payload: units }: { payload: LearningUnit[] }): void => {
       const { trainingProgress } = state;
       const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriority(trainingProgress[unit.id]));
       state.trainingUnit = buildTrainingUnit(selectedUnit);
@@ -92,5 +92,5 @@ const buildTrainingUnit = (learningUnit: LearningUnit | null): TrainingUnit | nu
   }
 };
 
-export const { passDe, failDe } = slice.actions;
+export const { pass, fail } = slice.actions;
 export default slice.reducer;
