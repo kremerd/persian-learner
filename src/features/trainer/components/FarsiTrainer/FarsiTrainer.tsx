@@ -1,10 +1,10 @@
 import React from 'react';
 
-export class TrainPhoneticPersian extends React.Component {
+export class FarsiTrainer extends React.Component {
   render(): JSX.Element {
     return (
       <div>
-        Hello TrainPhoneticPersian
+        Hello FarsiTrainer
       </div>
     );
   }

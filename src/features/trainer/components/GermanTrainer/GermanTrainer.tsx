@@ -4,14 +4,13 @@ import { TestStage } from '../../model/testStage';
 import { TrainingProgress } from '../../model/trainingProgress';
 import { ToggleText } from '../ToggleText/ToggleText';
 
-export class TrainGerman extends React.Component<{
-  unit: LearningUnit;
+export class GermanTrainer extends React.Component<{
   progress: TrainingProgress;
-  pass: () => void;
+  unit: LearningUnit;
   fail: () => void;
-  proceed: () => void;
-},
-{
+  next: () => void;
+  pass: () => void;
+}, {
   enteredTranslation: string;
   stage: TestStage;
 }> {
@@ -30,7 +29,7 @@ export class TrainGerman extends React.Component<{
   }
 
   private proceed(): void {
-    this.props.proceed();
+    this.props.next();
     this.setState({
       enteredTranslation: '',
       stage: TestStage.Initial,

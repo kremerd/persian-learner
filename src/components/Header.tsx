@@ -43,7 +43,7 @@ export class Header extends React.Component {
               </li>
               <li className="nav-item">
                 <Link className="nav-link"
-                  to="/trainer/persian"
+                  to="/trainer/farsi"
                   onClick={(): void => this.collapse?.hide()}
                 >
                   Persisch trainieren
