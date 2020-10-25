@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { differenceInSeconds } from 'date-fns';
 import { LearningUnit } from '../../lexicon/model/learningUnit';
 import { selectLearningUnits } from '../../lexicon/selectors';
-import { TrainingProgress } from '../model/trainingProgress';
-import { TrainingUnit } from '../model/trainingUnit';
+import { LangProgress, TrainingProgress } from '../model/trainingProgress';
+import { TrainingUnit, TrainingUnitLang, TrainingUnitWithPriority } from '../model/trainingUnit';
 import configuration from './configuration';
 import selectRandom from './selectRandom';
 import { buildEmptyProgress } from './trainingProgress';
@@ -28,25 +28,30 @@ const slice = createSlice({
   initialState,
   reducers: {
     pass: (state: State): void => {
-      const progress = getProgress(state);
-      progress.scoreDe = Math.min(progress.scoreDe + 1, 5);
-      progress.lastCorrectDe = new Date().toISOString();
+      const progress = getLangProgress(state);
+      progress.score = Math.min(progress.score + 1, 5);
+      progress.lastCorrect = new Date().toISOString();
+      progress.lastTried = progress.lastCorrect;
     },
     fail: (state: State): void => {
-      const progress = getProgress(state);
-      progress.scoreDe = Math.max(progress.scoreDe - 1, 0);
+      const progress = getLangProgress(state);
+      progress.score = Math.max(progress.score - 1, 0);
+      progress.lastTried = new Date().toISOString();
     }
   },
   extraReducers: {
     [select.fulfilled.type]: (state, { payload: units }: { payload: LearningUnit[] }): void => {
       const { trainingProgress } = state;
-      const selectedUnit = selectRandom(units as LearningUnit[], unit => getPriority(trainingProgress[unit.id]));
-      state.trainingUnit = buildTrainingUnit(selectedUnit);
+      const trainingUnits = units
+        .map(({ id }) => getTrainingUnits(id, trainingProgress[id]))
+        .flat();
+      const selectedUnit = selectRandom(trainingUnits, unit => unit.priority);
+      state.trainingUnit = copyTrainingUnit(selectedUnit);
     }
   }
 });
 
-const getProgress = ({ trainingUnit, trainingProgress }: State): TrainingProgress => {
+const getLangProgress = ({ trainingUnit, trainingProgress }: State): LangProgress => {
   if (trainingUnit === null) {
     throw new Error('No training unit selected');
   }
@@ -55,12 +60,21 @@ const getProgress = ({ trainingUnit, trainingProgress }: State): TrainingProgres
     trainingProgress[trainingUnit.id] = buildEmptyProgress();
   }
 
-  return trainingProgress[trainingUnit.id];
+  return trainingProgress[trainingUnit.id][trainingUnit.lang];
 };
 
-const getPriority = ({ scoreDe, lastCorrectDe }: TrainingProgress = buildEmptyProgress()): number => {
-  const config = configuration.find(c => c.score === scoreDe);
-  const gap = getDifferenceFromNowInSeconds(lastCorrectDe);
+const getTrainingUnits = (id: number, progress: TrainingProgress = buildEmptyProgress()): TrainingUnitWithPriority[] => {
+  const languages: TrainingUnitLang[] = ['de', 'fa'];
+  return languages.map(lang => ({
+    id,
+    lang,
+    priority: getPriority(progress[lang])
+  }));
+};
+
+const getPriority = ({ score, lastTried }: LangProgress): number => {
+  const config = configuration.find(c => c.score === score);
+  const gap = getDifferenceFromNowInSeconds(lastTried);
 
   if (config !== undefined && gap > config.minGap) {
     return config.frequency;
@@ -77,12 +91,10 @@ const getDifferenceFromNowInSeconds = (date: string | null): number => {
   }
 };
 
-const buildTrainingUnit = (learningUnit: LearningUnit | null): TrainingUnit | null => {
-  if (learningUnit !== null) {
-    return {
-      id: learningUnit.id,
-      lang: 'de',
-    };
+const copyTrainingUnit = (unit: TrainingUnit | null): TrainingUnit | null => {
+  if (unit !== null) {
+    const { id, lang } = unit;
+    return { id, lang };
   } else {
     return null;
   }

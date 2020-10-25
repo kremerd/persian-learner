@@ -1,5 +1,8 @@
 .score-badge {
-  margin: 0 .25rem;
+  &.badge {
+    font-size: 0.75rem;
+    margin: 0 .25rem;
+  }
 
   &.lvl-0 {
     background-color: #6c757d;

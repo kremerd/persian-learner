@@ -35,18 +35,10 @@ export class Header extends React.Component {
             <ul className="navbar-nav mr-auto mb-0">
               <li className="nav-item">
                 <Link className="nav-link"
-                  to="/trainer/german"
+                  to="/trainer"
                   onClick={(): void => this.collapse?.hide()}
                 >
-                  Deutsch trainieren
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link"
-                  to="/trainer/farsi"
-                  onClick={(): void => this.collapse?.hide()}
-                >
-                  Persisch trainieren
+                  Trainer
                 </Link>
               </li>
             </ul>

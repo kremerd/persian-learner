@@ -1,6 +1,10 @@
 export interface TrainingProgress {
-  scoreDe: number;
-  scoreFa: number;
-  lastCorrectDe: string | null;
-  lastCorrectFa: string | null;
+  de: LangProgress;
+  fa: LangProgress;
+}
+
+export interface LangProgress {
+  score: number;
+  lastCorrect: string | null;
+  lastTried: string | null;
 }
