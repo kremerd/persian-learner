@@ -1,13 +1,18 @@
 import { Toast as BootstrapToast } from 'bootstrap';
 import React from 'react';
 
-export class Toast extends React.Component<{ notification: string }> {
+export class Toast extends React.Component<{
+  message: string;
+  clear: () => void;
+}> {
   private toastRef = React.createRef<HTMLDivElement>();
 
   componentDidMount(): void {
-    if (this.toastRef.current) {
-      const toast = new (BootstrapToast as any)(this.toastRef.current, { autohide: false }) as BootstrapToast & { show: () => void };
+    const toastEl = this.toastRef.current;
+    if (toastEl) {
+      const toast = new BootstrapToast(toastEl) as BootstrapToast & { show: () => void };
       toast.show();
+      toastEl.addEventListener('hidden.bs.toast', () => this.props.clear());
     }
   }
 
@@ -20,7 +25,7 @@ export class Toast extends React.Component<{ notification: string }> {
         ref={this.toastRef}
       >
         <div className="toast-body">
-          {this.props.notification}
+          {this.props.message}
         </div>
         <button type="button"
           className="btn-close ml-auto mr-2"

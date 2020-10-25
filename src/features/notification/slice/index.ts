@@ -1,25 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { Notification } from '../model/notification';
 
 export interface State {
-  notifications: string[];
+  nextId: number;
+  notifications: Notification[];
 }
 
 const initialState: State = {
-  notifications: [
-    'Notif 1',
-    'Notif 2',
-  ],
+  nextId: 0,
+  notifications: [],
 };
 
 const slice = createSlice({
   name: 'notification',
   initialState,
   reducers: {
-    add: (state: State, { payload }: { payload: string }): void => {
-      state.notifications.push(payload);
+    addNotification: (state: State, { payload }: { payload: string }): void => {
+      state.notifications.push({ id: state.nextId, message: payload });
+      state.nextId++;
+    },
+    removeNotification: (state: State, { payload }: { payload: number }): void => {
+      state.notifications = state.notifications.filter(n => n.id !== payload);
     },
   },
 });
 
-export const { add } = slice.actions;
+export const { addNotification, removeNotification } = slice.actions;
 export default slice.reducer;
