@@ -8,6 +8,7 @@ import storage from 'redux-persist/lib/storage';
 import { version } from '../package.json';
 import { App } from './components/App';
 import decodeUrl from './decodeUrl';
+import { addNotification } from './features/notification/slice';
 import './index.scss';
 import reducer from './reducers';
 import * as serviceWorker from './serviceWorker';
@@ -49,4 +50,7 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+serviceWorker.register({
+  onSuccess: () => store.dispatch(addNotification('Caching abgeschlossen. Die App funktioniert jetzt auch offline!')),
+  onUpdate: () => store.dispatch(addNotification('Neue Version verfügbar. Zum Update bitte alle Tabs der App schließen!')),
+});
