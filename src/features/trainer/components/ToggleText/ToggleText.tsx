@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dash, Plus } from '../Icons';
+import { Dash, Plus } from '../../../../components/Icons';
 
 export class ToggleText extends React.Component<{
   title: string;

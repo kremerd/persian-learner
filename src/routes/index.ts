@@ -1,5 +1,5 @@
-import train from '../features/train/routes';
+import trainer from '../features/trainer/routes';
 
 export default [
-  ...train
+  ...trainer
 ];
