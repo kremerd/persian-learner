@@ -96,31 +96,31 @@ export class GermanTrainer extends React.Component<{
           </div>
         </div>
         {this.isShowSolution() ? (
-          <React.Fragment>
-            <div className="mb-3">
-              <div>Deutsch</div>
-              <div className="form-control-plaintext">
-                {this.isWrongSolution() && (
-                  <React.Fragment>
-                    <span className="text-danger text-decoration-line-through">
-                      {this.state.enteredTranslation}
-                    </span>
-                    <span> </span>
-                  </React.Fragment>
-                )}
-                <span className={this.isCountingAsSuccess() || this.isWrongSolution() ? 'text-success' : 'text-warning'}>
-                  {unit.de}
-                  <ScoreBadge score={progress.scoreDe}
-                    decreased={this.isCountingAsFailure()}
-                    increased={this.isCountingAsSuccess()}
-                  ></ScoreBadge>
-                </span>
-              </div>
-              <div className="form-text">
-                <ToggleText title="Englisch" value={unit.en}></ToggleText>
-              </div>
+          <div className="mb-3">
+            <div>
+              Deutsch
             </div>
-          </React.Fragment>
+            <div className="form-control-plaintext">
+              {this.isWrongSolution() && (
+                <React.Fragment>
+                  <span className="text-danger text-decoration-line-through">
+                    {this.state.enteredTranslation}
+                  </span>
+                  <span> </span>
+                </React.Fragment>
+              )}
+              <span className={this.isCountingAsSuccess() || this.isWrongSolution() ? 'text-success' : 'text-warning'}>
+                {unit.de}
+                <ScoreBadge score={progress.scoreDe}
+                  decreased={this.isCountingAsFailure()}
+                  increased={this.isCountingAsSuccess()}
+                ></ScoreBadge>
+              </span>
+            </div>
+            <div className="form-text">
+              <ToggleText title="Englisch" value={unit.en}></ToggleText>
+            </div>
+          </div>
         ) : (
           <div className="mb-3">
             <label htmlFor="german">
