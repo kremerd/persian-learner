@@ -2,6 +2,7 @@ import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { TestStage } from '../../model/testStage';
 import { TrainingProgress } from '../../model/trainingProgress';
+import { ScoreBadge } from '../ScoreBadge/ScoreBadge';
 import { ToggleText } from '../ToggleText/ToggleText';
 
 export class GermanTrainer extends React.Component<{
@@ -14,10 +15,21 @@ export class GermanTrainer extends React.Component<{
   enteredTranslation: string;
   stage: TestStage;
 }> {
+  private inputRef = React.createRef<HTMLInputElement>();
+  private submitRef = React.createRef<HTMLButtonElement>();
+
   state = {
     enteredTranslation: '',
     stage: TestStage.Initial,
   };
+
+  componentDidUpdate(): void {
+    if (this.inputRef.current) {
+      this.inputRef.current.focus();
+    } else if (this.submitRef.current) {
+      this.submitRef.current.focus();
+    }
+  }
 
   private submit(event: React.FormEvent): void {
     event.preventDefault();
@@ -74,17 +86,6 @@ export class GermanTrainer extends React.Component<{
         <h2>Deutsch trainieren</h2>
         <div className="mb-3">
           <div>
-            Fortschritt
-          </div>
-          <div className={'form-control-plaintext'
-              + (this.isCountingAsFailure() ? ' text-danger' : '')
-              + (this.isCountingAsSuccess() ? ' text-success' : '')
-          }>
-            {progress.scoreDe}
-          </div>
-        </div>
-        <div className="mb-3">
-          <div>
             Persisch
           </div>
           <div className="form-control-plaintext text-large">
@@ -99,18 +100,20 @@ export class GermanTrainer extends React.Component<{
             <div className="mb-3">
               <div>Deutsch</div>
               <div className="form-control-plaintext">
-                {this.isCountingAsFailure()
-                  ? (
-                    <React.Fragment>
-                      <span className="text-danger text-decoration-line-through">
-                        {this.state.enteredTranslation}
-                      </span>
-                      <span> </span>
-                    </React.Fragment>
-                  ) : null
-                }
-                <span className="text-success">
+                {this.isWrongSolution() && (
+                  <React.Fragment>
+                    <span className="text-danger text-decoration-line-through">
+                      {this.state.enteredTranslation}
+                    </span>
+                    <span> </span>
+                  </React.Fragment>
+                )}
+                <span className={this.isCountingAsSuccess() || this.isWrongSolution() ? 'text-success' : 'text-warning'}>
                   {unit.de}
+                  <ScoreBadge score={progress.scoreDe}
+                    decreased={this.isCountingAsFailure()}
+                    increased={this.isCountingAsSuccess()}
+                  ></ScoreBadge>
                 </span>
               </div>
               <div className="form-text">
@@ -127,6 +130,7 @@ export class GermanTrainer extends React.Component<{
               id="german"
               className="form-control"
               value={this.state.enteredTranslation}
+              ref={this.inputRef}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
@@ -150,6 +154,7 @@ export class GermanTrainer extends React.Component<{
           <button type="submit"
             className="btn btn-primary btn-block"
             key="proceed-btn"
+            ref={this.submitRef}
           >
             Weiter
           </button>
@@ -170,8 +175,9 @@ export class GermanTrainer extends React.Component<{
             </div>
             <div className="col-6 col-sm-8">
               <button type="submit"
-                className="btn btn-primary btn-block"
+                className={`btn btn-block ${this.isCountingAsFailure() ? 'btn-warning' : 'btn-primary'}`}
                 key="chck-btn"
+                ref={this.submitRef}
               >
                 Überprüfen
               </button>
@@ -201,7 +207,14 @@ export class GermanTrainer extends React.Component<{
     return [
       TestStage.Passed,
       TestStage.PassedOnRetry,
-      TestStage.Failed
+      TestStage.Failed,
+    ].includes(this.state.stage);
+  }
+
+  private isWrongSolution(): boolean {
+    return [
+      TestStage.Failed,
+      TestStage.Retry,
     ].includes(this.state.stage);
   }
 
@@ -209,13 +222,13 @@ export class GermanTrainer extends React.Component<{
     return [
       TestStage.PassedOnRetry,
       TestStage.Retry,
-      TestStage.Failed
+      TestStage.Failed,
     ].includes(this.state.stage);
   }
 
   private isCountingAsSuccess(): boolean {
     return [
-      TestStage.Passed
+      TestStage.Passed,
     ].includes(this.state.stage);
   }
 }

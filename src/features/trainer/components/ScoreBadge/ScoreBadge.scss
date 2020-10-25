@@ -1,0 +1,32 @@
+.score-badge {
+  margin: 0 .25rem;
+
+  &.lvl-0 {
+    background-color: #6c757d;
+  }
+
+  &.lvl-1 {
+    background-color: #5b7975;
+  }
+
+  &.lvl-2 {
+    background-color: #4b7C6d;
+  }
+
+  &.lvl-3 {
+    background-color: #3a8064;
+  }
+
+  &.lvl-4 {
+    background-color: #2a835c;
+  }
+
+  &.lvl-5 {
+    background-color: #198754;
+  }
+
+  svg {
+    height: 10px;
+    width: 10px;
+  }
+}
