@@ -2,8 +2,8 @@ import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { LangProgress } from '../../model/trainingProgress';
 import { TrainingUnitLang } from '../../model/trainingUnit';
-import { FarsiTrainer } from '../FarsiTrainer/FarsiTrainer';
-import { GermanTrainer } from '../GermanTrainer/GermanTrainer';
+import { FarsiTrainer } from '../LangTrainer/FarsiTrainer';
+import { GermanTrainer } from '../LangTrainer/GermanTrainer';
 import { NoTraining } from '../NoTraining/NoTraining';
 
 export class Trainer extends React.Component<{
