@@ -5,7 +5,7 @@
     "de": "Wasser",
     "en": "water",
     "fa": "آب",
-    "faRm": "oob"
+    "faRm": "âb"
   },
   {
     "id": 1,
@@ -13,7 +13,7 @@
     "de": "Papa",
     "en": "dad",
     "fa": "بابا",
-    "faRm": "booboo"
+    "faRm": "bâbâ"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "de": "mit",
     "en": "with",
     "fa": "با",
-    "faRm": "boo"
+    "faRm": "bâ"
   },
   {
     "id": 3,
@@ -37,7 +37,7 @@
     "de": "Gebäude",
     "en": "building",
     "fa": "بَنا",
-    "faRm": "banoo"
+    "faRm": "banâ"
   },
   {
     "id": 5,
@@ -45,7 +45,7 @@
     "de": "das",
     "en": "that",
     "fa": "آن",
-    "faRm": "oon"
+    "faRm": "ân"
   },
   {
     "id": 6,
@@ -53,7 +53,7 @@
     "de": "Wind",
     "en": "wind",
     "fa": "باد",
-    "faRm": "bood"
+    "faRm": "bâd"
   },
   {
     "id": 7,
@@ -77,7 +77,7 @@
     "de": "Schrei",
     "en": "shout",
     "fa": "داد",
-    "faRm": "dood"
+    "faRm": "dâd"
   },
   {
     "id": 10,
@@ -85,13 +85,13 @@
     "de": "geben",
     "en": "give",
     "fa": "دادَن",
-    "faRm": "doodan"
+    "faRm": "dâdan"
   },
   {
     "id": 11,
     "type": "noun",
     "de": "Tür",
-    "en": "door",
+    "en": "dâr",
     "fa": "دَر",
     "faRm": "dar"
   },
@@ -101,7 +101,7 @@
     "de": "Last",
     "en": "load",
     "fa": "بار",
-    "faRm": "boor"
+    "faRm": "bâr"
   },
   {
     "id": 13,
@@ -109,7 +109,7 @@
     "de": "fahren",
     "en": "drive",
     "fa": "راندَن",
-    "faRm": "roondan"
+    "faRm": "rândan"
   },
   {
     "id": 14,
@@ -117,7 +117,7 @@
     "de": "er / sie hat nicht",
     "en": "he / she doesn't have",
     "fa": "نَدارَد",
-    "faRm": "nadoorad"
+    "faRm": "nadârad"
   },
   {
     "id": 15,
@@ -125,7 +125,7 @@
     "de": "Granatapfel",
     "en": "pomegranate",
     "fa": "اَنار",
-    "faRm": "aanoor"
+    "faRm": "anâr"
   },
   {
     "id": 16,
@@ -133,7 +133,7 @@
     "de": "Regen",
     "en": "rain",
     "fa": "باران",
-    "faRm": "booroon"
+    "faRm": "bârân"
   },
   {
     "id": 17,
@@ -141,7 +141,7 @@
     "de": "Mehl",
     "en": "flour",
     "fa": "آرد",
-    "faRm": "oord"
+    "faRm": "ârd"
   },
   {
     "id": 18,
@@ -149,7 +149,7 @@
     "de": "er / sie hat",
     "en": "he / she has",
     "fa": "دارَد",
-    "faRm": "doorad"
+    "faRm": "dârad"
   },
   {
     "id": 19,
@@ -157,7 +157,7 @@
     "de": "Name",
     "en": "name",
     "fa": "نام",
-    "faRm": "noom"
+    "faRm": "nâm"
   },
   {
     "id": 20,
@@ -165,7 +165,7 @@
     "de": "ich habe",
     "en": "I have",
     "fa": "دارَم",
-    "faRm": "dooram"
+    "faRm": "dâram"
   },
   {
     "id": 21,
@@ -173,7 +173,7 @@
     "de": "ich kam",
     "en": "I came",
     "fa": "آمَدَم",
-    "faRm": "oomadam"
+    "faRm": "âmadam"
   },
   {
     "id": 22,
@@ -181,7 +181,7 @@
     "de": "er / sie kam",
     "en": "he / she came",
     "fa": "آمَد",
-    "faRm": "oomad"
+    "faRm": "âmad"
   },
   {
     "id": 23,
@@ -189,7 +189,7 @@
     "de": "Mandel",
     "en": "almond",
     "fa": "بادام",
-    "faRm": "boodoom"
+    "faRm": "bâdâm"
   },
   {
     "id": 24,
@@ -197,7 +197,7 @@
     "de": "Mutter",
     "en": "mother",
     "fa": "مادَر",
-    "faRm": "moodar"
+    "faRm": "mâdar"
   },
   {
     "id": 25,
@@ -205,7 +205,7 @@
     "de": "Schlange",
     "en": "snake",
     "fa": "مار",
-    "faRm": "moor"
+    "faRm": "mâr"
   },
   {
     "id": 26,
@@ -253,7 +253,7 @@
     "de": "Sichel",
     "en": "sickle",
     "fa": "داس",
-    "faRm": "doos"
+    "faRm": "dâs"
   },
   {
     "id": 32,
@@ -268,7 +268,111 @@
     "type": "noun",
     "de": "Pferd",
     "en": "horse",
-    "fa": "اسب",
-    "faRm": "aasb"
+    "fa": "اَسب",
+    "faRm": "asb"
+  },
+  {
+    "id": 34,
+    "type": "adjective",
+    "de": "richtig",
+    "en": "right",
+    "fa": "راست",
+    "faRm": "râst"
+  },
+  {
+    "id": 35,
+    "type": "noun",
+    "de": "Text",
+    "en": "text",
+    "fa": "مَتن",
+    "faRm": "matn"
+  },
+  {
+    "id": 36,
+    "type": "noun",
+    "de": "Axt",
+    "en": "ax",
+    "fa": "تَبَر",
+    "faRm": "tabar"
+  },
+  {
+    "id": 37,
+    "type": "unclassified",
+    "de": "er / sie ist",
+    "en": "he / she is",
+    "fa": "اَست",
+    "faRm": "ast"
+  },
+  {
+    "id": 38,
+    "type": "noun",
+    "de": "Schaukel",
+    "en": "swing",
+    "fa": "تاب",
+    "faRm": "tâb"
+  },
+  {
+    "id": 39,
+    "type": "noun",
+    "de": "Fieber",
+    "en": "fever",
+    "fa": "تَب",
+    "faRm": "tab"
+  },
+  {
+    "id": 40,
+    "type": "noun",
+    "de": "hand",
+    "en": "Hand",
+    "fa": "دَست",
+    "faRm": "dast"
+  },
+  {
+    "id": 41,
+    "type": "noun",
+    "de": "Buch",
+    "en": "book",
+    "fa": "کِتاب",
+    "faRm": "ketâb"
+  },
+  {
+    "id": 42,
+    "type": "noun",
+    "de": "Arbeit",
+    "en": "work",
+    "fa": "کار",
+    "faRm": "kâr"
+  },
+  {
+    "id": 43,
+    "type": "adjective",
+    "de": "wenig",
+    "en": "little",
+    "fa": "کَم",
+    "faRm": "kam"
+  },
+  {
+    "id": 44,
+    "type": "adjective",
+    "de": "taub",
+    "en": "deaf",
+    "fa": "کَر",
+    "faRm": "kar"
+  },
+  {
+    "id": 45,
+    "type": "noun",
+    "de": "Kebab",
+    "en": "kebab",
+    "fa": "کَباب",
+    "faRm": "kabâb"
+  },
+  {
+    "id": 46,
+    "type": "noun",
+    "de": "Mitarbeiter",
+    "en": "employee",
+    "fa": "کارمَند",
+    "faRm": "kârmand"
   }
 ]
