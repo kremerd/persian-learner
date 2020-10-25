@@ -6,7 +6,7 @@ import trainer from '../features/trainer/slice';
 const rootReducer = combineReducers({
   lexicon,
   notification,
-  trainer
+  trainer,
 });
 
 export default rootReducer;
