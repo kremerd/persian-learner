@@ -13,6 +13,10 @@ export class Trainer extends React.Component<{
   next: () => void;
   pass: () => void;
 }> {
+  componentDidMount(): void {
+    this.props.next();
+  }
+
   render(): JSX.Element {
     const { lang, progress, unit, fail, next, pass } = this.props;
     if (lang === 'de' && unit !== null) {
