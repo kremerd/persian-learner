@@ -16,3 +16,7 @@ export const selectCurrentLearningUnit = createSelector([selectSlice, selectLear
 export const selectCurrentTrainingProgress = createSelector([selectSlice],
   ({ trainingUnit, trainingProgress }) => getKey(trainingUnit?.id, trainingProgress) ?? buildEmptyProgress()
 );
+
+export const selectCurrentLangProgress = createSelector([selectCurrentLanguage, selectCurrentTrainingProgress],
+  (lang, trainingProgress) => lang !== null ? trainingProgress[lang] : buildEmptyProgress()
+);

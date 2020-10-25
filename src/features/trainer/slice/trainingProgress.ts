@@ -1,8 +1,12 @@
 import { TrainingProgress } from '../model/trainingProgress';
 
 export const buildEmptyProgress = (): TrainingProgress => ({
-  scoreDe: 0,
-  scoreFa: 0,
-  lastCorrectDe: null,
-  lastCorrectFa: null,
+  de: {
+    score: 0,
+    lastCorrect: null,
+  },
+  fa: {
+    score: 0,
+    lastCorrect: null,
+  },
 });

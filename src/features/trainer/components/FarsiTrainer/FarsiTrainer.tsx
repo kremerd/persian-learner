@@ -1,12 +1,12 @@
 import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { TestStage } from '../../model/testStage';
-import { TrainingProgress } from '../../model/trainingProgress';
+import { LangProgress } from '../../model/trainingProgress';
 import { ScoreBadge } from '../ScoreBadge/ScoreBadge';
 import { ToggleText } from '../ToggleText/ToggleText';
 
 export class FarsiTrainer extends React.Component<{
-  progress: TrainingProgress;
+  progress: LangProgress;
   unit: LearningUnit;
   fail: () => void;
   next: () => void;
@@ -109,7 +109,7 @@ export class FarsiTrainer extends React.Component<{
               )}
               <span className={this.isCountingAsSuccess() || this.isWrongSolution() ? 'text-success' : 'text-warning'}>
                 {unit.fa}
-                <ScoreBadge score={progress.scoreFa}
+                <ScoreBadge score={progress.score}
                   decreased={this.isCountingAsFailure()}
                   increased={this.isCountingAsSuccess()}
                 ></ScoreBadge>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { TestStage } from '../../model/testStage';
-import { TrainingProgress } from '../../model/trainingProgress';
+import { LangProgress } from '../../model/trainingProgress';
 import { ScoreBadge } from '../ScoreBadge/ScoreBadge';
 import { ToggleText } from '../ToggleText/ToggleText';
 
 export class GermanTrainer extends React.Component<{
-  progress: TrainingProgress;
+  progress: LangProgress;
   unit: LearningUnit;
   fail: () => void;
   next: () => void;
@@ -111,7 +111,7 @@ export class GermanTrainer extends React.Component<{
               )}
               <span className={this.isCountingAsSuccess() || this.isWrongSolution() ? 'text-success' : 'text-warning'}>
                 {unit.de}
-                <ScoreBadge score={progress.scoreDe}
+                <ScoreBadge score={progress.score}
                   decreased={this.isCountingAsFailure()}
                   increased={this.isCountingAsSuccess()}
                 ></ScoreBadge>

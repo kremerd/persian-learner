@@ -1,6 +1,6 @@
 import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
-import { TrainingProgress } from '../../model/trainingProgress';
+import { LangProgress } from '../../model/trainingProgress';
 import { TrainingUnitLang } from '../../model/trainingUnit';
 import { FarsiTrainer } from '../FarsiTrainer/FarsiTrainer';
 import { GermanTrainer } from '../GermanTrainer/GermanTrainer';
@@ -8,7 +8,7 @@ import { NoTraining } from '../NoTraining/NoTraining';
 
 export class Trainer extends React.Component<{
   lang: TrainingUnitLang | null;
-  progress: TrainingProgress;
+  progress: LangProgress;
   unit: LearningUnit | null;
   fail: () => void;
   next: () => void;
