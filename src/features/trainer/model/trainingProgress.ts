@@ -6,4 +6,5 @@ export interface TrainingProgress {
 export interface LangProgress {
   score: number;
   lastCorrect: string | null;
+  lastTried: string | null;
 }

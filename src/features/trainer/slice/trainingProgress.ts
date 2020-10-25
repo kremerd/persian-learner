@@ -1,12 +1,12 @@
-import { TrainingProgress } from '../model/trainingProgress';
+import { LangProgress, TrainingProgress } from '../model/trainingProgress';
 
 export const buildEmptyProgress = (): TrainingProgress => ({
-  de: {
-    score: 0,
-    lastCorrect: null,
-  },
-  fa: {
-    score: 0,
-    lastCorrect: null,
-  },
+  de: buildEmptyLangProgress(),
+  fa: buildEmptyLangProgress(),
+});
+
+const buildEmptyLangProgress = (): LangProgress => ({
+  score: 0,
+  lastCorrect: null,
+  lastTried: null,
 });

@@ -31,10 +31,12 @@ const slice = createSlice({
       const progress = getLangProgress(state);
       progress.score = Math.min(progress.score + 1, 5);
       progress.lastCorrect = new Date().toISOString();
+      progress.lastTried = progress.lastCorrect;
     },
     fail: (state: State): void => {
       const progress = getLangProgress(state);
       progress.score = Math.max(progress.score - 1, 0);
+      progress.lastTried = new Date().toISOString();
     }
   },
   extraReducers: {
@@ -70,9 +72,9 @@ const getTrainingUnits = (id: number, progress: TrainingProgress = buildEmptyPro
   }));
 };
 
-const getPriority = ({ score, lastCorrect }: LangProgress): number => {
+const getPriority = ({ score, lastTried }: LangProgress): number => {
   const config = configuration.find(c => c.score === score);
-  const gap = getDifferenceFromNowInSeconds(lastCorrect);
+  const gap = getDifferenceFromNowInSeconds(lastTried);
 
   if (config !== undefined && gap > config.minGap) {
     return config.frequency;
