@@ -14,11 +14,7 @@ export interface State {
 }
 
 const initialState: State = {
-  // TODO: Set to null
-  trainingUnit: {
-    id: 0,
-    lang: 'de',
-  },
+  trainingUnit: null,
   trainingProgress: {},
 };
 
