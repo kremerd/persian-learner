@@ -9,5 +9,5 @@ export const selectLearningUnitRecord = createSelector([selectSlice],
 );
 
 export const selectLearningUnits = createSelector([selectLearningUnitRecord],
-  units => Object.keys(units).map(k => units[k as unknown as number])
+  units => Object.values(units)
 );

@@ -10,6 +10,7 @@ import { App } from './components/App';
 import decodeUrl from './decodeUrl';
 import { addNotification } from './features/notification/slice';
 import './index.scss';
+import migrate from './migrations';
 import reducer from './reducers';
 import * as serviceWorker from './serviceWorker';
 
@@ -19,8 +20,9 @@ if (process.env.NODE_ENV === 'production') {
 
 const persistedReducer = persistReducer({
   key: 'root',
+  migrate,
   storage,
-  version: 1
+  version: 1,
 }, reducer);
 
 const store = configureStore({

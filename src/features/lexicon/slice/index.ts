@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import vocabulary from '../../../data/vocabulary.json';
 import { LearningUnit } from '../model/learningUnit';
-import vocabulary from './vocabulary.json';
 
 export interface State {
   units: Record<number, LearningUnit>;

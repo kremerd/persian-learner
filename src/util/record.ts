@@ -10,3 +10,9 @@ export const getKey = <K extends string | number | symbol, T>
   }
   return result;
 };
+
+export const keys = <K extends string | number | symbol>
+  (record: Record<K, any>): K[] =>
+{
+  return Object.keys(record) as unknown as K[];
+};
