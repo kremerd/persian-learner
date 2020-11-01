@@ -806,5 +806,189 @@
     "en": "home",
     "fa": "خانِه",
     "faRm": "khâne"
+  },
+  {
+    "id": 100,
+    "type": "noun",
+    "de": "Schwester",
+    "en": "sister",
+    "fa": "خواهَر",
+    "faRm": "khâhar"
+  },
+  {
+    "id": 101,
+    "type": "noun",
+    "de": "Bett",
+    "en": "bed",
+    "fa": "تَخت",
+    "faRm": "takht"
+  },
+  {
+    "id": 102,
+    "type": "adjective",
+    "de": "müde",
+    "en": "tired",
+    "fa": "خَستِه",
+    "faRm": "khaste"
+  },
+  {
+    "id": 103,
+    "type": "unclassified",
+    "de": "ich bin",
+    "en": "I am",
+    "fa": "هَستَم",
+    "faRm": "hastam"
+  },
+  {
+    "id": 104,
+    "type": "unclassified",
+    "de": "du bist",
+    "en": "you are",
+    "fa": "هَستی",
+    "faRm": "hasti"
+  },
+  {
+    "id": 105,
+    "type": "unclassified",
+    "de": "wir sind",
+    "en": "we are",
+    "fa": "هَستیم",
+    "faRm": "hastim"
+  },
+  {
+    "id": 106,
+    "type": "unclassified",
+    "de": "ihr seid",
+    "en": "you are",
+    "fa": "هَستید",
+    "faRm": "hastid"
+  },
+  {
+    "id": 107,
+    "type": "unclassified",
+    "de": "sie sind",
+    "en": "they are",
+    "fa": "هَستَند",
+    "faRm": "hastand"
+  },
+  {
+    "id": 108,
+    "type": "unclassified",
+    "de": "ich bin nicht",
+    "en": "I am not",
+    "fa": "نیستَم",
+    "faRm": "nistam"
+  },
+  {
+    "id": 109,
+    "type": "unclassified",
+    "de": "du bist nicht",
+    "en": "you are not",
+    "fa": "نیستی",
+    "faRm": "nisti"
+  },
+  {
+    "id": 110,
+    "type": "unclassified",
+    "de": "er / sie ist nicht",
+    "en": "he / she is not",
+    "fa": "نیست",
+    "faRm": "nist"
+  },
+  {
+    "id": 111,
+    "type": "noun",
+    "de": "Schwimmen",
+    "en": "swim",
+    "fa": "شِنا",
+    "faRm": "shenâ"
+  },
+  {
+    "id": 112,
+    "type": "verb",
+    "de": "hören",
+    "en": "listen",
+    "fa": "شِنیدَن",
+    "faRm": "shenidan"
+  },
+  {
+    "id": 113,
+    "type": "noun",
+    "de": "Arzt",
+    "en": "physician",
+    "fa": "پِزِشک",
+    "faRm": "pezeshk"
+  },
+  {
+    "id": 114,
+    "type": "noun",
+    "de": "Nacht",
+    "en": "night",
+    "fa": "شَب",
+    "faRm": "shab"
+  },
+  {
+    "id": 115,
+    "type": "adjective",
+    "de": "glücklich",
+    "en": "happy",
+    "fa": "شاد",
+    "faRm": "shâd"
+  },
+  {
+    "id": 116,
+    "type": "unclassified",
+    "de": "sechs",
+    "en": "six",
+    "fa": "شِش",
+    "faRm": "shesh"
+  },
+  {
+    "id": 117,
+    "type": "noun",
+    "de": "Verkäufer",
+    "en": "vendor",
+    "fa": "فُروشَندِه",
+    "faRm": "forushande"
+  },
+  {
+    "id": 118,
+    "type": "verb",
+    "de": "senden",
+    "en": "send",
+    "fa": "فِرِستادَن",
+    "faRm": "ferestâdan"
+  },
+  {
+    "id": 119,
+    "type": "verb",
+    "de": "verstehen",
+    "en": "realize",
+    "fa": "فَهمیدَن",
+    "faRm": "fahmidan"
+  },
+  {
+    "id": 120,
+    "type": "noun",
+    "de": "morgen",
+    "en": "tomorrow",
+    "fa": "فَردا",
+    "faRm": "fardâ"
+  },
+  {
+    "id": 121,
+    "type": "noun",
+    "de": "Teppich",
+    "en": "carpet",
+    "fa": "فَرش",
+    "faRm": "farsh"
+  },
+  {
+    "id": 122,
+    "type": "verb",
+    "de": "verkaufen",
+    "en": "sell",
+    "fa": "فُروختَن",
+    "faRm": "forukhtan"
   }
 ]
