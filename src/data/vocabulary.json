@@ -646,5 +646,165 @@
     "en": "skin",
     "fa": "پوست",
     "faRm": "pust"
+  },
+  {
+    "id": 80,
+    "type": "adjective",
+    "de": "breit",
+    "en": "wide",
+    "fa": "پَهن",
+    "faRm": "pahn"
+  },
+  {
+    "id": 81,
+    "type": "noun",
+    "de": "Hügel",
+    "en": "hill",
+    "fa": "تَپِه",
+    "faRm": "tapeh"
+  },
+  {
+    "id": 82,
+    "type": "unclassified",
+    "de": "zehn",
+    "en": "ten",
+    "fa": "دَه",
+    "faRm": "dah"
+  },
+  {
+    "id": 83,
+    "type": "noun",
+    "de": "Stern",
+    "en": "star",
+    "fa": "سِتارِه",
+    "faRm": "setâre"
+  },
+  {
+    "id": 84,
+    "type": "noun",
+    "de": "Künstler",
+    "en": "artist",
+    "fa": "هُنَرمَند",
+    "faRm": "honarmand"
+  },
+  {
+    "id": 85,
+    "type": "noun",
+    "de": "Brief",
+    "en": "letter",
+    "fa": "نامِه",
+    "faRm": "nâme"
+  },
+  {
+    "id": 86,
+    "type": "noun",
+    "de": "Monat",
+    "en": "month",
+    "fa": "ماه",
+    "faRm": "mâh"
+  },
+  {
+    "id": 87,
+    "type": "adjective",
+    "de": "gütig",
+    "en": "kind",
+    "fa": "مِهرَبان",
+    "faRm": "mehrabân"
+  },
+  {
+    "id": 88,
+    "type": "unclassified",
+    "de": "drei",
+    "en": "three",
+    "fa": "سِه",
+    "faRm": "se"
+  },
+  {
+    "id": 89,
+    "type": "noun",
+    "de": "Schule",
+    "en": "school",
+    "fa": "مَدرِسِه",
+    "faRm": "madrese"
+  },
+  {
+    "id": 90,
+    "type": "unclassified",
+    "de": "wir",
+    "en": "we",
+    "fa": "ما",
+    "faRm": "mâ"
+  },
+  {
+    "id": 91,
+    "type": "unclassified",
+    "de": "ihr",
+    "en": "you",
+    "fa": "ََشُما",
+    "faRm": "shomâ"
+  },
+  {
+    "id": 92,
+    "type": "unclassified",
+    "de": "sie",
+    "en": "they",
+    "fa": "انها",
+    "faRm": "ânhâ"
+  },
+  {
+    "id": 93,
+    "type": "noun",
+    "de": "Professor",
+    "en": "professor",
+    "fa": "اُستاد",
+    "faRm": "ostâd"
+  },
+  {
+    "id": 94,
+    "type": "adjective",
+    "de": "iranisch",
+    "en": "Iranian",
+    "fa": "ایرانی",
+    "faRm": "irâni"
+  },
+  {
+    "id": 95,
+    "type": "unclassified",
+    "de": "Bücher‌",
+    "en": "books",
+    "fa": "کِتابها",
+    "faRm": "ket‍âbhâ"
+  },
+  {
+    "id": 96,
+    "type": "unclassified",
+    "de": "Mütter",
+    "en": "mothers",
+    "fa": "مادَران",
+    "faRm": "mâdarân"
+  },
+  {
+    "id": 97,
+    "type": "verb",
+    "de": "schlafen",
+    "en": "sleep",
+    "fa": "خوابیدَن",
+    "faRm": "khâbidan"
+  },
+  {
+    "id": 98,
+    "type": "verb",
+    "de": "essen",
+    "en": "eat",
+    "fa": "خوردَن",
+    "faRm": "khordan"
+  },
+  {
+    "id": 99,
+    "type": "noun",
+    "de": "Zuhause",
+    "en": "home",
+    "fa": "خانِه",
+    "faRm": "khâne"
   }
 ]
