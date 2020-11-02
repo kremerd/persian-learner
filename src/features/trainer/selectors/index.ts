@@ -7,6 +7,8 @@ import { buildEmptyProgress } from '../slice/trainingProgress';
 const selectSlice = (state: any): State => state.trainer;
 export default selectSlice;
 
+export const selectTrainingProgress = createSelector([selectSlice], ({ trainingProgress }) => trainingProgress);
+
 export const selectCurrentLanguage = createSelector([selectSlice], ({ trainingUnit }) => trainingUnit?.lang ?? null);
 
 export const selectCurrentLearningUnit = createSelector([selectSlice, selectLearningUnitRecord],

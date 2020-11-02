@@ -41,6 +41,14 @@ export class Header extends React.Component {
                   Trainer
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link"
+                  to="/dictionary"
+                  onClick={(): void => this.collapse?.hide()}
+                >
+                  Wörterbuch
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
