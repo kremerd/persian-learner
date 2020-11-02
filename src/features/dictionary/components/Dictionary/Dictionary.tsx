@@ -10,7 +10,11 @@ export class Dictionary extends React.Component<{
     return (
       <div>
         <h2>Wörterbuch</h2>
-        {entries.map(e => (<DictionaryAccordeon key={e.id} entry={e}></DictionaryAccordeon>))}
+        <table className="table dictionary">
+          <tbody>
+            {entries.map(e => (<DictionaryAccordeon key={e.id} entry={e}></DictionaryAccordeon>))}
+          </tbody>
+        </table>
       </div>
     );
   }

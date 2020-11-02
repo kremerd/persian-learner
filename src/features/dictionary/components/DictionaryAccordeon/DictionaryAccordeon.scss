@@ -1,0 +1,30 @@
+.dict-accordeon {
+  cursor: pointer;
+
+  td {
+    vertical-align: middle;
+
+    &:nth-child(1) {
+      text-align: right;
+      font-size: 24px;
+    }
+
+    &:nth-child(3) {
+      width: 0px;
+
+      svg {
+        transition: 200ms ease-out transform;
+      }
+    }
+  }
+
+  &.show-details {
+    td:nth-child(3) svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+tr.dict-accordeon-details > td {
+  padding: 0;
+}
