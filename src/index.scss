@@ -1,9 +1,20 @@
 $primary: #198754;
 
-@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+  --c-primary: #{$primary};
+  --c-gray: #6c757d;
+  --fs-large: 32px;
+  --fs-medium: 24px;
+}
 
 .text-large {
-  font-size: 32px;
+  font-size: var(--fs-large);
+}
+
+.text-medium {
+  font-size: var(--fs-medium);
 }
 
 .cursor-pointer {

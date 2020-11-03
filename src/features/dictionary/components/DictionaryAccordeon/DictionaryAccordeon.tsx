@@ -3,6 +3,7 @@ import AnimateHeight from 'react-animate-height';
 import { ChevronDown } from '../../../../components/Icons';
 import { DictionaryEntry } from '../../model/dictionaryEntry';
 import { VisibilityState } from '../../model/visibilityState';
+import { DictionaryDetails } from '../DictionaryDetails/DictionaryDetails';
 import './DictionaryAccordeon.scss';
 
 export class DictionaryAccordeon extends React.Component<{
@@ -49,9 +50,7 @@ export class DictionaryAccordeon extends React.Component<{
             easing="ease-out"
             onAnimationEnd={(): void => this.endAnimation()}
           >
-            <div>
-              Hello World
-            </div>
+            <DictionaryDetails entry={entry}></DictionaryDetails>
           </AnimateHeight>
         </td>
       </tr>
