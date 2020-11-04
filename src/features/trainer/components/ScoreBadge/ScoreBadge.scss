@@ -1,5 +1,7 @@
 .score-badge {
   &.badge {
+    position: relative;
+    top: -0.15rem;
     font-size: 0.75rem;
     margin: 0 .25rem;
   }

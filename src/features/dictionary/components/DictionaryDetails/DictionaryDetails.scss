@@ -1,0 +1,57 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.dict-details {
+  margin: 1.5rem;
+
+  .row {
+    margin-bottom: 0.5rem;
+  }
+
+  .key {
+    @include make-col-ready();
+    @include make-col(12);
+    color: var(--c-gray);
+    text-align: center;
+  }
+
+  .value {
+    @include make-col-ready();
+    @include make-col(12);
+    color: var(--c-primary);
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .row {
+      margin-bottom: 0;
+    }
+
+    .key {
+      @include make-col(6);
+      text-align: right;
+    }
+
+    .value {
+      @include make-col(6);
+      text-align: left;
+    }
+
+    .score {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .fa {
+    align-items: baseline;
+
+    .value {
+      font-size: var(--fs-large);
+    }
+  }
+
+  .fa-rm {
+    font-style: italic;
+  }
+}
