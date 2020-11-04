@@ -1126,5 +1126,93 @@
     "en": "come",
     "fa": "آمَدَن",
     "faRm": "âmadan"
+  },
+  {
+    "id": 140,
+    "type": "noun",
+    "de": "Kaki",
+    "en": "persimmon",
+    "fa": "خُرمالو",
+    "faRm": "khormâlo"
+  },
+  {
+    "id": 141,
+    "type": "unclassified",
+    "de": "Fr.",
+    "en": "Ms.",
+    "fa": "خانُم",
+    "faRm": "khânom"
+  },
+  {
+    "id": 142,
+    "type": "noun",
+    "de": "Aubergine",
+    "en": "aubergine",
+    "fa": "بادِمجان",
+    "faRm": "bâdemjân"
+  },
+  {
+    "id": 143,
+    "type": "verb",
+    "de": "haben",
+    "en": "have",
+    "fa": "داشتَن",
+    "faRm": "dâshtan"
+  },
+  {
+    "id": 144,
+    "type": "verb",
+    "de": "tun",
+    "en": "do",
+    "fa": "کَردَن",
+    "faRm": "kardan"
+  },
+  {
+    "id": 145,
+    "type": "noun",
+    "de": "Spiel",
+    "en": "game",
+    "fa": "بازی",
+    "faRm": "bâzi"
+  },
+  {
+    "id": 146,
+    "type": "verb",
+    "de": "spielen",
+    "en": "play",
+    "fa": "بازی کَردَن",
+    "faRm": "bâzi kardan"
+  },
+  {
+    "id": 147,
+    "type": "noun",
+    "de": "Lektion",
+    "en": "lesson",
+    "fa": "دَرس",
+    "faRm": "dars"
+  },
+  {
+    "id": 148,
+    "type": "verb",
+    "de": "unterrichten",
+    "en": "teach",
+    "fa": "دَرس دادَن",
+    "faRm": "dars dâdan"
+  },
+  {
+    "id": 149,
+    "type": "unclassified",
+    "de": "zu",
+    "en": "to",
+    "fa": "بَه",
+    "faRm": "be"
+  },
+  {
+    "id": 150,
+    "type": "noun",
+    "de": "Präsensstamm",
+    "en": "present stem",
+    "fa": "سِتاکِ حال",
+    "faRm": "setâke hâl"
   }
 ]
