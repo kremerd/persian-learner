@@ -1,0 +1,26 @@
+.dict-search {
+  position: relative;
+
+  input:not(.empty) {
+    padding-right: 3rem;
+
+    ~ button {
+      display: block;
+    }
+  }
+
+  button {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 3rem;
+    top: 0px;
+    right: 0px;
+
+    svg {
+      height: 100%;
+      width: auto;
+      color: var(--c-gray);
+    }
+  }
+}

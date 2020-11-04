@@ -2,6 +2,7 @@ import React from 'react';
 import { DictionaryEntry } from '../../model/dictionaryEntry';
 import { DictionaryFilter } from '../../model/dictionaryFilter';
 import { DictionaryAccordeon } from '../DictionaryAccordeon/DictionaryAccordeon';
+import { DictionarySearch } from '../DictionarySearch/DictionarySearch';
 
 export class Dictionary extends React.Component<{
   entries: DictionaryEntry[];
@@ -15,13 +16,11 @@ export class Dictionary extends React.Component<{
     return (
       <div>
         <h2>Wörterbuch</h2>
-        <input className="form-control"
-          type="text"
-          placeholder="Search dictionary..."
-          ref={this.searchRef}
-          value={this.props.filter?.searchTerm ?? ''}
-          onChange={(): void => this.updateSearchTerm()}
-        />
+        <DictionarySearch
+          currentSearch={this.props.filter?.searchTerm}
+          search={(s: string | null): void => this.props.search(s)}
+        >
+        </DictionarySearch>
         <table className="table dictionary">
           <tbody>
             {entries.map(e => (<DictionaryAccordeon key={e.id} entry={e}></DictionaryAccordeon>))}
