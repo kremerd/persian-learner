@@ -990,5 +990,141 @@
     "en": "sell",
     "fa": "فُروختَن",
     "faRm": "forukhtan"
+  },
+  {
+    "id": 123,
+    "type": "adjective",
+    "de": "hungrig",
+    "en": "hungry",
+    "fa": "گُرُسنِه",
+    "faRm": "gorosne"
+  },
+  {
+    "id": 124,
+    "type": "verb",
+    "de": "zurückkehren",
+    "en": "return",
+    "fa": "بَرگَشتَن",
+    "faRm": "bargashtan"
+  },
+  {
+    "id": 125,
+    "type": "adjective",
+    "de": "groß",
+    "en": "big",
+    "fa": "بُزُرگ",
+    "faRm": "bozorg"
+  },
+  {
+    "id": 126,
+    "type": "noun",
+    "de": "Hund",
+    "en": "dog",
+    "fa": "سَگ",
+    "faRm": "sag"
+  },
+  {
+    "id": 127,
+    "type": "noun",
+    "de": "Kuh",
+    "en": "cow",
+    "fa": "گاو",
+    "faRm": "gâv"
+  },
+  {
+    "id": 128,
+    "type": "noun",
+    "de": "Wolf",
+    "en": "wolf",
+    "fa": "گُرگ",
+    "faRm": "gorg"
+  },
+  {
+    "id": 129,
+    "type": "noun",
+    "de": "Preis",
+    "en": "price",
+    "fa": "قِیمَت",
+    "faRm": "gheimat"
+  },
+  {
+    "id": 130,
+    "type": "noun",
+    "de": "Gesicht",
+    "en": "face",
+    "fa": "قیافِه",
+    "faRm": "ghiyâfe"
+  },
+  {
+    "id": 131,
+    "type": "noun",
+    "de": "Zimmer",
+    "en": "room",
+    "fa": "اُتاق",
+    "faRm": "otâgh"
+  },
+  {
+    "id": 132,
+    "type": "noun",
+    "de": "Teller",
+    "en": "plate",
+    "fa": "بُشقاب",
+    "faRm": "boshghâb"
+  },
+  {
+    "id": 133,
+    "type": "noun",
+    "de": "Löffel",
+    "en": "spoon",
+    "fa": "قاشُق",
+    "faRm": "ghâshogh"
+  },
+  {
+    "id": 134,
+    "type": "adjective",
+    "de": "wunderschön",
+    "en": "beautiful",
+    "fa": "قَشَنگ",
+    "faRm": "ghashang"
+  },
+  {
+    "id": 135,
+    "type": "verb",
+    "de": "sehen",
+    "en": "see",
+    "fa": "دیدَن",
+    "faRm": "didan"
+  },
+  {
+    "id": 136,
+    "type": "verb",
+    "de": "sagen",
+    "en": "say",
+    "fa": "گُفتَن",
+    "faRm": "goftan"
+  },
+  {
+    "id": 137,
+    "type": "verb",
+    "de": "schreiben",
+    "en": "write",
+    "fa": "نِوِشتَن",
+    "faRm": "neveshtan"
+  },
+  {
+    "id": 138,
+    "type": "verb",
+    "de": "gehen",
+    "en": "go",
+    "fa": "رَفتَن",
+    "faRm": "raftan"
+  },
+  {
+    "id": 139,
+    "type": "verb",
+    "de": "kommen",
+    "en": "come",
+    "fa": "آمَدَن",
+    "faRm": "âmadan"
   }
 ]
