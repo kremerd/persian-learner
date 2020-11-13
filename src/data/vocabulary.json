@@ -274,7 +274,7 @@
   {
     "id": 34,
     "type": "adjective",
-    "de": "richtig",
+    "de": "rechts",
     "en": "right",
     "fa": "راست",
     "faRm": "râst"
@@ -660,8 +660,8 @@
     "type": "noun",
     "de": "Hügel",
     "en": "hill",
-    "fa": "تَپِه",
-    "faRm": "tapeh"
+    "fa": "تَپِّه",
+    "faRm": "tappe"
   },
   {
     "id": 82,
@@ -706,7 +706,7 @@
   {
     "id": 87,
     "type": "adjective",
-    "de": "gütig",
+    "de": "nett",
     "en": "kind",
     "fa": "مِهرَبان",
     "faRm": "mehrabân"
@@ -1050,8 +1050,8 @@
   {
     "id": 130,
     "type": "noun",
-    "de": "Gesicht",
-    "en": "face",
+    "de": "Aussehen",
+    "en": "appearance",
     "fa": "قیافِه",
     "faRm": "ghiyâfe"
   },
@@ -1082,7 +1082,7 @@
   {
     "id": 134,
     "type": "adjective",
-    "de": "wunderschön",
+    "de": "schön",
     "en": "beautiful",
     "fa": "قَشَنگ",
     "faRm": "ghashang"
@@ -1204,7 +1204,7 @@
     "type": "unclassified",
     "de": "zu",
     "en": "to",
-    "fa": "بَه",
+    "fa": "بِه",
     "faRm": "be"
   },
   {
@@ -1214,5 +1214,45 @@
     "en": "present stem",
     "fa": "سِتاکِ حال",
     "faRm": "setâke hâl"
+  },
+  {
+    "id": 151,
+    "type": "unclassified",
+    "de": "andere",
+    "en": "else",
+    "fa": "دیگَر",
+    "faRm": "digar"
+  },
+  {
+    "id": 152,
+    "type": "noun",
+    "de": "Gesicht",
+    "en": "face",
+    "fa": "صورَت",
+    "faRm": "surat"
+  },
+  {
+    "id": 153,
+    "type": "adjective",
+    "de": "richtig",
+    "en": "correct",
+    "fa": "دُرُست",
+    "faRm": "dorost"
+  },
+  {
+    "id": 154,
+    "type": "unclassified",
+    "de": "herzlich willkommen",
+    "en": "welcome",
+    "fa": "خوش آمَدی",
+    "faRm": "khosh âmadi"
+  },
+  {
+    "id": 155,
+    "type": "noun",
+    "de": "root",
+    "en": "welcome",
+    "fa": "ریشِه",
+    "faRm": "rishe"
   }
 ]
