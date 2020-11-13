@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2e675bf807864638cccd62065488ec20",
+    "revision": "3a2a722c06deb1883cfa1c5e48dabe33",
     "url": "/persian-learner/index.html"
   },
   {
-    "revision": "b6f231f655065d5a09e0",
+    "revision": "397ae1ab3bed23b54479",
     "url": "/persian-learner/static/css/main.d70d5988.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/persian-learner/static/js/2.c574a446.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b6f231f655065d5a09e0",
-    "url": "/persian-learner/static/js/main.f47c8ea1.chunk.js"
+    "revision": "397ae1ab3bed23b54479",
+    "url": "/persian-learner/static/js/main.b3b0f14d.chunk.js"
   },
   {
     "revision": "79fe1b9d9aeebf129d5f",
