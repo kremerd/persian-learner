@@ -1,6 +1,8 @@
 import { Collapse } from 'bootstrap';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Header.scss';
+import { Book, Check2Square, Lightning } from './Icons';
 
 export class Header extends React.Component {
   private collapseRef = React.createRef<HTMLDivElement>();
@@ -16,7 +18,7 @@ export class Header extends React.Component {
 
   render(): JSX.Element {
     return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-2">
+      <nav className="header navbar navbar-expand-md navbar-dark bg-primary mb-2">
         <div className="container">
           <span className="navbar-brand mb-0 h1">
             Persian Learner
@@ -35,10 +37,20 @@ export class Header extends React.Component {
             <ul className="navbar-nav mr-auto mb-0">
               <li className="nav-item">
                 <Link className="nav-link"
-                  to="/trainer"
+                  to="/trainer/learn"
                   onClick={(): void => this.collapse?.hide()}
                 >
-                  Trainer
+                  <Lightning></Lightning>
+                  Training
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link"
+                  to="/trainer/exam"
+                  onClick={(): void => this.collapse?.hide()}
+                >
+                  <Check2Square></Check2Square>
+                  Wiederholung
                 </Link>
               </li>
               <li className="nav-item">
@@ -46,6 +58,7 @@ export class Header extends React.Component {
                   to="/dictionary"
                   onClick={(): void => this.collapse?.hide()}
                 >
+                  <Book></Book>
                   Wörterbuch
                 </Link>
               </li>

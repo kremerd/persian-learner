@@ -35,7 +35,6 @@ export abstract class BaseTrainer extends React.Component<{
     const { unit } = this.props;
     return (
       <form onSubmit={(e): void => this.submit(e)}>
-        <h2>Vokabeltrainer</h2>
         {this.renderTask(unit)}
         {this.isShowSolution()
           ? this.renderSolution(unit, this.renderSolutionContent())

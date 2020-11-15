@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { getKey } from '../../../util/record';
 import { selectLearningUnitRecord } from '../../lexicon/selectors';
 import { State } from '../slice';
-import { buildEmptyProgress } from '../slice/trainingProgress';
+import { buildEmptyLangProgress, buildEmptyProgress } from '../slice/trainingProgress';
 
 const selectSlice = (state: any): State => state.trainer;
 export default selectSlice;
@@ -20,5 +20,5 @@ export const selectCurrentTrainingProgress = createSelector([selectSlice],
 );
 
 export const selectCurrentLangProgress = createSelector([selectCurrentLanguage, selectCurrentTrainingProgress],
-  (lang, trainingProgress) => lang !== null ? trainingProgress[lang] : buildEmptyProgress()
+  (lang, trainingProgress) => lang !== null ? trainingProgress[lang] : buildEmptyLangProgress()
 );

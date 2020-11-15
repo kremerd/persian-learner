@@ -1,5 +1,6 @@
 import React from 'react';
 import { LearningUnit } from '../../../lexicon/model/learningUnit';
+import { TrainingMode } from '../../model/trainingMode';
 import { LangProgress } from '../../model/trainingProgress';
 import { TrainingUnitLang } from '../../model/trainingUnit';
 import { FarsiTrainer } from '../LangTrainer/FarsiTrainer';
@@ -10,23 +11,35 @@ export class Trainer extends React.Component<{
   lang: TrainingUnitLang | null;
   progress: LangProgress;
   unit: LearningUnit | null;
+  trainingMode: TrainingMode;
   fail: () => void;
-  next: () => void;
+  next: (trainingMode: TrainingMode) => void;
   pass: () => void;
 }> {
   componentDidMount(): void {
-    this.props.next();
+    this.selectNextUnit();
   }
 
   render(): JSX.Element {
-    const { lang, progress, unit, fail, next, pass } = this.props;
+    return (
+      <React.Fragment>
+        <h2>
+          {this.props.trainingMode === TrainingMode.Learning ? 'Training' : 'Wiederholung'}
+        </h2>
+        {this.renderBody()}
+      </React.Fragment>
+    );
+  }
+
+  renderBody(): JSX.Element {
+    const { lang, progress, unit, fail, pass } = this.props;
     if (lang === 'de' && unit !== null) {
       return <GermanTrainer
         unit={unit}
         progress={progress}
         pass={pass}
         fail={fail}
-        next={next}
+        next={(): void => this.selectNextUnit()}
       ></GermanTrainer>;
     } else if (lang === 'fa' && unit !== null) {
       return <FarsiTrainer
@@ -34,12 +47,16 @@ export class Trainer extends React.Component<{
         progress={progress}
         pass={pass}
         fail={fail}
-        next={next}
+        next={(): void => this.selectNextUnit()}
       ></FarsiTrainer>;
     } else {
       return <NoTraining
-        next={this.props.next}
+        next={(): void => this.selectNextUnit()}
       ></NoTraining>;
     }
+  }
+
+  private selectNextUnit(): void {
+    this.props.next(this.props.trainingMode);
   }
 }

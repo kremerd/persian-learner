@@ -5,7 +5,7 @@ export const buildEmptyProgress = (): TrainingProgress => ({
   fa: buildEmptyLangProgress(),
 });
 
-const buildEmptyLangProgress = (): LangProgress => ({
+export const buildEmptyLangProgress = (): LangProgress => ({
   score: 0,
   lastCorrect: null,
   lastTried: null,
