@@ -1,14 +1,28 @@
 import { escapeRegExp } from '../../../util/string';
-import { Person, Tense } from '../model/primitives';
-import { ConjugationDetails } from './model/conjugationDetails';
+import { Person, VerbForm } from '../model/verbForm';
+import { ConjugationDetails, VerbDe } from './model/verb';
 import { VerbStructure } from './model/verbStructure';
 
-export const conjugate = (verb: ConjugationDetails, tense: Tense, person: Person): string => {
+export const conjugateDe = (verb: VerbDe, form: VerbForm): string => {
+  const conjugationDetails = getConjugationDetails(verb);
+  if (form === 'infinitive') {
+    return conjugationDetails.infinitive.replace(/\|/g, '');
+  }
+
+  const { person, tense } = form;
   const pronoun = getPronoun(person);
 
   switch (tense) {
   case 'present':
-    return `${pronoun} ${conjugatePresent(verb, person)}`;
+    return `${pronoun} ${conjugatePresent(conjugationDetails, person)}`;
+  }
+};
+
+const getConjugationDetails = (verb: VerbDe): ConjugationDetails => {
+  if (typeof verb === 'string') {
+    return { infinitive: verb };
+  } else {
+    return verb;
   }
 };
 
