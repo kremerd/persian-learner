@@ -1,3 +1,4 @@
+import { escapeRegExp } from '../../../util/string';
 import { Person, Tense } from '../model/primitives';
 import { ConjugationDetails } from './model/conjugationDetails';
 import { VerbStructure } from './model/verbStructure';
@@ -29,31 +30,59 @@ const getPronoun = (person: Person): string => {
 };
 
 const conjugatePresent = (verb: ConjugationDetails, person: Person): string => {
-  const { preposition, stem } = parseVerb(verb);
-  const suffix = getSuffix(stem, person);
-  const appendedPreposition = getAppendedPreposition(preposition);
-
-  if (endsWithAny(stem, 'el') && person === '1s') {
-    return stem.slice(0, -2) + stem.slice(-1) + suffix + appendedPreposition;
+  const explicitConjugation = verb.present && verb.present[person];
+  if (explicitConjugation) {
+    return explicitConjugation;
   } else {
-    return stem + suffix + appendedPreposition;
+    return autoConjugatePresent(verb, person);
   }
 };
 
-const parseVerb = (verb: ConjugationDetails): VerbStructure => {
-  return parseInfinitive(verb.infinitive);
+const autoConjugatePresent = (verb: ConjugationDetails, person: Person): string => {
+  const { prefix, stem } = parseVerb(verb, person);
+  const suffix = getSuffix(stem, person);
+  const appendedPrefix = getAppendedPrefix(prefix);
+
+  if (endsWithAny(stem, 'el') && person === '1s') {
+    return stem.slice(0, -2) + stem.slice(-1) + suffix + appendedPrefix;
+  } else {
+    return stem + suffix + appendedPrefix;
+  }
+};
+
+const parseVerb = (verb: ConjugationDetails, person: Person): VerbStructure => {
+  if (['2s', '3s'].includes(person) && verb?.present?.['3s'] !== undefined) {
+    const { prefix } = parseInfinitive(verb.infinitive);
+    return parse3s(verb.present['3s'], prefix);
+  } else {
+    return parseInfinitive(verb.infinitive);
+  }
+};
+
+const parse3s = (_3s: string, prefix?: string): VerbStructure => {
+  const appendixRegex = escapeRegExp(getAppendedPrefix(prefix));
+  const regex = new RegExp(`^((?<etStem>.*)et|(?<tStem>.*)t)${appendixRegex}$`);
+  const match = _3s.match(regex);
+  if (match !== null) {
+    return {
+      prefix,
+      stem: match.groups?.etStem ?? match.groups?.tStem ?? '',
+    };
+  } else {
+    throw new Error(`Could not parse German 3s ${_3s}.`);
+  }
 };
 
 const parseInfinitive = (infinitive: string): VerbStructure => {
-  const regex = /^((?<preposition>[^|]*)\|)?((?<enStem>.*)en|(?<elnStem>.*el)n|(?<unStem>.*u)n)$/;
+  const regex = /^((?<prefix>[^|]*)\|)?((?<enStem>.*)en|(?<elnStem>.*el)n|(?<unStem>.*u)n)$/;
   const match = infinitive.match(regex);
   if (match !== null) {
     return {
-      preposition: match.groups?.preposition,
+      prefix: match.groups?.prefix,
       stem: match.groups?.enStem ?? match.groups?.elnStem ?? match.groups?.unStem ?? '',
     };
   } else {
-    throw new Error(`Did not find stem of ${infinitive}.`);
+    throw new Error(`Could not parse German infinitive ${infinitive}.`);
   }
 };
 
@@ -87,10 +116,10 @@ const endsWithAny = (string: string, ...suffixes: string[]): boolean => {
   return suffixes.some(suffix => string.endsWith(suffix));
 };
 
-const getAppendedPreposition = (preposition: string | undefined): string => {
-  if (preposition === undefined) {
+const getAppendedPrefix = (prefix: string | undefined): string => {
+  if (prefix === undefined) {
     return '';
   } else {
-    return ` ${preposition}`;
+    return ` ${prefix}`;
   }
 };

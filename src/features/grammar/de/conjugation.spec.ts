@@ -1,8 +1,9 @@
 import { Person } from '../model/primitives';
 import { conjugate } from './conjugation';
+import { ConjugationDetails } from './model/conjugationDetails';
 
 describe('German conjugation', () => {
-  describe('verbs without metadata', () => {
+  describe('simple verbs', () => {
     it('should conjugate the regular fragen', () => {
       expect(conjugatePresent('fragen', '1s')).toEqual('ich frage');
       expect(conjugatePresent('fragen', '2s')).toEqual('du fragst');
@@ -110,12 +111,9 @@ describe('German conjugation', () => {
       expect(conjugatePresent('tun', '2p')).toEqual('ihr tut');
       expect(conjugatePresent('tun', '3p')).toEqual('sie tun');
     });
-
-    const conjugatePresent = (infinitive: string, person: Person): string =>
-      conjugate({ infinitive }, 'present', person);
   });
 
-  describe('split verbes', () => {
+  describe('split verbs', () => {
     it('should conjugate the regular anfragen', () => {
       expect(conjugatePresent('an|fragen', '1s')).toEqual('ich frage an');
       expect(conjugatePresent('an|fragen', '2s')).toEqual('du fragst an');
@@ -151,8 +149,95 @@ describe('German conjugation', () => {
       expect(conjugatePresent('ab|tun', '2p')).toEqual('ihr tut ab');
       expect(conjugatePresent('ab|tun', '3p')).toEqual('sie tun ab');
     });
+  });
 
-    const conjugatePresent = (infinitive: string, person: Person): string =>
-      conjugate({ infinitive }, 'present', person);
+  const conjugatePresent = (infinitive: string, person: Person): string =>
+    conjugate({ infinitive }, 'present', person);
+
+  describe('mixed and irregular verbs', () => {
+    it('should conjugate essen', () => {
+      const verb: ConjugationDetails = {
+        infinitive: 'essen',
+        present: {
+          '3s': 'isst'
+        }
+      };
+
+      expect(conjugate(verb, 'present', '1s')).toEqual('ich esse');
+      expect(conjugate(verb, 'present', '2s')).toEqual('du isst');
+      expect(conjugate(verb, 'present', '3s')).toEqual('er / sie isst');
+      expect(conjugate(verb, 'present', '1p')).toEqual('wir essen');
+      expect(conjugate(verb, 'present', '2p')).toEqual('ihr esst');
+      expect(conjugate(verb, 'present', '3p')).toEqual('sie essen');
+    });
+
+    it('should conjugate sehen', () => {
+      const verb: ConjugationDetails = {
+        infinitive: 'sehen',
+        present: {
+          '3s': 'sieht'
+        }
+      };
+
+      expect(conjugate(verb, 'present', '1s')).toEqual('ich sehe');
+      expect(conjugate(verb, 'present', '2s')).toEqual('du siehst');
+      expect(conjugate(verb, 'present', '3s')).toEqual('er / sie sieht');
+      expect(conjugate(verb, 'present', '1p')).toEqual('wir sehen');
+      expect(conjugate(verb, 'present', '2p')).toEqual('ihr seht');
+      expect(conjugate(verb, 'present', '3p')).toEqual('sie sehen');
+    });
+
+    it('should conjugate the split ansehen', () => {
+      const verb: ConjugationDetails = {
+        infinitive: 'an|sehen',
+        present: {
+          '3s': 'sieht an'
+        }
+      };
+
+      expect(conjugate(verb, 'present', '1s')).toEqual('ich sehe an');
+      expect(conjugate(verb, 'present', '2s')).toEqual('du siehst an');
+      expect(conjugate(verb, 'present', '3s')).toEqual('er / sie sieht an');
+      expect(conjugate(verb, 'present', '1p')).toEqual('wir sehen an');
+      expect(conjugate(verb, 'present', '2p')).toEqual('ihr seht an');
+      expect(conjugate(verb, 'present', '3p')).toEqual('sie sehen an');
+    });
+
+    it('should conjugate the irregular sein', () => {
+      const verb: ConjugationDetails = {
+        infinitive: 'sein',
+        present: {
+          '1s': 'bin',
+          '2s': 'bist',
+          '3s': 'ist',
+          '1p': 'sind',
+          '2p': 'seid',
+          '3p': 'sind'
+        }
+      };
+
+      expect(conjugate(verb, 'present', '1s')).toEqual('ich bin');
+      expect(conjugate(verb, 'present', '2s')).toEqual('du bist');
+      expect(conjugate(verb, 'present', '3s')).toEqual('er / sie ist');
+      expect(conjugate(verb, 'present', '1p')).toEqual('wir sind');
+      expect(conjugate(verb, 'present', '2p')).toEqual('ihr seid');
+      expect(conjugate(verb, 'present', '3p')).toEqual('sie sind');
+    });
+
+    it('should handle special characters in the verb definition', () => {
+      const verb: ConjugationDetails = {
+        infinitive: '[an/ab]|sehen',
+        present: {
+          '3s': 'sieht [an/ab]'
+        }
+      };
+
+      expect(conjugate(verb, 'present', '1s')).toEqual('ich sehe [an/ab]');
+      expect(conjugate(verb, 'present', '2s')).toEqual('du siehst [an/ab]');
+      expect(conjugate(verb, 'present', '3s')).toEqual('er / sie sieht [an/ab]');
+      expect(conjugate(verb, 'present', '1p')).toEqual('wir sehen [an/ab]');
+      expect(conjugate(verb, 'present', '2p')).toEqual('ihr seht [an/ab]');
+      expect(conjugate(verb, 'present', '3p')).toEqual('sie sehen [an/ab]');
+    });
   });
 });
