@@ -1254,5 +1254,261 @@
     "en": "root",
     "fa": "ریشِه",
     "faRm": "rishe"
+  },
+  {
+    "id": 156,
+    "type": "noun",
+    "de": "Socken",
+    "en": "socks",
+    "fa": "جوراب",
+    "faRm": "jurâb"
+  },
+  {
+    "id": 157,
+    "type": "noun",
+    "de": "Feier",
+    "en": "celebration",
+    "fa": "جَشن",
+    "faRm": "jashn"
+  },
+  {
+    "id": 158,
+    "type": "noun",
+    "de": "Huhn",
+    "en": "chicken",
+    "fa": "جوجِه",
+    "faRm": "juje"
+  },
+  {
+    "id": 159,
+    "type": "noun",
+    "de": "Krone",
+    "en": "crown",
+    "fa": "تاج",
+    "faRm": "tâj"
+  },
+  {
+    "id": 160,
+    "type": "noun",
+    "de": "Magier",
+    "en": "magician",
+    "fa": "جادوگَر",
+    "faRm": "jâdugar"
+  },
+  {
+    "id": 161,
+    "type": "noun",
+    "de": "Antwort",
+    "en": "answer",
+    "fa": "جَواب",
+    "faRm": "javâb"
+  },
+  {
+    "id": 162,
+    "type": "verb",
+    "de": "antworten",
+    "en": "answer",
+    "fa": "جَواب دادَن",
+    "faRm": "javâb dâdan"
+  },
+  {
+    "id": 163,
+    "type": "noun",
+    "de": "Stadt",
+    "en": "city",
+    "fa": "شَهر",
+    "faRm": "shahr"
+  },
+  {
+    "id": 164,
+    "type": "unclassified",
+    "de": "große Stadt",
+    "en": "big city",
+    "fa": "شَهرِ بُزُرگ",
+    "faRm": "shahre bozorg"
+  },
+  {
+    "id": 165,
+    "type": "noun",
+    "de": "Junge",
+    "en": "boy",
+    "fa": "پِسَر",
+    "faRm": "pesar"
+  },
+  {
+    "id": 166,
+    "type": "adjective",
+    "de": "gut",
+    "en": "good",
+    "fa": "خوب",
+    "faRm": "khub"
+  },
+  {
+    "id": 167,
+    "type": "unclassified",
+    "de": "gute Jungs",
+    "en": "good boys",
+    "fa": "پِسَرهایِ خوب",
+    "faRm": "pesarhâye khub"
+  },
+  {
+    "id": 168,
+    "type": "noun",
+    "de": "Mädchen",
+    "en": "girl",
+    "fa": "دُختَر",
+    "faRm": "dokhtar"
+  },
+  {
+    "id": 169,
+    "type": "adjective",
+    "de": "wunderschön",
+    "en": "beautiful",
+    "fa": "زیبا",
+    "faRm": "zibâ"
+  },
+  {
+    "id": 170,
+    "type": "unclassified",
+    "de": "schönes Mädchen",
+    "en": "beautiful girl",
+    "fa": "دُختَرِ زیبا",
+    "faRm": "dokhtare zibâ"
+  },
+  {
+    "id": 171,
+    "type": "noun",
+    "de": "Wand",
+    "en": "wall",
+    "fa": "دیوار",
+    "faRm": "divâr"
+  },
+  {
+    "id": 172,
+    "type": "adjective",
+    "de": "hoch",
+    "en": "high",
+    "fa": "بُلَند",
+    "faRm": "boland"
+  },
+  {
+    "id": 173,
+    "type": "unclassified",
+    "de": "hohe Mauer",
+    "en": "high wall",
+    "fa": "دیوارِ بُلَند",
+    "faRm": "divâre boland"
+  },
+  {
+    "id": 174,
+    "type": "noun",
+    "de": "Bleistift",
+    "en": "pencil",
+    "fa": "مِداد",
+    "faRm": "medâd"
+  },
+  {
+    "id": 175,
+    "type": "unclassified",
+    "de": "dein Bleistift",
+    "en": "your pencil",
+    "fa": "مِدادِ شُما",
+    "faRm": "medâde shomâ"
+  },
+  {
+    "id": 176,
+    "type": "unclassified",
+    "de": "mein Buch",
+    "en": "my book",
+    "fa": "کِتابِ مَن",
+    "faRm": "ketâbe man"
+  },
+  {
+    "id": 177,
+    "type": "unclassified",
+    "de": "unser Zuhause",
+    "en": "our home",
+    "fa": "خانِه‌یِ ما",
+    "faRm": "khâneye mâ"
+  },
+  {
+    "id": 178,
+    "type": "unclassified",
+    "de": "deine Schule",
+    "en": "your school",
+    "fa": "مَدرِسِه‌یِ تو",
+    "faRm": "madreseye to"
+  },
+  {
+    "id": 179,
+    "type": "noun",
+    "de": "Kleid",
+    "en": "dress",
+    "fa": "لِباس",
+    "faRm": "lebâs"
+  },
+  {
+    "id": 180,
+    "type": "noun",
+    "de": "Blumentopf",
+    "en": "pot",
+    "fa": "گُلدان",
+    "faRm": "goldân"
+  },
+  {
+    "id": 181,
+    "type": "noun",
+    "de": "Blume",
+    "en": "flower",
+    "fa": "گُل",
+    "faRm": "gol"
+  },
+  {
+    "id": 182,
+    "type": "noun",
+    "de": "Lippe",
+    "en": "lip",
+    "fa": "لَب",
+    "faRm": "lab"
+  },
+  {
+    "id": 183,
+    "type": "noun",
+    "de": "Storch",
+    "en": "stork",
+    "fa": "لَک لَک",
+    "faRm": "laklak"
+  },
+  {
+    "id": 184,
+    "type": "noun",
+    "de": "Klasse",
+    "en": "class",
+    "fa": "کِلاس",
+    "faRm": "kelâs"
+  },
+  {
+    "id": 185,
+    "type": "noun",
+    "de": "Nase",
+    "en": "nose",
+    "fa": "بینی",
+    "faRm": "bini"
+  },
+  {
+    "id": 186,
+    "type": "unclassified",
+    "de": "danke",
+    "en": "thanks",
+    "fa": "مِرسی",
+    "faRm": "mersi"
+  },
+  {
+    "id": 187,
+    "type": "unclassified",
+    "de": "gute Nacht",
+    "en": "good night",
+    "fa": "شَبِ بَخیر",
+    "faRm": "shabe bakhir"
   }
 ]
