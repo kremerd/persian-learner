@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/persian-learner/precache-manifest.46746a4ae312a42083b571090bce232c.js"
+  "/persian-learner/precache-manifest.cd49235ee028c1d951866725d5acfd1c.js"
 );
 
 self.addEventListener('message', (event) => {
