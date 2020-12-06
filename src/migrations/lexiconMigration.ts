@@ -22,7 +22,7 @@ const lexiconMigration = (state: State): State => {
     trainer: {
       ...state.trainer,
       currentTrainingUnit: migrateTrainingUnit(state.trainer.currentTrainingUnit, migration),
-      trainingProgress: migrateTrainingProgress(state.trainer.trainingProgress, migration),
+      progress: migrateProgress(state.trainer.progress, migration),
     },
   };
 };
@@ -61,7 +61,7 @@ const migrateTrainingUnit = (persisted: UnscoredTrainingUnit | null, { deleted }
   }
 };
 
-const migrateTrainingProgress = (persisted: Record<number, ProgressAggregate>, migration: LexiconMigration): Record<number, ProgressAggregate> => {
+const migrateProgress = (persisted: Record<number, ProgressAggregate>, migration: LexiconMigration): Record<number, ProgressAggregate> => {
   const result = { ...persisted };
   migration.updated.forEach(w => delete result[w.id]);
   migration.deleted.forEach(w => delete result[w.id]);

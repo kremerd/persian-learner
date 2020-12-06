@@ -1,6 +1,7 @@
 export interface ProgressAggregate {
-  de: TrainingProgress;
-  fa: TrainingProgress;
+  de?: TrainingProgress;
+  fa?: TrainingProgress;
+  faConj?: TrainingProgress;
 }
 
 export interface TrainingProgress {

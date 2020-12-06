@@ -9,11 +9,6 @@ export const getTrainingProgress = (
   return progress[id]?.[trainer] ?? buildEmptyTrainingProgress();
 };
 
-export const buildEmptyProgressAggregate = (): ProgressAggregate => ({
-  de: buildEmptyTrainingProgress(),
-  fa: buildEmptyTrainingProgress(),
-});
-
 export const buildEmptyTrainingProgress = (): TrainingProgress => ({
   score: 0,
   lastCorrect: null,

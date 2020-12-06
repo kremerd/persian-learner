@@ -5,13 +5,13 @@ import { getTrainingProgress } from '../slice/trainingProgress';
 const selectSlice = (state: any): State => state.trainer;
 export default selectSlice;
 
-export const selectTrainingProgress = createSelector([selectSlice], ({ trainingProgress }) => trainingProgress);
+export const selectProgress = createSelector([selectSlice], ({ progress }) => progress);
 
 export const selectCurrentTrainingUnit = createSelector([selectSlice],
-  ({ currentTrainingUnit, trainingProgress }) => currentTrainingUnit !== null
+  ({ currentTrainingUnit, progress }) => currentTrainingUnit !== null
     ? {
       ...currentTrainingUnit,
-      score: getTrainingProgress(trainingProgress, currentTrainingUnit.id, currentTrainingUnit.trainer).score
+      score: getTrainingProgress(progress, currentTrainingUnit.id, currentTrainingUnit.trainer).score
     }
     : null
 );

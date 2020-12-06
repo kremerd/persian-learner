@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Word } from '../../lexicon/model/word';
+import { conjugateDe } from '../../grammar/de/conjugation';
+import { Person } from '../../grammar/model/verbForm';
+import { Verb, Word } from '../../lexicon/model/word';
 import { selectWords } from '../../lexicon/selectors';
 import { normalizeDe, normalizeEn, normalizeFa, normalizeFaRm } from '../../lexicon/util';
 import { PrioritizedEntity } from '../model/prioritizedEntity';
@@ -9,16 +11,16 @@ import { Trainer, UnscoredTrainingUnit } from '../model/trainingUnit';
 import SelectionStrategy from './selection/selectionStrategy';
 import selectionStrategyFactory from './selection/selectionStrategyFactory';
 import selectRandom from './selectRandom';
-import { buildEmptyProgressAggregate } from './trainingProgress';
+import { buildEmptyTrainingProgress, getTrainingProgress } from './trainingProgress';
 
 export interface State {
   currentTrainingUnit: UnscoredTrainingUnit | null;
-  trainingProgress: Record<number, ProgressAggregate>;
+  progress: Record<number, ProgressAggregate>;
 }
 
 const initialState: State = {
   currentTrainingUnit: null,
-  trainingProgress: {},
+  progress: {},
 };
 
 export const select = createAsyncThunk(
@@ -39,24 +41,24 @@ const slice = createSlice({
   initialState,
   reducers: {
     pass: (state: State): void => {
-      const progress = getLangProgress(state);
+      const progress = getProgress(state);
       progress.score = Math.min(progress.score + 1, 5);
       progress.lastCorrect = new Date().toISOString();
       progress.lastTried = progress.lastCorrect;
     },
     fail: (state: State): void => {
-      const progress = getLangProgress(state);
+      const progress = getProgress(state);
       progress.score = Math.max(progress.score - 1, 0);
       progress.lastTried = new Date().toISOString();
     }
   },
   extraReducers: {
     [select.fulfilled.type]: (state, { payload: { words, trainingMode } }: PayloadAction<SelectPayload>): void => {
-      const { trainingProgress } = state;
+      const { progress } = state;
       const selectionStrategy = selectionStrategyFactory(trainingMode);
 
       const prioritizedUnits = words
-        .map(word => buildPrioritizedUnits(word, trainingProgress[word.id], selectionStrategy))
+        .map(word => buildPrioritizedUnits(word, progress, selectionStrategy))
         .flat();
       const selectedUnit = selectRandom(prioritizedUnits, unit => unit.priority);
       state.currentTrainingUnit = extractUnscoredTrainingUnit(selectedUnit);
@@ -64,35 +66,75 @@ const slice = createSlice({
   }
 });
 
-const getLangProgress = ({ currentTrainingUnit, trainingProgress }: State): TrainingProgress => {
+const getProgress = ({ currentTrainingUnit, progress }: State): TrainingProgress => {
   if (currentTrainingUnit === null) {
     throw new Error('No training unit selected');
   }
 
-  if (trainingProgress[currentTrainingUnit.id] === undefined) {
-    trainingProgress[currentTrainingUnit.id] = buildEmptyProgressAggregate();
+  if (progress[currentTrainingUnit.id] === undefined) {
+    progress[currentTrainingUnit.id] = {};
+  }
+  if (progress[currentTrainingUnit.id][currentTrainingUnit.trainer] === undefined) {
+    progress[currentTrainingUnit.id][currentTrainingUnit.trainer] = buildEmptyTrainingProgress();
   }
 
-  return trainingProgress[currentTrainingUnit.id][currentTrainingUnit.trainer];
+  return getTrainingProgress(progress, currentTrainingUnit.id, currentTrainingUnit.trainer);
 };
 
 const buildPrioritizedUnits = (
   word: Word,
-  progress: ProgressAggregate = buildEmptyProgressAggregate(),
+  progress: Record<number, ProgressAggregate>,
   selectionStrategy: SelectionStrategy
 ): PrioritizedEntity<UnscoredTrainingUnit>[] => {
-  const trainers: Trainer[] = ['de', 'fa'];
-  return trainers.map(trainer => ({
-    entity: {
-      id: word.id,
-      trainer,
-      de: normalizeDe(word),
-      en: normalizeEn(word),
-      fa: normalizeFa(word),
-      faRm: normalizeFaRm(word),
-    },
-    priority: selectionStrategy(progress[trainer])
+  return buildTrainingUnits(word).map(unit => ({
+    entity: unit,
+    priority: selectionStrategy(getTrainingProgress(progress, word.id, unit.trainer))
   }));
+};
+
+const buildTrainingUnits = (word: Word): UnscoredTrainingUnit[] => {
+  const trainers: UnscoredTrainingUnit[] = [
+    buildNormalTrainingUnit(word, 'de'),
+    buildNormalTrainingUnit(word, 'fa')
+  ];
+
+  if (word.type === 'verb') {
+    trainers.push(buildConjugationTrainingUnit(word));
+  }
+
+  return trainers;
+};
+
+const buildNormalTrainingUnit = (word: Word, trainer: Trainer): UnscoredTrainingUnit => {
+  return {
+    id: word.id,
+    trainer,
+    de: normalizeDe(word),
+    en: normalizeEn(word),
+    fa: normalizeFa(word),
+    faRm: normalizeFaRm(word),
+  };
+};
+
+const buildConjugationTrainingUnit = (word: Verb): UnscoredTrainingUnit => {
+  const person = pickRandomPerson();
+  return {
+    id: word.id,
+    trainer: 'faConj',
+    de: conjugateDe(word.de, { person, tense: 'present' }),
+    en: normalizeEn(word),
+    fa: normalizeFa(word),
+    faRm: normalizeFaRm(word),
+  };
+};
+
+const pickRandomPerson = (): Person => {
+  const result = selectRandom<Person>(['1s', '2s', '3s', '1p', '2p', '3p'], () => 1);
+  if (result !== null) {
+    return result;
+  } else {
+    throw new Error('Error while picking a random person for conjugation');
+  }
 };
 
 const extractUnscoredTrainingUnit = (unit: PrioritizedEntity<UnscoredTrainingUnit> | null): UnscoredTrainingUnit | null => {

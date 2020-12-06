@@ -36,7 +36,7 @@ export class Trainer extends React.Component<{
         fail={fail}
         next={(): void => this.selectNextUnit()}
       ></GermanTrainer>;
-    } else if (unit?.trainer === 'fa') {
+    } else if (unit?.trainer === 'fa' || unit?.trainer === 'faConj') {
       return <FarsiTrainer
         unit={unit}
         pass={pass}

@@ -4,7 +4,7 @@ import { Word } from '../../lexicon/model/word';
 import { selectWords } from '../../lexicon/selectors';
 import { normalizeDe, normalizeEn, normalizeFa, normalizeFaRm } from '../../lexicon/util';
 import { ProgressAggregate } from '../../trainer/model/trainingProgress';
-import { selectTrainingProgress } from '../../trainer/selectors';
+import { selectProgress } from '../../trainer/selectors';
 import { DictionaryEntry } from '../model/dictionaryEntry';
 import { DictionaryFilter } from '../model/dictionaryFilter';
 import { State } from '../slice';
@@ -14,10 +14,10 @@ export default selectSlice;
 
 export const selectFilter = createSelector([selectSlice], state => state.filter);
 
-export const selectDictionary = createSelector([selectFilter, selectWords, selectTrainingProgress],
-  (filter, words, trainingProgress) => words
+export const selectDictionary = createSelector([selectFilter, selectWords, selectProgress],
+  (filter, words, progress) => words
     .filter(word => wordMatchesFilter(word, filter))
-    .map(word => buildDictionaryEntry(word, trainingProgress))
+    .map(word => buildDictionaryEntry(word, progress))
 );
 
 const wordMatchesFilter = (word: Word, { searchTerm }: Partial<DictionaryFilter>): boolean =>
@@ -28,13 +28,13 @@ const wordMatchesFilter = (word: Word, { searchTerm }: Partial<DictionaryFilter>
 const removeDiacritics = (text: string): string =>
   text.replace(/[َُِ]/g, '');
 
-const buildDictionaryEntry = (word: Word, trainingProgress: Record<number, ProgressAggregate>): DictionaryEntry => ({
+const buildDictionaryEntry = (word: Word, progress: Record<number, ProgressAggregate>): DictionaryEntry => ({
   type: word.type,
   id: word.id,
   de: normalizeDe(word),
   en: normalizeEn(word),
   fa: normalizeFa(word),
   faRm: normalizeFaRm(word),
-  scoreDe: trainingProgress[word.id]?.de.score ?? null,
-  scoreFa: trainingProgress[word.id]?.fa.score ?? null,
+  scoreDe: progress[word.id]?.de?.score ?? null,
+  scoreFa: progress[word.id]?.fa?.score ?? null,
 });
