@@ -82,7 +82,12 @@
   {
     "id": 10,
     "type": "verb",
-    "de": "geben",
+    "de": {
+      "infinitive": "geben",
+      "present": {
+        "3s": "gibt"
+      }
+    },
     "en": "give",
     "fa": "دادَن",
     "faRm": "dâdan"
@@ -106,7 +111,12 @@
   {
     "id": 13,
     "type": "verb",
-    "de": "fahren",
+    "de": {
+      "infinitive": "fahren",
+      "present": {
+        "3s": "fährt"
+      }
+    },
     "en": "drive",
     "fa": "راندَن",
     "faRm": "rândan"
@@ -786,7 +796,12 @@
   {
     "id": 97,
     "type": "verb",
-    "de": "schlafen",
+    "de": {
+      "infinitive": "schlafen",
+      "present": {
+        "3s": "schläft"
+      }
+    },
     "en": "sleep",
     "fa": "خوابیدَن",
     "faRm": "khâbidan"
@@ -794,7 +809,12 @@
   {
     "id": 98,
     "type": "verb",
-    "de": "essen",
+    "de": {
+      "infinitive": "essen",
+      "present": {
+        "3s": "isst"
+      }
+    },
     "en": "eat",
     "fa": "خوردَن",
     "faRm": "khordan"
@@ -1002,7 +1022,7 @@
   {
     "id": 124,
     "type": "verb",
-    "de": "zurückkehren",
+    "de": "zurück|kehren",
     "en": "return",
     "fa": "بَرگَشتَن",
     "faRm": "bargashtan"
@@ -1090,7 +1110,12 @@
   {
     "id": 135,
     "type": "verb",
-    "de": "sehen",
+    "de": {
+      "infinitive": "sehen",
+      "present": {
+        "3s": "sieht"
+      }
+    },
     "en": "see",
     "fa": "دیدَن",
     "faRm": "didan"
@@ -1154,7 +1179,12 @@
   {
     "id": 143,
     "type": "verb",
-    "de": "haben",
+    "de": {
+      "infinitive": "haben",
+      "present": {
+        "3s": "hat"
+      }
+    },
     "en": "have",
     "fa": "داشتَن",
     "faRm": "dâshtan"
