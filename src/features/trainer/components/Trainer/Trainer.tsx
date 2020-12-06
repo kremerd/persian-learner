@@ -1,16 +1,12 @@
 import React from 'react';
-import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { TrainingMode } from '../../model/trainingMode';
-import { LangProgress } from '../../model/trainingProgress';
-import { TrainingUnitLang } from '../../model/trainingUnit';
+import { TrainingUnit } from '../../model/trainingUnit';
 import { FarsiTrainer } from '../LangTrainer/FarsiTrainer';
 import { GermanTrainer } from '../LangTrainer/GermanTrainer';
 import { NoTraining } from '../NoTraining/NoTraining';
 
 export class Trainer extends React.Component<{
-  lang: TrainingUnitLang | null;
-  progress: LangProgress;
-  unit: LearningUnit | null;
+  unit: TrainingUnit | null;
   trainingMode: TrainingMode;
   fail: () => void;
   next: (trainingMode: TrainingMode) => void;
@@ -32,19 +28,17 @@ export class Trainer extends React.Component<{
   }
 
   renderBody(): JSX.Element {
-    const { lang, progress, unit, fail, pass } = this.props;
-    if (lang === 'de' && unit !== null) {
+    const { unit, fail, pass } = this.props;
+    if (unit?.trainer === 'de') {
       return <GermanTrainer
         unit={unit}
-        progress={progress}
         pass={pass}
         fail={fail}
         next={(): void => this.selectNextUnit()}
       ></GermanTrainer>;
-    } else if (lang === 'fa' && unit !== null) {
+    } else if (unit?.trainer === 'fa') {
       return <FarsiTrainer
         unit={unit}
-        progress={progress}
         pass={pass}
         fail={fail}
         next={(): void => this.selectNextUnit()}

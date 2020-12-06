@@ -1,21 +1,22 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LearningUnit } from '../../lexicon/model/learningUnit';
 import { selectLearningUnits } from '../../lexicon/selectors';
+import { PrioritizedEntity } from '../model/prioritizedEntity';
 import { TrainingMode } from '../model/trainingMode';
-import { LangProgress, TrainingProgress } from '../model/trainingProgress';
-import { TrainingUnit, TrainingUnitLang, TrainingUnitWithPriority } from '../model/trainingUnit';
+import { ProgressAggregate, TrainingProgress } from '../model/trainingProgress';
+import { Trainer, UnscoredTrainingUnit } from '../model/trainingUnit';
 import SelectionStrategy from './selection/selectionStrategy';
 import selectionStrategyFactory from './selection/selectionStrategyFactory';
 import selectRandom from './selectRandom';
-import { buildEmptyProgress } from './trainingProgress';
+import { buildEmptyProgressAggregate } from './trainingProgress';
 
 export interface State {
-  trainingUnit: TrainingUnit | null;
-  trainingProgress: Record<number, TrainingProgress>;
+  currentTrainingUnit: UnscoredTrainingUnit | null;
+  trainingProgress: Record<number, ProgressAggregate>;
 }
 
 const initialState: State = {
-  trainingUnit: null,
+  currentTrainingUnit: null,
   trainingProgress: {},
 };
 
@@ -53,44 +54,46 @@ const slice = createSlice({
       const { trainingProgress } = state;
       const selectionStrategy = selectionStrategyFactory(trainingMode);
 
-      const trainingUnits = learningUnits
-        .map(({ id }) => buildTrainingUnits(id, trainingProgress[id], selectionStrategy))
+      const prioritizedUnits = learningUnits
+        .map(learningUnit => buildPrioritizedUnits(learningUnit, trainingProgress[learningUnit.id], selectionStrategy))
         .flat();
-      const selectedUnit = selectRandom(trainingUnits, unit => unit.priority);
-      state.trainingUnit = extractTrainingUnit(selectedUnit);
+      const selectedUnit = selectRandom(prioritizedUnits, unit => unit.priority);
+      state.currentTrainingUnit = extractUnscoredTrainingUnit(selectedUnit);
     }
   }
 });
 
-const getLangProgress = ({ trainingUnit, trainingProgress }: State): LangProgress => {
-  if (trainingUnit === null) {
+const getLangProgress = ({ currentTrainingUnit, trainingProgress }: State): TrainingProgress => {
+  if (currentTrainingUnit === null) {
     throw new Error('No training unit selected');
   }
 
-  if (trainingProgress[trainingUnit.id] === undefined) {
-    trainingProgress[trainingUnit.id] = buildEmptyProgress();
+  if (trainingProgress[currentTrainingUnit.id] === undefined) {
+    trainingProgress[currentTrainingUnit.id] = buildEmptyProgressAggregate();
   }
 
-  return trainingProgress[trainingUnit.id][trainingUnit.lang];
+  return trainingProgress[currentTrainingUnit.id][currentTrainingUnit.trainer];
 };
 
-const buildTrainingUnits = (
-  id: number,
-  progress: TrainingProgress = buildEmptyProgress(),
+const buildPrioritizedUnits = (
+  learningUnit: LearningUnit,
+  progress: ProgressAggregate = buildEmptyProgressAggregate(),
   selectionStrategy: SelectionStrategy
-): TrainingUnitWithPriority[] => {
-  const languages: TrainingUnitLang[] = ['de', 'fa'];
-  return languages.map(lang => ({
-    id,
-    lang,
-    priority: selectionStrategy(progress[lang])
+): PrioritizedEntity<UnscoredTrainingUnit>[] => {
+  const trainers: Trainer[] = ['de', 'fa'];
+  return trainers.map(trainer => ({
+    entity: {
+      ...learningUnit,
+      trainer
+    },
+    priority: selectionStrategy(progress[trainer])
   }));
 };
 
-const extractTrainingUnit = (unit: TrainingUnitWithPriority | null): TrainingUnit | null => {
+const extractUnscoredTrainingUnit = (unit: PrioritizedEntity<UnscoredTrainingUnit> | null): UnscoredTrainingUnit | null => {
   if (unit !== null) {
-    const { id, lang } = unit;
-    return { id, lang };
+    const { id, trainer, de, en, fa, faRm } = unit.entity;
+    return { id, trainer, de, en, fa, faRm };
   } else {
     return null;
   }

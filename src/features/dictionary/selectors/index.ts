@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { LearningUnit } from '../../lexicon/model/learningUnit';
 import { selectLearningUnits } from '../../lexicon/selectors';
-import { TrainingProgress } from '../../trainer/model/trainingProgress';
+import { ProgressAggregate } from '../../trainer/model/trainingProgress';
 import { selectTrainingProgress } from '../../trainer/selectors';
 import { DictionaryEntry } from '../model/dictionaryEntry';
 import { DictionaryFilter } from '../model/dictionaryFilter';
@@ -26,7 +26,7 @@ const unitMatchesFilter = (unit: LearningUnit, { searchTerm }: Partial<Dictionar
 const removeShortVowels = (text: string): string =>
   text.replace(/[َُِ]/g, '');
 
-const buildDictionaryEntry = (unit: LearningUnit, trainingProgress: Record<number, TrainingProgress>): DictionaryEntry => ({
+const buildDictionaryEntry = (unit: LearningUnit, trainingProgress: Record<number, ProgressAggregate>): DictionaryEntry => ({
   ...unit,
   scoreDe: trainingProgress[unit.id]?.de.score ?? null,
   scoreFa: trainingProgress[unit.id]?.fa.score ?? null,

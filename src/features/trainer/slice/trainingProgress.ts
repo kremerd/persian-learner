@@ -1,11 +1,20 @@
-import { LangProgress, TrainingProgress } from '../model/trainingProgress';
+import { ProgressAggregate, TrainingProgress } from '../model/trainingProgress';
+import { Trainer } from '../model/trainingUnit';
 
-export const buildEmptyProgress = (): TrainingProgress => ({
-  de: buildEmptyLangProgress(),
-  fa: buildEmptyLangProgress(),
+export const getTrainingProgress = (
+  progress: Record<number, ProgressAggregate>,
+  id: number,
+  trainer: Trainer
+): TrainingProgress => {
+  return progress[id]?.[trainer] ?? buildEmptyTrainingProgress();
+};
+
+export const buildEmptyProgressAggregate = (): ProgressAggregate => ({
+  de: buildEmptyTrainingProgress(),
+  fa: buildEmptyTrainingProgress(),
 });
 
-export const buildEmptyLangProgress = (): LangProgress => ({
+export const buildEmptyTrainingProgress = (): TrainingProgress => ({
   score: 0,
   lastCorrect: null,
   lastTried: null,

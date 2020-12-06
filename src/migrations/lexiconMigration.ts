@@ -1,7 +1,7 @@
 import vocabulary from '../data/vocabulary.json';
 import { LearningUnit } from '../features/lexicon/model/learningUnit';
-import { TrainingProgress } from '../features/trainer/model/trainingProgress';
-import { TrainingUnit } from '../features/trainer/model/trainingUnit';
+import { ProgressAggregate } from '../features/trainer/model/trainingProgress';
+import { UnscoredTrainingUnit } from '../features/trainer/model/trainingUnit';
 import { State } from '../reducers';
 
 interface LexiconMigration {
@@ -21,7 +21,7 @@ const lexiconMigration = (state: State): State => {
     },
     trainer: {
       ...state.trainer,
-      trainingUnit: migrateTrainingUnit(state.trainer.trainingUnit, migration),
+      currentTrainingUnit: migrateTrainingUnit(state.trainer.currentTrainingUnit, migration),
       trainingProgress: migrateTrainingProgress(state.trainer.trainingProgress, migration),
     },
   };
@@ -53,7 +53,7 @@ const migrateUnitsTrainingProgress = (persisted: Record<number, LearningUnit>, m
   return result;
 };
 
-const migrateTrainingUnit = (persisted: TrainingUnit | null, { deleted }: LexiconMigration): TrainingUnit | null => {
+const migrateTrainingUnit = (persisted: UnscoredTrainingUnit | null, { deleted }: LexiconMigration): UnscoredTrainingUnit | null => {
   if (deleted.some(el => el.id === persisted?.id)) {
     return null;
   } else {
@@ -61,7 +61,7 @@ const migrateTrainingUnit = (persisted: TrainingUnit | null, { deleted }: Lexico
   }
 };
 
-const migrateTrainingProgress = (persisted: Record<number, TrainingProgress>, migration: LexiconMigration): Record<number, TrainingProgress> => {
+const migrateTrainingProgress = (persisted: Record<number, ProgressAggregate>, migration: LexiconMigration): Record<number, ProgressAggregate> => {
   const result = { ...persisted };
   migration.updated.forEach(u => delete result[u.id]);
   migration.deleted.forEach(u => delete result[u.id]);

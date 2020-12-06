@@ -1,9 +1,9 @@
-export interface TrainingProgress {
-  de: LangProgress;
-  fa: LangProgress;
+export interface ProgressAggregate {
+  de: TrainingProgress;
+  fa: TrainingProgress;
 }
 
-export interface LangProgress {
+export interface TrainingProgress {
   score: number;
   lastCorrect: string | null;
   lastTried: string | null;
