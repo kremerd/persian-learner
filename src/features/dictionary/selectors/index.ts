@@ -1,6 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { LearningUnit } from '../../lexicon/model/learningUnit';
-import { selectLearningUnits } from '../../lexicon/selectors';
+import { conjugateDe } from '../../grammar/de/conjugation';
+import { Word } from '../../lexicon/model/word';
+import { selectWords } from '../../lexicon/selectors';
+import { normalizeDe, normalizeEn, normalizeFa, normalizeFaRm } from '../../lexicon/util';
 import { ProgressAggregate } from '../../trainer/model/trainingProgress';
 import { selectTrainingProgress } from '../../trainer/selectors';
 import { DictionaryEntry } from '../model/dictionaryEntry';
@@ -12,22 +14,27 @@ export default selectSlice;
 
 export const selectFilter = createSelector([selectSlice], state => state.filter);
 
-export const selectDictionary = createSelector([selectFilter, selectLearningUnits, selectTrainingProgress],
-  (filter, learningUnits, trainingProgress) => learningUnits
-    .filter(unit => unitMatchesFilter(unit, filter))
-    .map(unit => buildDictionaryEntry(unit, trainingProgress))
+export const selectDictionary = createSelector([selectFilter, selectWords, selectTrainingProgress],
+  (filter, words, trainingProgress) => words
+    .filter(word => wordMatchesFilter(word, filter))
+    .map(word => buildDictionaryEntry(word, trainingProgress))
 );
 
-const unitMatchesFilter = (unit: LearningUnit, { searchTerm }: Partial<DictionaryFilter>): boolean =>
+const wordMatchesFilter = (word: Word, { searchTerm }: Partial<DictionaryFilter>): boolean =>
   searchTerm === undefined ||
-  [unit.de, unit.en, unit.fa, removeShortVowels(unit.fa), unit.faRm]
+  [word.type === 'verb' ? conjugateDe(word.de, 'infinitive') : word.de, word.en, word.fa, removeDiacritics(word.fa), word.faRm]
     .some(term => term.toLowerCase().includes(searchTerm.toLowerCase().trim()));
 
-const removeShortVowels = (text: string): string =>
+const removeDiacritics = (text: string): string =>
   text.replace(/[َُِ]/g, '');
 
-const buildDictionaryEntry = (unit: LearningUnit, trainingProgress: Record<number, ProgressAggregate>): DictionaryEntry => ({
-  ...unit,
-  scoreDe: trainingProgress[unit.id]?.de.score ?? null,
-  scoreFa: trainingProgress[unit.id]?.fa.score ?? null,
+const buildDictionaryEntry = (word: Word, trainingProgress: Record<number, ProgressAggregate>): DictionaryEntry => ({
+  type: word.type,
+  id: word.id,
+  de: normalizeDe(word),
+  en: normalizeEn(word),
+  fa: normalizeFa(word),
+  faRm: normalizeFaRm(word),
+  scoreDe: trainingProgress[word.id]?.de.score ?? null,
+  scoreFa: trainingProgress[word.id]?.fa.score ?? null,
 });

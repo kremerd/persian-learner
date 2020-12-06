@@ -1,5 +1,5 @@
 import React from 'react';
-import { LearningUnitType } from '../../../lexicon/model/learningUnit';
+import { WordType } from '../../../lexicon/model/word';
 import { ScoreBadge } from '../../../trainer/components/ScoreBadge/ScoreBadge';
 import { DictionaryEntry } from '../../model/dictionaryEntry';
 import './DictionaryDetails.scss';
@@ -64,7 +64,7 @@ export class DictionaryDetails extends React.Component<{
     );
   }
 
-  private formatType(type: LearningUnitType): string {
+  private formatType(type: WordType): string {
     switch (type) {
     case 'adjective':
       return 'Adjektiv';

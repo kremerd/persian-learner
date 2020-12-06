@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { LearningUnit } from '../../lexicon/model/learningUnit';
-import { selectLearningUnits } from '../../lexicon/selectors';
+import { Word } from '../../lexicon/model/word';
+import { selectWords } from '../../lexicon/selectors';
+import { normalizeDe, normalizeEn, normalizeFa, normalizeFaRm } from '../../lexicon/util';
 import { PrioritizedEntity } from '../model/prioritizedEntity';
 import { TrainingMode } from '../model/trainingMode';
 import { ProgressAggregate, TrainingProgress } from '../model/trainingProgress';
@@ -23,13 +24,13 @@ const initialState: State = {
 export const select = createAsyncThunk(
   'train/select',
   (trainingMode: TrainingMode, { getState }) => ({
-    learningUnits: selectLearningUnits(getState()),
+    words: selectWords(getState()),
     trainingMode,
   })
 );
 
 interface SelectPayload {
-  learningUnits: LearningUnit[];
+  words: Word[];
   trainingMode: TrainingMode;
 }
 
@@ -50,12 +51,12 @@ const slice = createSlice({
     }
   },
   extraReducers: {
-    [select.fulfilled.type]: (state, { payload: { learningUnits, trainingMode } }: PayloadAction<SelectPayload>): void => {
+    [select.fulfilled.type]: (state, { payload: { words, trainingMode } }: PayloadAction<SelectPayload>): void => {
       const { trainingProgress } = state;
       const selectionStrategy = selectionStrategyFactory(trainingMode);
 
-      const prioritizedUnits = learningUnits
-        .map(learningUnit => buildPrioritizedUnits(learningUnit, trainingProgress[learningUnit.id], selectionStrategy))
+      const prioritizedUnits = words
+        .map(word => buildPrioritizedUnits(word, trainingProgress[word.id], selectionStrategy))
         .flat();
       const selectedUnit = selectRandom(prioritizedUnits, unit => unit.priority);
       state.currentTrainingUnit = extractUnscoredTrainingUnit(selectedUnit);
@@ -76,15 +77,19 @@ const getLangProgress = ({ currentTrainingUnit, trainingProgress }: State): Trai
 };
 
 const buildPrioritizedUnits = (
-  learningUnit: LearningUnit,
+  word: Word,
   progress: ProgressAggregate = buildEmptyProgressAggregate(),
   selectionStrategy: SelectionStrategy
 ): PrioritizedEntity<UnscoredTrainingUnit>[] => {
   const trainers: Trainer[] = ['de', 'fa'];
   return trainers.map(trainer => ({
     entity: {
-      ...learningUnit,
-      trainer
+      id: word.id,
+      trainer,
+      de: normalizeDe(word),
+      en: normalizeEn(word),
+      fa: normalizeFa(word),
+      faRm: normalizeFaRm(word),
     },
     priority: selectionStrategy(progress[trainer])
   }));

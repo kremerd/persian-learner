@@ -1,23 +1,23 @@
 import vocabulary from '../data/vocabulary.json';
-import { LearningUnit } from '../features/lexicon/model/learningUnit';
+import { Word } from '../features/lexicon/model/word';
 import { ProgressAggregate } from '../features/trainer/model/trainingProgress';
 import { UnscoredTrainingUnit } from '../features/trainer/model/trainingUnit';
 import { State } from '../reducers';
 
 interface LexiconMigration {
-  added: LearningUnit[];
-  updated: LearningUnit[];
-  deleted: LearningUnit[];
+  added: Word[];
+  updated: Word[];
+  deleted: Word[];
 }
 
 const lexiconMigration = (state: State): State => {
-  const migration = buildMigration(state.lexicon.units);
+  const migration = buildMigration(state.lexicon.words);
 
   return {
     ...state,
     lexicon: {
       ...state.lexicon,
-      units: migrateUnitsTrainingProgress(state.lexicon.units, migration),
+      words: migrateWords(state.lexicon.words, migration),
     },
     trainer: {
       ...state.trainer,
@@ -27,25 +27,25 @@ const lexiconMigration = (state: State): State => {
   };
 };
 
-const buildMigration = (persistedUnitRecord: Record<number, LearningUnit>): LexiconMigration => {
-  const persistedUnits = Object.values(persistedUnitRecord);
-  const expectedUnits = vocabulary as LearningUnit[];
-  const expectedUnitRecord = Object.fromEntries(
+const buildMigration = (persistedWordRecord: Record<number, Word>): LexiconMigration => {
+  const persistedWords = Object.values(persistedWordRecord);
+  const expectedWords = vocabulary as Word[];
+  const expectedWordRecord = Object.fromEntries(
     vocabulary.map(v => [v.id, v])
   );
 
   return {
-    added: expectedUnits.filter(u => !(u.id in persistedUnitRecord)),
-    updated: expectedUnits.filter(u => (u.id in persistedUnitRecord) && !isEqual(u, persistedUnitRecord[u.id])),
-    deleted: persistedUnits.filter(u => !(u.id in expectedUnitRecord)),
+    added: expectedWords.filter(u => !(u.id in persistedWordRecord)),
+    updated: expectedWords.filter(u => (u.id in persistedWordRecord) && !isEqual(u, persistedWordRecord[u.id])),
+    deleted: persistedWords.filter(u => !(u.id in expectedWordRecord)),
   };
 };
 
-const isEqual = (a: LearningUnit | undefined, b: LearningUnit | undefined): boolean => {
+const isEqual = (a: Word | undefined, b: Word | undefined): boolean => {
   return JSON.stringify(a) === JSON.stringify(b);
 };
 
-const migrateUnitsTrainingProgress = (persisted: Record<number, LearningUnit>, migration: LexiconMigration): Record<number, LearningUnit> => {
+const migrateWords = (persisted: Record<number, Word>, migration: LexiconMigration): Record<number, Word> => {
   const result = { ...persisted };
   migration.added.forEach(u => result[u.id] = u);
   migration.updated.forEach(u => result[u.id] = u);
@@ -63,8 +63,8 @@ const migrateTrainingUnit = (persisted: UnscoredTrainingUnit | null, { deleted }
 
 const migrateTrainingProgress = (persisted: Record<number, ProgressAggregate>, migration: LexiconMigration): Record<number, ProgressAggregate> => {
   const result = { ...persisted };
-  migration.updated.forEach(u => delete result[u.id]);
-  migration.deleted.forEach(u => delete result[u.id]);
+  migration.updated.forEach(w => delete result[w.id]);
+  migration.deleted.forEach(w => delete result[w.id]);
   return result;
 };
 
