@@ -376,14 +376,6 @@
     "faRm": "kârmand"
   },
   {
-    "id": 46,
-    "type": "noun",
-    "de": "Markt",
-    "en": "market",
-    "fa": "بازار",
-    "faRm": "bâzâr"
-  },
-  {
     "id": 47,
     "type": "adjective",
     "de": "offen",
@@ -1510,5 +1502,13 @@
     "en": "good night",
     "fa": "شَبِ بَخیر",
     "faRm": "shabe bakhir"
+  },
+  {
+    "id": 188,
+    "type": "noun",
+    "de": "Markt",
+    "en": "market",
+    "fa": "بازار",
+    "faRm": "bâzâr"
   }
 ]
