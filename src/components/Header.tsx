@@ -2,7 +2,7 @@ import { Collapse } from 'bootstrap';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
-import { Book, Check2Square, Lightning } from './Icons';
+import { Book, Check2Square, Lightning, Tools } from './Icons';
 
 export class Header extends React.Component {
   private collapseRef = React.createRef<HTMLDivElement>();
@@ -60,6 +60,15 @@ export class Header extends React.Component {
                 >
                   <Book></Book>
                   Wörterbuch
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link"
+                  to="/settings"
+                  onClick={(): void => this.collapse?.hide()}
+                >
+                  <Tools></Tools>
+                  Einstellungen
                 </Link>
               </li>
             </ul>
