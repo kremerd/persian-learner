@@ -89,8 +89,14 @@
       }
     },
     "en": "give",
-    "fa": "دادَن",
-    "faRm": "dâdan"
+    "fa": {
+      "infinitive": "دادَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "dâdan",
+      "presentStem": "deh"
+    }
   },
   {
     "id": 11,
@@ -118,8 +124,14 @@
       }
     },
     "en": "drive",
-    "fa": "راندَن",
-    "faRm": "rândan"
+    "fa": {
+      "infinitive": "راندَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "rândan",
+      "presentStem": "rân"
+    }
   },
   {
     "id": 14,
@@ -622,8 +634,14 @@
     "type": "verb",
     "de": "springen",
     "en": "jump",
-    "fa": "پَریدَن",
-    "faRm": "paridan"
+    "fa": {
+      "infinitive": "پَریدَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "paridan",
+      "presentStem": "par"
+    }
   },
   {
     "id": 76,
@@ -803,8 +821,14 @@
       }
     },
     "en": "sleep",
-    "fa": "خوابیدَن",
-    "faRm": "khâbidan"
+    "fa": {
+      "infinitive": "خوابیدَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "khâbidan",
+      "presentStem": "khâb"
+    }
   },
   {
     "id": 98,
@@ -816,8 +840,14 @@
       }
     },
     "en": "eat",
-    "fa": "خوردَن",
-    "faRm": "khordan"
+    "fa": {
+      "infinitive": "خوردَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "khordan",
+      "presentStem": "khor"
+    }
   },
   {
     "id": 99,
@@ -928,8 +958,14 @@
     "type": "verb",
     "de": "hören",
     "en": "listen",
-    "fa": "شِنیدَن",
-    "faRm": "shenidan"
+    "fa": {
+      "infinitive": "شِنیدَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "shenidan",
+      "presentStem": "shenav"
+    }
   },
   {
     "id": 113,
@@ -976,8 +1012,14 @@
     "type": "verb",
     "de": "senden",
     "en": "send",
-    "fa": "فِرِستادَن",
-    "faRm": "ferestâdan"
+    "fa": {
+      "infinitive": "فِرِستادَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "ferestâdan",
+      "presentStem": "ferest"
+    }
   },
   {
     "id": 119,
@@ -1008,8 +1050,14 @@
     "type": "verb",
     "de": "verkaufen",
     "en": "sell",
-    "fa": "فُروختَن",
-    "faRm": "forukhtan"
+    "fa": {
+      "infinitive": "فُروختَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "forukhtan",
+      "presentStem": "forush"
+    }
   },
   {
     "id": 123,
@@ -1024,8 +1072,14 @@
     "type": "verb",
     "de": "zurück|kehren",
     "en": "return",
-    "fa": "بَرگَشتَن",
-    "faRm": "bargashtan"
+    "fa": {
+      "infinitive": "بَرگَشتَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "bargashtan",
+      "presentStem": ""
+    }
   },
   {
     "id": 125,
@@ -1216,16 +1270,30 @@
       }
     },
     "en": "have",
-    "fa": "داشتَن",
-    "faRm": "dâshtan"
+    "fa": {
+      "infinitive": "داشتَن",
+      "presentForm": "simple",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "dâshtan",
+      "presentForm": "simple",
+      "presentStem": "dâr"
+    }
   },
   {
     "id": 144,
     "type": "verb",
     "de": "tun",
     "en": "do",
-    "fa": "کَردَن",
-    "faRm": "kardan"
+    "fa": {
+      "infinitive": "کَردَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "kardan",
+      "presentStem": "kon"
+    }
   },
   {
     "id": 145,
@@ -1240,8 +1308,14 @@
     "type": "verb",
     "de": "spielen",
     "en": "play",
-    "fa": "بازی کَردَن",
-    "faRm": "bâzi kardan"
+    "fa": {
+      "infinitive": "بازی کَردَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "bâzi kardan",
+      "presentStem": "bâzi kon"
+    }
   },
   {
     "id": 147,
@@ -1256,8 +1330,14 @@
     "type": "verb",
     "de": "unterrichten",
     "en": "teach",
-    "fa": "دَرس دادَن",
-    "faRm": "dars dâdan"
+    "fa": {
+      "infinitive": "دَرس دادَن",
+      "presentStem": ""
+    },
+    "faRm": {
+      "infinitive": "dars dâdan",
+      "presentStem": "dars deh"
+    }
   },
   {
     "id": 149,

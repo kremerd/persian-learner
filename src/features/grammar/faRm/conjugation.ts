@@ -1,6 +1,7 @@
 import { Person, VerbForm } from '../model/verbForm';
+import { VerbStructure } from '../model/verbStructure';
 import { endsWithAny } from '../util';
-import { VerbFaRm } from './model/verb';
+import { PresentForm, VerbFaRm } from './model/verb';
 
 export const conjugateFaRm = (verb: VerbFaRm, form: VerbForm): string => {
   if (form === 'infinitive') {
@@ -43,8 +44,31 @@ const conjugatePresent = (verb: VerbFaRm, person: Person): string => {
 };
 
 const autoConjugatePresent = (verb: VerbFaRm, person: Person): string => {
-  const suffix = getSuffix(verb.presentStem, person);
-  return `mi${verb.presentStem}${suffix}`;
+  const { prefix, stem } = parsePresentStem(verb.presentStem);
+  const tensePrefix = getTensePrefix(verb.presentForm);
+  const suffix = getSuffix(stem, person);
+  return `${prefix ?? ''}${tensePrefix}${stem}${suffix}`;
+};
+
+const parsePresentStem = (presentStem: string): VerbStructure => {
+  const regex = /^(?<prefix>.* )?(?<stem>[^ ]+)$/;
+  const match = presentStem.match(regex);
+  if (match !== null) {
+    return {
+      prefix: match.groups?.prefix,
+      stem: match.groups?.stem ?? '',
+    };
+  } else {
+    throw new Error(`Could not parse romanized Farsi present stem ${presentStem}.`);
+  }
+};
+
+const getTensePrefix = (presentForm: PresentForm = 'imperfect'): string => {
+  if (presentForm === 'imperfect') {
+    return 'mi';
+  } else {
+    return '';
+  }
 };
 
 const getSuffix = (stem: string, person: Person): string => {
