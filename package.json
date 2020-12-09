@@ -1,10 +1,11 @@
 {
   "name": "persian-learner",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.5.4",
     "@reduxjs/toolkit": "^1.4.0",
-    "bootstrap": "^5.0.0-alpha2",
+    "bootstrap": "^5.0.0-beta1",
     "date-fns": "^2.16.1",
     "react": "^16.13.1",
     "react-animate-height": "^2.0.23",
@@ -17,7 +18,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "@types/bootstrap": "^5.0.0",
+    "@types/bootstrap": "^5.0.1",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.67",
     "@types/react": "^16.9.51",

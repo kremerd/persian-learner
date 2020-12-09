@@ -103,7 +103,7 @@ export abstract class BaseTrainer extends React.Component<{
       return (
         <div className="col">
           <button type="submit"
-            className="btn btn-primary btn-block"
+            className="btn btn-primary w-100"
             key="proceed-btn"
             ref={this.submitRef}
           >
@@ -117,7 +117,7 @@ export abstract class BaseTrainer extends React.Component<{
           <div className="row mb-2">
             <div className="col-6 col-sm-4">
               <button type="button"
-                className="btn btn-secondary btn-block"
+                className="btn btn-secondary w-100"
                 key="solve-btn"
                 onClick={(): void => this.solve()}
               >
@@ -126,7 +126,7 @@ export abstract class BaseTrainer extends React.Component<{
             </div>
             <div className="col-6 col-sm-8">
               <button type="submit"
-                className={`btn btn-block ${this.isCountingAsFailure() ? 'btn-warning' : 'btn-primary'}`}
+                className={`btn ${this.isCountingAsFailure() ? 'btn-warning' : 'btn-primary'} w-100`}
                 key="chck-btn"
                 ref={this.submitRef}
               >
@@ -139,7 +139,7 @@ export abstract class BaseTrainer extends React.Component<{
               <div className="row">
                 <div className="col">
                   <button type="button"
-                    className="btn btn-link btn-block"
+                    className="btn btn-link w-100"
                     key="skip-btn"
                     onClick={(): void => this.proceed()}
                   >
