@@ -1117,40 +1117,70 @@
       }
     },
     "en": "see",
-    "fa": "دیدَن",
-    "faRm": "didan"
+    "fa": {
+      "infinitive": "دیدَن",
+      "presentStem": "بین"
+    },
+    "faRm": {
+      "infinitive": "didan",
+      "presentStem": "bin"
+    }
   },
   {
     "id": 136,
     "type": "verb",
     "de": "sagen",
     "en": "say",
-    "fa": "گُفتَن",
-    "faRm": "goftan"
+    "fa": {
+      "infinitive": "گُفتَن",
+      "presentStem": "گو"
+    },
+    "faRm": {
+      "infinitive": "goftan",
+      "presentStem": "gu"
+    }
   },
   {
     "id": 137,
     "type": "verb",
     "de": "schreiben",
     "en": "write",
-    "fa": "نِوِشتَن",
-    "faRm": "neveshtan"
+    "fa": {
+      "infinitive": "نِوِشتَن",
+      "presentStem": "نِویس"
+    },
+    "faRm": {
+      "infinitive": "neveshtan",
+      "presentStem": "nevis"
+    }
   },
   {
     "id": 138,
     "type": "verb",
     "de": "gehen",
     "en": "go",
-    "fa": "رَفتَن",
-    "faRm": "raftan"
+    "fa": {
+      "infinitive": "رَفتَن",
+      "presentStem": "رَو"
+    },
+    "faRm": {
+      "infinitive": "raftan",
+      "presentStem": "rav"
+    }
   },
   {
     "id": 139,
     "type": "verb",
     "de": "kommen",
     "en": "come",
-    "fa": "آمَدَن",
-    "faRm": "âmadan"
+    "fa": {
+      "infinitive": "آمَدَن",
+      "presentStem": "آ"
+    },
+    "faRm": {
+      "infinitive": "âmadan",
+      "presentStem": "â"
+    }
   },
   {
     "id": 140,

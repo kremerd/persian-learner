@@ -1,5 +1,6 @@
 import { escapeRegExp } from '../../../util/string';
 import { Person, VerbForm } from '../model/verbForm';
+import { endsWithAny } from '../util';
 import { ConjugationDetails, VerbDe } from './model/verb';
 import { VerbStructure } from './model/verbStructure';
 
@@ -124,10 +125,6 @@ const getSuffix = (stem: string, person: Person): string => {
   case '3p':
     return omitEExtension ? 'n' : 'en';
   }
-};
-
-const endsWithAny = (string: string, ...suffixes: string[]): boolean => {
-  return suffixes.some(suffix => string.endsWith(suffix));
 };
 
 const getAppendedPrefix = (prefix: string | undefined): string => {
