@@ -91,7 +91,7 @@
     "en": "give",
     "fa": {
       "infinitive": "دادَن",
-      "presentStem": ""
+      "presentStem": "دِه"
     },
     "faRm": {
       "infinitive": "dâdan",
@@ -126,7 +126,7 @@
     "en": "drive",
     "fa": {
       "infinitive": "راندَن",
-      "presentStem": ""
+      "presentStem": "ران"
     },
     "faRm": {
       "infinitive": "rândan",
@@ -636,7 +636,7 @@
     "en": "jump",
     "fa": {
       "infinitive": "پَریدَن",
-      "presentStem": ""
+      "presentStem": "پَر"
     },
     "faRm": {
       "infinitive": "paridan",
@@ -823,7 +823,7 @@
     "en": "sleep",
     "fa": {
       "infinitive": "خوابیدَن",
-      "presentStem": ""
+      "presentStem": "خواب"
     },
     "faRm": {
       "infinitive": "khâbidan",
@@ -842,7 +842,7 @@
     "en": "eat",
     "fa": {
       "infinitive": "خوردَن",
-      "presentStem": ""
+      "presentStem": "خور"
     },
     "faRm": {
       "infinitive": "khordan",
@@ -960,7 +960,7 @@
     "en": "listen",
     "fa": {
       "infinitive": "شِنیدَن",
-      "presentStem": ""
+      "presentStem": "شِنَو"
     },
     "faRm": {
       "infinitive": "shenidan",
@@ -1014,7 +1014,7 @@
     "en": "send",
     "fa": {
       "infinitive": "فِرِستادَن",
-      "presentStem": ""
+      "presentStem": "فِرِست"
     },
     "faRm": {
       "infinitive": "ferestâdan",
@@ -1052,7 +1052,7 @@
     "en": "sell",
     "fa": {
       "infinitive": "فُروختَن",
-      "presentStem": ""
+      "presentStem": "فُروش"
     },
     "faRm": {
       "infinitive": "forukhtan",
@@ -1273,7 +1273,7 @@
     "fa": {
       "infinitive": "داشتَن",
       "presentForm": "simple",
-      "presentStem": ""
+      "presentStem": "دار"
     },
     "faRm": {
       "infinitive": "dâshtan",
@@ -1288,7 +1288,7 @@
     "en": "do",
     "fa": {
       "infinitive": "کَردَن",
-      "presentStem": ""
+      "presentStem": "کُن"
     },
     "faRm": {
       "infinitive": "kardan",
@@ -1310,7 +1310,7 @@
     "en": "play",
     "fa": {
       "infinitive": "بازی کَردَن",
-      "presentStem": ""
+      "presentStem": "بازی کُن"
     },
     "faRm": {
       "infinitive": "bâzi kardan",
@@ -1332,7 +1332,7 @@
     "en": "teach",
     "fa": {
       "infinitive": "دَرس دادَن",
-      "presentStem": ""
+      "presentStem": "دَرس دِه"
     },
     "faRm": {
       "infinitive": "dars dâdan",

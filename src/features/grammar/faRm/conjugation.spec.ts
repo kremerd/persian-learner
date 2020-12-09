@@ -1,6 +1,6 @@
+import { VerbFa } from '../fa/model/verb';
 import { Person } from '../model/verbForm';
 import { conjugateFaRm } from './conjugation';
-import { VerbFaRm } from './model/verb';
 
 describe('Romanized Farsi conjugation', () => {
   describe('infinitives', () => {
@@ -78,7 +78,7 @@ describe('Romanized Farsi conjugation', () => {
 
   describe('present conjugation of verbs in simple present and with manual overrides', () => {
     it('should conjugate dâshtan', () => {
-      const verb: VerbFaRm = {
+      const verb: VerbFa = {
         infinitive: 'dâshtan',
         presentForm: 'simple',
         presentStem: 'dâr'
@@ -93,7 +93,7 @@ describe('Romanized Farsi conjugation', () => {
     });
 
     it('should conjugate the combined meyl dâshtan', () => {
-      const verb: VerbFaRm = {
+      const verb: VerbFa = {
         infinitive: 'meyl dâshtan',
         presentForm: 'simple',
         presentStem: 'meyl dâr'
@@ -108,7 +108,7 @@ describe('Romanized Farsi conjugation', () => {
     });
 
     it('should conjugate the irregular budan', () => {
-      const verb: VerbFaRm = {
+      const verb: VerbFa = {
         infinitive: 'budan',
         presentStem: 'bâsh',
         present: {
@@ -130,7 +130,7 @@ describe('Romanized Farsi conjugation', () => {
     });
   });
 
-  const conjugatePresent = (presentStemOrVerb: string | VerbFaRm, person: Person): string => {
+  const conjugatePresent = (presentStemOrVerb: string | VerbFa, person: Person): string => {
     const verb = typeof presentStemOrVerb === 'string'
       ? { infinitive: 'infinitive', presentStem: presentStemOrVerb }
       : presentStemOrVerb;

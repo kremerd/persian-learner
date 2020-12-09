@@ -3,7 +3,7 @@ import { Person, VerbForm } from '../model/verbForm';
 import { VerbStructure } from '../model/verbStructure';
 import { endsWithAny } from '../util';
 
-export const conjugateFaRm = (verb: VerbFa, form: VerbForm): string => {
+export const conjugateFa = (verb: VerbFa, form: VerbForm): string => {
   if (form === 'infinitive') {
     return verb.infinitive;
   }
@@ -20,17 +20,17 @@ export const conjugateFaRm = (verb: VerbFa, form: VerbForm): string => {
 const getPronoun = (person: Person): string => {
   switch (person) {
   case '1s':
-    return 'man';
+    return 'مَن';
   case '2s':
-    return 'to';
+    return 'تو';
   case '3s':
-    return 'u';
+    return 'او';
   case '1p':
-    return 'mâ';
+    return 'ما';
   case '2p':
-    return 'shomâ';
+    return 'شُما';
   case '3p':
-    return 'ânhâ';
+    return 'آنها';
   }
 };
 
@@ -59,33 +59,33 @@ const parsePresentStem = (presentStem: string): VerbStructure => {
       stem: match.groups?.stem ?? '',
     };
   } else {
-    throw new Error(`Could not parse romanized Farsi present stem ${presentStem}.`);
+    throw new Error(`Could not parse Farsi present stem ${presentStem}.`);
   }
 };
 
 const getTensePrefix = (presentForm: PresentForm = 'imperfect'): string => {
   if (presentForm === 'imperfect') {
-    return 'mi';
+    return 'می‌';
   } else {
     return '';
   }
 };
 
 const getSuffix = (stem: string, person: Person): string => {
-  const extension = endsWithAny(stem, 'â', 'u') ? 'y' : '';
+  const extension = endsWithAny(stem, 'آ', 'ا', 'و') ? 'ی' : '';
 
   switch (person) {
   case '1s':
-    return extension + 'am';
+    return extension + 'َم';
   case '2s':
-    return extension + 'i';
+    return extension + 'ی';
   case '3s':
-    return extension + 'ad';
+    return extension + 'َد';
   case '1p':
-    return extension + 'im';
+    return extension + 'یم';
   case '2p':
-    return extension + 'id';
+    return extension + 'ید';
   case '3p':
-    return extension + 'and';
+    return extension + 'َند';
   }
 };

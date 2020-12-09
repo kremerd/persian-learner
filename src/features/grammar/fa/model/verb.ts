@@ -1,6 +1,6 @@
 import { ConjugationTable } from '../../model/conjugationTable';
 
-export interface VerbFaRm {
+export interface VerbFa {
   infinitive: string;
   presentForm?: PresentForm;
   presentStem: string;
