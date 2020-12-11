@@ -72,7 +72,10 @@ const getTensePrefix = (presentForm: PresentForm = 'imperfect'): string => {
 };
 
 const getSuffix = (stem: string, person: Person): string => {
-  const extension = endsWithAny(stem, 'آ', 'ا', 'و') ? 'ی' : '';
+  const extension = (
+    endsWithAny(stem, 'آ', 'ا', 'و') &&
+    !endsWithAny(stem, 'آو', 'او', 'یو', 'َو', 'ِو', 'ُو')
+  ) ? 'ی' : '';
 
   switch (person) {
   case '1s':
