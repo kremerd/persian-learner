@@ -1510,5 +1510,157 @@
     "en": "market",
     "fa": "بازار",
     "faRm": "bâzâr"
+  },
+  {
+    "id": 189,
+    "type": "verb",
+    "de": "einfügen",
+    "en": "paste",
+    "fa": "چَسباندَن",
+    "faRm": "chasbândan"
+  },
+  {
+    "id": 190,
+    "type": "noun",
+    "de": "Fahrrad",
+    "en": "bike",
+    "fa": "دوچَرخِه",
+    "faRm": "docharkhe"
+  },
+  {
+    "id": 191,
+    "type": "noun",
+    "de": "Auge",
+    "en": "eye",
+    "fa": "چَشم",
+    "faRm": "chashm"
+  },
+  {
+    "id": 192,
+    "type": "adjective",
+    "de": "links",
+    "en": "left",
+    "fa": "چَپ",
+    "faRm": "chap"
+  },
+  {
+    "id": 193,
+    "type": "verb",
+    "de": "anordnen",
+    "en": "arrange",
+    "fa": "چیدَن",
+    "faRm": "chidan"
+  },
+  {
+    "id": 194,
+    "type": "adjective",
+    "de": "fettig",
+    "en": "fatty",
+    "fa": "چَرب",
+    "faRm": "charb"
+  },
+  {
+    "id": 195,
+    "type": "adjective",
+    "de": "",
+    "en": "black",
+    "fa": "سیاه",
+    "faRm": "siyâh"
+  },
+  {
+    "id": 196,
+    "type": "verb",
+    "de": "stellen",
+    "en": "put",
+    "fa": "گُذاشتَن",
+    "faRm": "gozâshtan"
+  },
+  {
+    "id": 197,
+    "type": "noun",
+    "de": "Verstand",
+    "en": "mind",
+    "fa": "ذِهن",
+    "faRm": "zehn"
+  },
+  {
+    "id": 198,
+    "type": "noun",
+    "de": "Gravitation",
+    "en": "gravity",
+    "fa": "جاذِبِه",
+    "faRm": "jâzebe"
+  },
+  {
+    "id": 199,
+    "type": "adjective",
+    "de": "attraktiv",
+    "en": "attractive",
+    "fa": "جَذّاب",
+    "faRm": "jazâb"
+  },
+  {
+    "id": 200,
+    "type": "noun",
+    "de": "Absorption",
+    "en": "absorption",
+    "fa": "جَذب",
+    "faRm": "jazb"
+  },
+  {
+    "id": 201,
+    "type": "noun",
+    "de": "Instinkt",
+    "en": "instinct",
+    "fa": "ذات",
+    "faRm": "zât"
+  },
+  {
+    "id": 202,
+    "type": "noun",
+    "de": "Belästigung",
+    "en": "harassment",
+    "fa": "اَذیَّت",
+    "faRm": "aziyat"
+  },
+  {
+    "id": 203,
+    "type": "noun",
+    "de": "Erde",
+    "en": "earth",
+    "fa": "زَمین",
+    "faRm": "zamin"
+  },
+  {
+    "id": 204,
+    "type": "noun",
+    "de": "Vergangenheitsstamm",
+    "en": "past stem",
+    "fa": "سِتاکِ گُذَشتِه",
+    "faRm": "setâke gozashte"
+  },
+  {
+    "id": 205,
+    "type": "verb",
+    "de": "waschen",
+    "en": "wash",
+    "fa": "شُستَن",
+    "faRm": "shostan"
+  },
+  {
+    "id": 206,
+    "type": "verb",
+    "de": "sitzen",
+    "en": "sit",
+    "fa": "نِشَستَن",
+    "faRm": "neshastan"
+  },
+  {
+    "id": 207,
+    "type": "verb",
+    "de": "sein",
+    "en": "be",
+    "fa": "بودَن",
+    "faRm": "budan"
   }
 ]
