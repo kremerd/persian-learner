@@ -1562,7 +1562,7 @@
   {
     "id": 195,
     "type": "adjective",
-    "de": "",
+    "de": "schwarz",
     "en": "black",
     "fa": "سیاه",
     "faRm": "siyâh"
@@ -1662,5 +1662,141 @@
     "en": "be",
     "fa": "بودَن",
     "faRm": "budan"
+  },
+  {
+    "id": 208,
+    "type": "noun",
+    "de": "Schlag",
+    "en": "strike",
+    "fa": "اِصابَت",
+    "faRm": "esâbat"
+  },
+  {
+    "id": 209,
+    "type": "noun",
+    "de": "Stuhl",
+    "en": "chair",
+    "fa": "صَندَلی",
+    "faRm": "sandali"
+  },
+  {
+    "id": 210,
+    "type": "noun",
+    "de": "Geduld",
+    "en": "patience",
+    "fa": "صَبر",
+    "faRm": "sabr"
+  },
+  {
+    "id": 211,
+    "type": "unclassified",
+    "de": "hundert",
+    "en": "hundred",
+    "fa": "صَد",
+    "faRm": "sad"
+  },
+  {
+    "id": 212,
+    "type": "noun",
+    "de": "Seife",
+    "en": "soap",
+    "fa": "صابون",
+    "faRm": "sâbun"
+  },
+  {
+    "id": 213,
+    "type": "adjective",
+    "de": "besonders",
+    "en": "special",
+    "fa": "مَخصوص",
+    "faRm": "makhsus"
+  },
+  {
+    "id": 214,
+    "type": "noun",
+    "de": "selbst",
+    "en": "self",
+    "fa": "خود",
+    "faRm": "khod"
+  },
+  {
+    "id": 215,
+    "type": "noun",
+    "de": "Geschenk",
+    "en": "present",
+    "fa": "حاضِر",
+    "faRm": "hâzer"
+  },
+  {
+    "id": 216,
+    "type": "noun",
+    "de": "Kopftuch",
+    "en": "veil",
+    "fa": "حِجاب",
+    "faRm": "hejâb"
+  },
+  {
+    "id": 217,
+    "type": "noun",
+    "de": "Wunsch",
+    "en": "wish",
+    "fa": "حاجَت",
+    "faRm": "hâjat"
+  },
+  {
+    "id": 218,
+    "type": "noun",
+    "de": "Blase",
+    "en": "bubble",
+    "fa": "حُباب",
+    "faRm": "hobâb"
+  },
+  {
+    "id": 219,
+    "type": "noun",
+    "de": "morgen",
+    "en": "morning",
+    "fa": "صُبح",
+    "faRm": "sobh"
+  },
+  {
+    "id": 220,
+    "type": "noun",
+    "de": "Frühstück",
+    "en": "breakfast",
+    "fa": "صُبحانِه",
+    "faRm": "sobhâne"
+  },
+  {
+    "id": 221,
+    "type": "noun",
+    "de": "Handtuch",
+    "en": "towel",
+    "fa": "حولِه",
+    "faRm": "hole"
+  },
+  {
+    "id": 222,
+    "type": "verb",
+    "de": "suchen",
+    "en": "search",
+    "fa": "گَشتَن",
+    "faRm": "gashtan"
+  },
+  {
+    "id": 223,
+    "type": "noun",
+    "de": "gekochter Reis",
+    "en": "steamed rice",
+    "fa": "پُلو",
+    "faRm": "polo"
+  },
+  {
+    "id": 224,
+    "type": "noun",
+    "de": "Kräutertee",
+    "en": "herbal tea",
+    "fa": "دَمنوش",
+    "faRm": "damnush"
   }
 ]
