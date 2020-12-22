@@ -1,11 +1,11 @@
 import { PresentForm, VerbFa } from '../fa/model/verb';
 import { Person, VerbForm } from '../model/verbForm';
-import { VerbStructure } from '../model/verbStructure';
 import { endsWithAny } from '../util';
+import { VerbStructure } from './model/verbStructure';
 
 export const conjugateFa = (verb: VerbFa, form: VerbForm): string => {
   if (form === 'infinitive') {
-    return verb.infinitive;
+    return verb.infinitive.replace(/\|/g, '');
   }
 
   const { person, tense } = form;
@@ -44,17 +44,18 @@ const conjugatePresent = (verb: VerbFa, person: Person): string => {
 };
 
 const autoConjugatePresent = (verb: VerbFa, person: Person): string => {
-  const { prefix, stem } = parsePresentStem(verb.presentStem);
+  const { preposition, prefix, stem } = parsePresentStem(verb.presentStem);
   const tensePrefix = getTensePrefix(verb.presentForm);
   const suffix = getSuffix(stem, person);
-  return `${prefix ?? ''}${tensePrefix}${stem}${suffix}`;
+  return `${preposition ?? ''} ${prefix ?? ''}${tensePrefix}${stem}${suffix}`.trim();
 };
 
 const parsePresentStem = (presentStem: string): VerbStructure => {
-  const regex = /^(?<prefix>.* )?(?<stem>[^ ]+)$/;
+  const regex = /^((?<preposition>.*) )?((?<prefix>.*)\|)?(?<stem>[^ ]+)$/;
   const match = presentStem.match(regex);
   if (match !== null) {
     return {
+      preposition: match.groups?.preposition,
       prefix: match.groups?.prefix,
       stem: match.groups?.stem ?? '',
     };

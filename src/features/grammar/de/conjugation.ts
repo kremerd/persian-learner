@@ -1,8 +1,8 @@
 import { escapeRegExp } from '../../../util/string';
 import { Person, VerbForm } from '../model/verbForm';
-import { VerbStructure } from '../model/verbStructure';
 import { endsWithAny } from '../util';
 import { ConjugationDetails, VerbDe } from './model/verb';
+import { VerbStructure } from './model/verbStructure';
 
 export const conjugateDe = (verb: VerbDe, form: VerbForm): string => {
   const conjugationDetails = getConjugationDetails(verb);

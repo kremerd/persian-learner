@@ -7,6 +7,10 @@ describe('Romanized Farsi conjugation', () => {
     it('should build the infinitive of a simple verb', () => {
       expect(conjugateFaRm({ infinitive: 'goftan', presentStem: 'go' }, 'infinitive')).toEqual('goftan');
     });
+
+    it('should build the infinitive of a split verb', () => {
+      expect(conjugateFaRm({ infinitive: 'bar|gashtan', presentStem: 'bar|gard' }, 'infinitive')).toEqual('bargashtan');
+    });
   });
 
   describe('present conjugation of simple verbs', () => {
@@ -44,6 +48,17 @@ describe('Romanized Farsi conjugation', () => {
       expect(conjugatePresent('gu', '1p')).toEqual('mâ miguyim');
       expect(conjugatePresent('gu', '2p')).toEqual('shomâ miguyid');
       expect(conjugatePresent('gu', '3p')).toEqual('ânhâ miguyand');
+    });
+  });
+
+  describe('present conjugation of split verbs', () => {
+    it('should conjugate the regular bargashtan', () => {
+      expect(conjugatePresent('bar|gard', '1s')).toEqual('man barmigardam');
+      expect(conjugatePresent('bar|gard', '2s')).toEqual('to barmigardi');
+      expect(conjugatePresent('bar|gard', '3s')).toEqual('u barmigardad');
+      expect(conjugatePresent('bar|gard', '1p')).toEqual('mâ barmigardim');
+      expect(conjugatePresent('bar|gard', '2p')).toEqual('shomâ barmigardid');
+      expect(conjugatePresent('bar|gard', '3p')).toEqual('ânhâ barmigardand');
     });
   });
 

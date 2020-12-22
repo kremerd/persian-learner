@@ -1073,12 +1073,12 @@
     "de": "zurück|kehren",
     "en": "return",
     "fa": {
-      "infinitive": "بَرگَشتَن",
-      "presentStem": ""
+      "infinitive": "بَر|گَشتَن",
+      "presentStem": "بَر|گَرد"
     },
     "faRm": {
-      "infinitive": "bargashtan",
-      "presentStem": ""
+      "infinitive": "bar|gashtan",
+      "presentStem": "bar|gard"
     }
   },
   {

@@ -7,6 +7,10 @@ describe('Farsi conjugation', () => {
     it('should build the infinitive of a simple verb', () => {
       expect(conjugateFa({ infinitive: 'گُفتَن', presentStem: 'گو' }, 'infinitive')).toEqual('گُفتَن');
     });
+
+    it('should build the infinitive of a split verb', () => {
+      expect(conjugateFa({ infinitive: 'بَر|گَشتَن', presentStem: 'بَر|گَرد' }, 'infinitive')).toEqual('بَرگَشتَن');
+    });
   });
 
   describe('present conjugation of simple verbs', () => {
@@ -44,6 +48,17 @@ describe('Farsi conjugation', () => {
       expect(conjugatePresent('گو', '1p')).toEqual('ما می‌گوییم');
       expect(conjugatePresent('گو', '2p')).toEqual('شُما می‌گویید');
       expect(conjugatePresent('گو', '3p')).toEqual('آنها می‌گویَند');
+    });
+  });
+
+  describe('present conjugation of split verbs', () => {
+    it('should conjugate the regular بَرگَشتَن', () => {
+      expect(conjugatePresent('بَر|گَرد', '1s')).toEqual('مَن بَرمی‌گَردَم');
+      expect(conjugatePresent('بَر|گَرد', '2s')).toEqual('تو بَرمی‌گَردی');
+      expect(conjugatePresent('بَر|گَرد', '3s')).toEqual('او بَرمی‌گَردَد');
+      expect(conjugatePresent('بَر|گَرد', '1p')).toEqual('ما بَرمی‌گَردیم');
+      expect(conjugatePresent('بَر|گَرد', '2p')).toEqual('شُما بَرمی‌گَردید');
+      expect(conjugatePresent('بَر|گَرد', '3p')).toEqual('آنها بَرمی‌گَردَند');
     });
   });
 
