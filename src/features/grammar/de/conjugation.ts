@@ -1,59 +1,25 @@
 import { escapeRegExp } from '../../../util/string';
-import { Person, VerbForm } from '../model/verbForm';
+import { buildConjugator } from '../buildConjugator';
+import { ConjugationDetails } from '../model/conjugationDetails';
+import { Person } from '../model/verbForm';
 import { endsWithAny } from '../util';
-import { ConjugationDetails, VerbDe } from './model/verb';
 import { VerbStructure } from './model/verbStructure';
 
-export const conjugateDe = (verb: VerbDe, form: VerbForm): string => {
-  const conjugationDetails = getConjugationDetails(verb);
-  if (form === 'infinitive') {
-    return conjugationDetails.infinitive.replace(/\|/g, '');
+export const conjugateDe = buildConjugator<ConjugationDetails>(
+  {
+    '1s': 'ich',
+    '2s': 'du',
+    '3s': 'er / sie',
+    '1p': 'wir',
+    '2p': 'ihr',
+    '3p': 'sie',
+  },
+  {
+    present: (verb, person) => conjugatePresent(verb, person),
   }
-
-  const { person, tense } = form;
-  const pronoun = getPronoun(person);
-
-  switch (tense) {
-  case 'present':
-    return `${pronoun} ${conjugatePresent(conjugationDetails, person)}`;
-  }
-};
-
-const getConjugationDetails = (verb: VerbDe): ConjugationDetails => {
-  if (typeof verb === 'string') {
-    return { infinitive: verb };
-  } else {
-    return verb;
-  }
-};
-
-const getPronoun = (person: Person): string => {
-  switch (person) {
-  case '1s':
-    return 'ich';
-  case '2s':
-    return 'du';
-  case '3s':
-    return 'er / sie';
-  case '1p':
-    return 'wir';
-  case '2p':
-    return 'ihr';
-  case '3p':
-    return 'sie';
-  }
-};
+);
 
 const conjugatePresent = (verb: ConjugationDetails, person: Person): string => {
-  const explicitConjugation = verb.present && verb.present[person];
-  if (explicitConjugation) {
-    return explicitConjugation;
-  } else {
-    return autoConjugatePresent(verb, person);
-  }
-};
-
-const autoConjugatePresent = (verb: ConjugationDetails, person: Person): string => {
   const { prefix, stem } = parseVerb(verb, person);
   const suffix = getSuffix(stem, person);
   const appendedPrefix = getAppendedPrefix(prefix);

@@ -1,49 +1,24 @@
+import { buildConjugator } from '../buildConjugator';
 import { PresentForm, VerbFa } from '../fa/model/verb';
-import { Person, VerbForm } from '../model/verbForm';
+import { VerbStructure } from '../fa/model/verbStructure';
+import { Person } from '../model/verbForm';
 import { endsWithAny } from '../util';
-import { VerbStructure } from './model/verbStructure';
 
-export const conjugateFaRm = (verb: VerbFa, form: VerbForm): string => {
-  if (form === 'infinitive') {
-    return verb.infinitive.replace(/\|/g, '');
+export const conjugateFaRm = buildConjugator<VerbFa>(
+  {
+    '1s': 'man',
+    '2s': 'to',
+    '3s': 'u',
+    '1p': 'mâ',
+    '2p': 'shomâ',
+    '3p': 'ânhâ',
+  },
+  {
+    present: (verb, person) => conjugatePresent(verb, person),
   }
-
-  const { person, tense } = form;
-  const pronoun = getPronoun(person);
-
-  switch (tense) {
-  case 'present':
-    return `${pronoun} ${conjugatePresent(verb, person)}`;
-  }
-};
-
-const getPronoun = (person: Person): string => {
-  switch (person) {
-  case '1s':
-    return 'man';
-  case '2s':
-    return 'to';
-  case '3s':
-    return 'u';
-  case '1p':
-    return 'mâ';
-  case '2p':
-    return 'shomâ';
-  case '3p':
-    return 'ânhâ';
-  }
-};
+);
 
 const conjugatePresent = (verb: VerbFa, person: Person): string => {
-  const explicitConjugation = verb.present && verb.present[person];
-  if (explicitConjugation) {
-    return explicitConjugation;
-  } else {
-    return autoConjugatePresent(verb, person);
-  }
-};
-
-const autoConjugatePresent = (verb: VerbFa, person: Person): string => {
   const { preposition, prefix, stem } = parsePresentStem(verb.presentStem);
   const tensePrefix = getTensePrefix(verb.presentForm);
   const suffix = getSuffix(stem, person);

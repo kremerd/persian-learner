@@ -1,6 +1,7 @@
+import { ConjugationDetails } from '../model/conjugationDetails';
 import { Person } from '../model/verbForm';
 import { conjugateEn } from './conjugation';
-import { ConjugationDetails, VerbEn } from './model/verb';
+import { VerbEn } from './model/verb';
 
 describe('English conjugation', () => {
   describe('infinitives', () => {

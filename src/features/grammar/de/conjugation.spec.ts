@@ -1,6 +1,7 @@
+import { ConjugationDetails } from '../model/conjugationDetails';
 import { Person } from '../model/verbForm';
 import { conjugateDe } from './conjugation';
-import { ConjugationDetails, VerbDe } from './model/verb';
+import { VerbDe } from './model/verb';
 
 describe('German conjugation', () => {
   describe('infinitives', () => {

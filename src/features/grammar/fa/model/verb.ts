@@ -1,10 +1,8 @@
-import { ConjugationTable } from '../../model/conjugationTable';
+import { ConjugationDetails } from '../../model/conjugationDetails';
 
-export interface VerbFa {
-  infinitive: string;
+export interface VerbFa extends ConjugationDetails {
   presentForm?: PresentForm;
   presentStem: string;
-  present?: Partial<ConjugationTable>;
 }
 
 export type PresentForm =

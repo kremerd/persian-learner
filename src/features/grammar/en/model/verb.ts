@@ -1,8 +1,3 @@
-import { ConjugationTable } from '../../model/conjugationTable';
+import { ConjugationDetails } from '../../model/conjugationDetails';
 
 export type VerbEn = string | ConjugationDetails;
-
-export interface ConjugationDetails {
-  infinitive: string;
-  present?: Partial<ConjugationTable>;
-}
