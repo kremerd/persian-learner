@@ -1,5 +1,4 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { conjugateDe } from '../../grammar/de/conjugation';
 import { Word } from '../../lexicon/model/word';
 import { selectWords } from '../../lexicon/selectors';
 import { normalizeDe, normalizeEn, normalizeFa, normalizeFaRm } from '../../lexicon/util';
@@ -22,7 +21,13 @@ export const selectDictionary = createSelector([selectFilter, selectWords, selec
 
 const wordMatchesFilter = (word: Word, { searchTerm }: Partial<DictionaryFilter>): boolean =>
   searchTerm === undefined ||
-  [word.type === 'verb' ? conjugateDe(word.de, 'infinitive') : word.de, word.en, word.fa, removeDiacritics(word.fa), word.faRm]
+  [
+    normalizeDe(word),
+    normalizeEn(word),
+    normalizeFa(word),
+    removeDiacritics(normalizeFa(word)),
+    normalizeFaRm(word)
+  ]
     .some(term => term.toLowerCase().includes(searchTerm.toLowerCase().trim()));
 
 const removeDiacritics = (text: string): string =>

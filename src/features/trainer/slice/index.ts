@@ -1,5 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { conjugateDe } from '../../grammar/de/conjugation';
+import { conjugateEn } from '../../grammar/en/conjugation';
+import { conjugateFa } from '../../grammar/fa/conjugation';
+import { conjugateFaRm } from '../../grammar/faRm/conjugation';
 import { Person } from '../../grammar/model/verbForm';
 import { Verb, Word } from '../../lexicon/model/word';
 import { selectWords } from '../../lexicon/selectors';
@@ -122,9 +125,9 @@ const buildConjugationTrainingUnit = (word: Verb): UnscoredTrainingUnit => {
     id: word.id,
     trainer: 'faConj',
     de: conjugateDe(word.de, { person, tense: 'present' }),
-    en: normalizeEn(word),
-    fa: normalizeFa(word),
-    faRm: normalizeFaRm(word),
+    en: conjugateEn(word.en, { person, tense: 'present' }),
+    fa: conjugateFa(word.fa, { person, tense: 'present' }),
+    faRm: conjugateFaRm(word.faRm, { person, tense: 'present' }),
   };
 };
 

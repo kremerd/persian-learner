@@ -1,4 +1,6 @@
 import { VerbDe } from '../../grammar/de/model/verb';
+import { VerbEn } from '../../grammar/en/model/verb';
+import { VerbFa } from '../../grammar/fa/model/verb';
 
 export type Word =
   Verb |
@@ -8,9 +10,9 @@ export interface Verb {
   type: 'verb';
   id: number;
   de: VerbDe;
-  en: string;
-  fa: string;
-  faRm: string;
+  en: VerbEn;
+  fa: VerbFa;
+  faRm: VerbFa;
 }
 
 export interface GenericWord {

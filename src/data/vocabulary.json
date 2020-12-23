@@ -1026,8 +1026,14 @@
     "type": "verb",
     "de": "verstehen",
     "en": "realize",
-    "fa": "فَهمیدَن",
-    "faRm": "fahmidan"
+    "fa": {
+      "infinitive": "فَهمیدَن",
+      "presentStem": "فَهم"
+    },
+    "faRm": {
+      "infinitive": "fahmidan",
+      "presentStem": "fahm"
+    }
   },
   {
     "id": 120,
