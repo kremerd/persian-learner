@@ -135,11 +135,11 @@
   },
   {
     "id": 14,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "er / sie hat nicht",
     "en": "he / she doesn't have",
-    "fa": "نَدارَد",
-    "faRm": "nadârad"
+    "fa": "او نَدارَد",
+    "faRm": "u nadârad"
   },
   {
     "id": 15,
@@ -166,14 +166,6 @@
     "faRm": "ârd"
   },
   {
-    "id": 18,
-    "type": "unclassified",
-    "de": "er / sie hat",
-    "en": "he / she has",
-    "fa": "دارَد",
-    "faRm": "dârad"
-  },
-  {
     "id": 19,
     "type": "noun",
     "de": "Name",
@@ -182,28 +174,20 @@
     "faRm": "nâm"
   },
   {
-    "id": 20,
-    "type": "unclassified",
-    "de": "ich habe",
-    "en": "I have",
-    "fa": "دارَم",
-    "faRm": "dâram"
-  },
-  {
     "id": 21,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "ich kam",
     "en": "I came",
-    "fa": "آمَدَم",
-    "faRm": "âmadam"
+    "fa": "مَن آمَدَم",
+    "faRm": "man âmadam"
   },
   {
     "id": 22,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "er / sie kam",
     "en": "he / she came",
-    "fa": "آمَد",
-    "faRm": "âmad"
+    "fa": "او آمَد",
+    "faRm": "u âmad"
   },
   {
     "id": 23,
@@ -316,14 +300,6 @@
     "en": "ax",
     "fa": "تَبَر",
     "faRm": "tabar"
-  },
-  {
-    "id": 37,
-    "type": "unclassified",
-    "de": "er / sie ist",
-    "en": "he / she is",
-    "fa": "اَست",
-    "faRm": "ast"
   },
   {
     "id": 38,
@@ -510,38 +486,6 @@
     "faRm": "sabzi"
   },
   {
-    "id": 61,
-    "type": "unclassified",
-    "de": "du hast",
-    "en": "you have",
-    "fa": "داری",
-    "faRm": "dâri"
-  },
-  {
-    "id": 62,
-    "type": "unclassified",
-    "de": "wir haben",
-    "en": "we have",
-    "fa": "داریم",
-    "faRm": "dârim"
-  },
-  {
-    "id": 63,
-    "type": "unclassified",
-    "de": "ihr habt",
-    "en": "you have",
-    "fa": "دارید",
-    "faRm": "dârid"
-  },
-  {
-    "id": 64,
-    "type": "unclassified",
-    "de": "sie haben",
-    "en": "they have",
-    "fa": "دارَند",
-    "faRm": "dârand"
-  },
-  {
     "id": 65,
     "type": "adjective",
     "de": "weit",
@@ -591,11 +535,26 @@
   },
   {
     "id": 71,
-    "type": "unclassified",
-    "de": "du magst",
-    "en": "you like",
-    "fa": "دوست داری",
-    "faRm": "dust dâri"
+    "type": "verb",
+    "de": {
+      "infinitive": "mögen",
+      "present": {
+        "1s": "mag",
+        "2s": "magst",
+        "3s": "mag"
+      }
+    },
+    "en": "like",
+    "fa": {
+      "infinitive": "دوست داشتَن",
+      "presentForm": "simple",
+      "presentStem": "دوست دار"
+    },
+    "faRm": {
+      "infinitive": "dust dâshtan",
+      "presentForm": "simple",
+      "presentStem": "dust dâr"
+    }
   },
   {
     "id": 72,
@@ -874,68 +833,28 @@
     "faRm": "khaste"
   },
   {
-    "id": 103,
-    "type": "unclassified",
-    "de": "ich bin",
-    "en": "I am",
-    "fa": "هَستَم",
-    "faRm": "hastam"
-  },
-  {
-    "id": 104,
-    "type": "unclassified",
-    "de": "du bist",
-    "en": "you are",
-    "fa": "هَستی",
-    "faRm": "hasti"
-  },
-  {
-    "id": 105,
-    "type": "unclassified",
-    "de": "wir sind",
-    "en": "we are",
-    "fa": "هَستیم",
-    "faRm": "hastim"
-  },
-  {
-    "id": 106,
-    "type": "unclassified",
-    "de": "ihr seid",
-    "en": "you are",
-    "fa": "هَستید",
-    "faRm": "hastid"
-  },
-  {
-    "id": 107,
-    "type": "unclassified",
-    "de": "sie sind",
-    "en": "they are",
-    "fa": "هَستَند",
-    "faRm": "hastand"
-  },
-  {
     "id": 108,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "ich bin nicht",
     "en": "I am not",
-    "fa": "نیستَم",
-    "faRm": "nistam"
+    "fa": "مَن نیستَم",
+    "faRm": "man nistam"
   },
   {
     "id": 109,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "du bist nicht",
     "en": "you are not",
-    "fa": "نیستی",
-    "faRm": "nisti"
+    "fa": "تو نیستی",
+    "faRm": "to nisti"
   },
   {
     "id": 110,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "er / sie ist nicht",
     "en": "he / she is not",
-    "fa": "نیست",
-    "faRm": "nist"
+    "fa": "او نیست",
+    "faRm": "u nist"
   },
   {
     "id": 111,
@@ -1379,7 +1298,7 @@
   },
   {
     "id": 154,
-    "type": "unclassified",
+    "type": "phrase",
     "de": "herzlich willkommen",
     "en": "welcome",
     "fa": "خوش آمَدی",
@@ -1446,8 +1365,14 @@
     "type": "verb",
     "de": "antworten",
     "en": "answer",
-    "fa": "جَواب دادَن",
-    "faRm": "javâb dâdan"
+    "fa": {
+      "infinitive": "جَواب دادَن",
+      "presentStem": "جَواب دِه"
+    },
+    "faRm": {
+      "infinitive": "javâb dâdan",
+      "presentStem": "javâb deh"
+    }
   },
   {
     "id": 163,
@@ -1660,10 +1585,16 @@
   {
     "id": 189,
     "type": "verb",
-    "de": "einfügen",
+    "de": "ein|fügen",
     "en": "paste",
-    "fa": "چَسباندَن",
-    "faRm": "chasbândan"
+    "fa": {
+      "infinitive": "چَسباندَن",
+      "presentStem": "چَسبان"
+    },
+    "faRm": {
+      "infinitive": "chasbândan",
+      "presentStem": "chasbân"
+    }
   },
   {
     "id": 190,
@@ -1692,10 +1623,16 @@
   {
     "id": 193,
     "type": "verb",
-    "de": "anordnen",
+    "de": "an|ordnen",
     "en": "arrange",
-    "fa": "چیدَن",
-    "faRm": "chidan"
+    "fa": {
+      "infinitive": "چیدَن",
+      "presentStem": "چین"
+    },
+    "faRm": {
+      "infinitive": "chidan",
+      "presentStem": "chin"
+    }
   },
   {
     "id": 194,
@@ -1718,8 +1655,14 @@
     "type": "verb",
     "de": "stellen",
     "en": "put",
-    "fa": "گُذاشتَن",
-    "faRm": "gozâshtan"
+    "fa": {
+      "infinitive": "گُذاشتَن",
+      "presentStem": "گُذار"
+    },
+    "faRm": {
+      "infinitive": "gozâshtan",
+      "presentStem": "gozâr"
+    }
   },
   {
     "id": 197,
@@ -1788,26 +1731,87 @@
   {
     "id": 205,
     "type": "verb",
-    "de": "waschen",
+    "de": {
+      "infinitive": "waschen",
+      "present": {
+        "3s": "wäscht"
+      }
+    },
     "en": "wash",
-    "fa": "شُستَن",
-    "faRm": "shostan"
+    "fa": {
+      "infinitive": "شُستَن",
+      "presentStem": "شو"
+    },
+    "faRm": {
+      "infinitive": "shostan",
+      "presentStem": "shu"
+    }
   },
   {
     "id": 206,
     "type": "verb",
     "de": "sitzen",
     "en": "sit",
-    "fa": "نِشَستَن",
-    "faRm": "neshastan"
+    "fa": {
+      "infinitive": "نِشَستَن",
+      "presentStem": "نِشین"
+    },
+    "faRm": {
+      "infinitive": "neshastan",
+      "presentStem": "neshin"
+    }
   },
   {
     "id": 207,
     "type": "verb",
-    "de": "sein",
-    "en": "be",
-    "fa": "بودَن",
-    "faRm": "budan"
+    "de": {
+      "infinitive": "sein",
+      "present": {
+        "1s": "bin",
+        "2s": "bist",
+        "3s": "ist",
+        "1p": "sind",
+        "2p": "seid",
+        "3p": "sind"
+      }
+    },
+    "en": {
+      "infinitive": "be",
+      "present": {
+        "1s": "am",
+        "2s": "are",
+        "3s": "is",
+        "1p": "are",
+        "2p": "are",
+        "3p": "are"
+      }
+    },
+    "fa": {
+      "infinitive": "بودَن",
+      "presentForm": "simple",
+      "presentStem": "باش",
+      "present": {
+        "1s": "هَستم",
+        "2s": "هَستی",
+        "3s": "اَست",
+        "1p": "هَستیم",
+        "2p": "هَستید",
+        "3p": "هَستَند"
+      }
+    },
+    "faRm": {
+      "infinitive": "budan",
+      "presentForm": "simple",
+      "presentStem": "bâsh",
+      "present": {
+        "1s": "hastam",
+        "2s": "hasti",
+        "3s": "ast",
+        "1p": "hastim",
+        "2p": "hastid",
+        "3p": "hastand"
+      }
+    }
   },
   {
     "id": 208,
@@ -1926,8 +1930,14 @@
     "type": "verb",
     "de": "suchen",
     "en": "search",
-    "fa": "گَشتَن",
-    "faRm": "gashtan"
+    "fa": {
+      "infinitive": "گَشتَن",
+      "presentStem": "گَرد"
+    },
+    "faRm": {
+      "infinitive": "gashtan",
+      "presentStem": "gard"
+    }
   },
   {
     "id": 223,

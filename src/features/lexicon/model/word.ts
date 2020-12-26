@@ -16,7 +16,7 @@ export interface Verb {
 }
 
 export interface GenericWord {
-  type: 'noun' | 'adjective' | 'unclassified';
+  type: 'noun' | 'adjective' | 'phrase' | 'unclassified';
   id: number;
   de: string;
   en: string;
