@@ -13,5 +13,6 @@ export interface UnscoredTrainingUnit {
 
 export type Trainer =
   'de' |
+  'deConj' |
   'fa' |
   'faConj';

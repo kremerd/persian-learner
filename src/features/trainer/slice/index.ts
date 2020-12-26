@@ -102,7 +102,10 @@ const buildTrainingUnits = (word: Word): UnscoredTrainingUnit[] => {
   ];
 
   if (word.type === 'verb') {
-    trainers.push(buildConjugationTrainingUnit(word));
+    trainers.push(
+      buildConjugationTrainingUnit(word, 'deConj'),
+      buildConjugationTrainingUnit(word, 'faConj')
+    );
   }
 
   return trainers;
@@ -119,11 +122,11 @@ const buildNormalTrainingUnit = (word: Word, trainer: Trainer): UnscoredTraining
   };
 };
 
-const buildConjugationTrainingUnit = (word: Verb): UnscoredTrainingUnit => {
+const buildConjugationTrainingUnit = (word: Verb, trainer: Trainer): UnscoredTrainingUnit => {
   const person = pickRandomPerson();
   return {
     id: word.id,
-    trainer: 'faConj',
+    trainer,
     de: conjugateDe(word.de, { person, tense: 'present' }),
     en: conjugateEn(word.en, { person, tense: 'present' }),
     fa: conjugateFa(word.fa, { person, tense: 'present' }),

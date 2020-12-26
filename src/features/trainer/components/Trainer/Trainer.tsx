@@ -29,7 +29,7 @@ export class Trainer extends React.Component<{
 
   renderBody(): JSX.Element {
     const { unit, fail, pass } = this.props;
-    if (unit?.trainer === 'de') {
+    if (unit?.trainer === 'de' || unit?.trainer === 'deConj') {
       return <GermanTrainer
         unit={unit}
         pass={pass}
