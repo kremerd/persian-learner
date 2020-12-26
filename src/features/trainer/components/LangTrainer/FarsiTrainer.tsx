@@ -11,7 +11,7 @@ export class FarsiTrainer extends BaseTrainer {
         <div>
           Deutsch
         </div>
-        <div className="form-control-plaintext font-weight-bold">
+        <div className="form-control-plaintext fw-bold">
           {unit.de}
         </div>
         <div className="form-text">

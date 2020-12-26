@@ -398,14 +398,6 @@
     "faRm": "kârmand"
   },
   {
-    "id": 46,
-    "type": "noun",
-    "de": "Markt",
-    "en": "market",
-    "fa": "بازار",
-    "faRm": "bâzâr"
-  },
-  {
     "id": 47,
     "type": "adjective",
     "de": "offen",
@@ -1400,5 +1392,557 @@
     "en": "root",
     "fa": "ریشِه",
     "faRm": "rishe"
+  },
+  {
+    "id": 156,
+    "type": "noun",
+    "de": "Socken",
+    "en": "socks",
+    "fa": "جوراب",
+    "faRm": "jurâb"
+  },
+  {
+    "id": 157,
+    "type": "noun",
+    "de": "Feier",
+    "en": "celebration",
+    "fa": "جَشن",
+    "faRm": "jashn"
+  },
+  {
+    "id": 158,
+    "type": "noun",
+    "de": "Huhn",
+    "en": "chicken",
+    "fa": "جوجِه",
+    "faRm": "juje"
+  },
+  {
+    "id": 159,
+    "type": "noun",
+    "de": "Krone",
+    "en": "crown",
+    "fa": "تاج",
+    "faRm": "tâj"
+  },
+  {
+    "id": 160,
+    "type": "noun",
+    "de": "Magier",
+    "en": "magician",
+    "fa": "جادوگَر",
+    "faRm": "jâdugar"
+  },
+  {
+    "id": 161,
+    "type": "noun",
+    "de": "Antwort",
+    "en": "answer",
+    "fa": "جَواب",
+    "faRm": "javâb"
+  },
+  {
+    "id": 162,
+    "type": "verb",
+    "de": "antworten",
+    "en": "answer",
+    "fa": "جَواب دادَن",
+    "faRm": "javâb dâdan"
+  },
+  {
+    "id": 163,
+    "type": "noun",
+    "de": "Stadt",
+    "en": "city",
+    "fa": "شَهر",
+    "faRm": "shahr"
+  },
+  {
+    "id": 164,
+    "type": "unclassified",
+    "de": "große Stadt",
+    "en": "big city",
+    "fa": "شَهرِ بُزُرگ",
+    "faRm": "shahre bozorg"
+  },
+  {
+    "id": 165,
+    "type": "noun",
+    "de": "Junge",
+    "en": "boy",
+    "fa": "پِسَر",
+    "faRm": "pesar"
+  },
+  {
+    "id": 166,
+    "type": "adjective",
+    "de": "gut",
+    "en": "good",
+    "fa": "خوب",
+    "faRm": "khub"
+  },
+  {
+    "id": 167,
+    "type": "unclassified",
+    "de": "gute Jungs",
+    "en": "good boys",
+    "fa": "پِسَرهایِ خوب",
+    "faRm": "pesarhâye khub"
+  },
+  {
+    "id": 168,
+    "type": "noun",
+    "de": "Mädchen",
+    "en": "girl",
+    "fa": "دُختَر",
+    "faRm": "dokhtar"
+  },
+  {
+    "id": 169,
+    "type": "adjective",
+    "de": "wunderschön",
+    "en": "beautiful",
+    "fa": "زیبا",
+    "faRm": "zibâ"
+  },
+  {
+    "id": 170,
+    "type": "unclassified",
+    "de": "schönes Mädchen",
+    "en": "beautiful girl",
+    "fa": "دُختَرِ زیبا",
+    "faRm": "dokhtare zibâ"
+  },
+  {
+    "id": 171,
+    "type": "noun",
+    "de": "Wand",
+    "en": "wall",
+    "fa": "دیوار",
+    "faRm": "divâr"
+  },
+  {
+    "id": 172,
+    "type": "adjective",
+    "de": "hoch",
+    "en": "high",
+    "fa": "بُلَند",
+    "faRm": "boland"
+  },
+  {
+    "id": 173,
+    "type": "unclassified",
+    "de": "hohe Mauer",
+    "en": "high wall",
+    "fa": "دیوارِ بُلَند",
+    "faRm": "divâre boland"
+  },
+  {
+    "id": 174,
+    "type": "noun",
+    "de": "Bleistift",
+    "en": "pencil",
+    "fa": "مِداد",
+    "faRm": "medâd"
+  },
+  {
+    "id": 175,
+    "type": "unclassified",
+    "de": "dein Bleistift",
+    "en": "your pencil",
+    "fa": "مِدادِ تو",
+    "faRm": "medâde to"
+  },
+  {
+    "id": 176,
+    "type": "unclassified",
+    "de": "mein Buch",
+    "en": "my book",
+    "fa": "کِتابِ مَن",
+    "faRm": "ketâbe man"
+  },
+  {
+    "id": 177,
+    "type": "unclassified",
+    "de": "unser Zuhause",
+    "en": "our home",
+    "fa": "خانِه‌یِ ما",
+    "faRm": "khâneye mâ"
+  },
+  {
+    "id": 178,
+    "type": "unclassified",
+    "de": "deine Schule",
+    "en": "your school",
+    "fa": "مَدرِسِه‌یِ تو",
+    "faRm": "madreseye to"
+  },
+  {
+    "id": 179,
+    "type": "noun",
+    "de": "Kleid",
+    "en": "dress",
+    "fa": "لِباس",
+    "faRm": "lebâs"
+  },
+  {
+    "id": 180,
+    "type": "noun",
+    "de": "Blumentopf",
+    "en": "pot",
+    "fa": "گُلدان",
+    "faRm": "goldân"
+  },
+  {
+    "id": 181,
+    "type": "noun",
+    "de": "Blume",
+    "en": "flower",
+    "fa": "گُل",
+    "faRm": "gol"
+  },
+  {
+    "id": 182,
+    "type": "noun",
+    "de": "Lippe",
+    "en": "lip",
+    "fa": "لَب",
+    "faRm": "lab"
+  },
+  {
+    "id": 183,
+    "type": "noun",
+    "de": "Storch",
+    "en": "stork",
+    "fa": "لَک لَک",
+    "faRm": "laklak"
+  },
+  {
+    "id": 184,
+    "type": "noun",
+    "de": "Klasse",
+    "en": "class",
+    "fa": "کِلاس",
+    "faRm": "kelâs"
+  },
+  {
+    "id": 185,
+    "type": "noun",
+    "de": "Nase",
+    "en": "nose",
+    "fa": "بینی",
+    "faRm": "bini"
+  },
+  {
+    "id": 186,
+    "type": "unclassified",
+    "de": "danke",
+    "en": "thanks",
+    "fa": "مِرسی",
+    "faRm": "mersi"
+  },
+  {
+    "id": 187,
+    "type": "unclassified",
+    "de": "gute Nacht",
+    "en": "good night",
+    "fa": "شَبِ بَخیر",
+    "faRm": "shabe bakhir"
+  },
+  {
+    "id": 188,
+    "type": "noun",
+    "de": "Markt",
+    "en": "market",
+    "fa": "بازار",
+    "faRm": "bâzâr"
+  },
+  {
+    "id": 189,
+    "type": "verb",
+    "de": "einfügen",
+    "en": "paste",
+    "fa": "چَسباندَن",
+    "faRm": "chasbândan"
+  },
+  {
+    "id": 190,
+    "type": "noun",
+    "de": "Fahrrad",
+    "en": "bike",
+    "fa": "دوچَرخِه",
+    "faRm": "docharkhe"
+  },
+  {
+    "id": 191,
+    "type": "noun",
+    "de": "Auge",
+    "en": "eye",
+    "fa": "چَشم",
+    "faRm": "chashm"
+  },
+  {
+    "id": 192,
+    "type": "adjective",
+    "de": "links",
+    "en": "left",
+    "fa": "چَپ",
+    "faRm": "chap"
+  },
+  {
+    "id": 193,
+    "type": "verb",
+    "de": "anordnen",
+    "en": "arrange",
+    "fa": "چیدَن",
+    "faRm": "chidan"
+  },
+  {
+    "id": 194,
+    "type": "adjective",
+    "de": "fettig",
+    "en": "fatty",
+    "fa": "چَرب",
+    "faRm": "charb"
+  },
+  {
+    "id": 195,
+    "type": "adjective",
+    "de": "schwarz",
+    "en": "black",
+    "fa": "سیاه",
+    "faRm": "siyâh"
+  },
+  {
+    "id": 196,
+    "type": "verb",
+    "de": "stellen",
+    "en": "put",
+    "fa": "گُذاشتَن",
+    "faRm": "gozâshtan"
+  },
+  {
+    "id": 197,
+    "type": "noun",
+    "de": "Verstand",
+    "en": "mind",
+    "fa": "ذِهن",
+    "faRm": "zehn"
+  },
+  {
+    "id": 198,
+    "type": "noun",
+    "de": "Gravitation",
+    "en": "gravity",
+    "fa": "جاذِبِه",
+    "faRm": "jâzebe"
+  },
+  {
+    "id": 199,
+    "type": "adjective",
+    "de": "attraktiv",
+    "en": "attractive",
+    "fa": "جَذّاب",
+    "faRm": "jazâb"
+  },
+  {
+    "id": 200,
+    "type": "noun",
+    "de": "Absorption",
+    "en": "absorption",
+    "fa": "جَذب",
+    "faRm": "jazb"
+  },
+  {
+    "id": 201,
+    "type": "noun",
+    "de": "Instinkt",
+    "en": "instinct",
+    "fa": "ذات",
+    "faRm": "zât"
+  },
+  {
+    "id": 202,
+    "type": "noun",
+    "de": "Belästigung",
+    "en": "harassment",
+    "fa": "اَذیَّت",
+    "faRm": "aziyat"
+  },
+  {
+    "id": 203,
+    "type": "noun",
+    "de": "Erde",
+    "en": "earth",
+    "fa": "زَمین",
+    "faRm": "zamin"
+  },
+  {
+    "id": 204,
+    "type": "noun",
+    "de": "Vergangenheitsstamm",
+    "en": "past stem",
+    "fa": "سِتاکِ گُذَشتِه",
+    "faRm": "setâke gozashte"
+  },
+  {
+    "id": 205,
+    "type": "verb",
+    "de": "waschen",
+    "en": "wash",
+    "fa": "شُستَن",
+    "faRm": "shostan"
+  },
+  {
+    "id": 206,
+    "type": "verb",
+    "de": "sitzen",
+    "en": "sit",
+    "fa": "نِشَستَن",
+    "faRm": "neshastan"
+  },
+  {
+    "id": 207,
+    "type": "verb",
+    "de": "sein",
+    "en": "be",
+    "fa": "بودَن",
+    "faRm": "budan"
+  },
+  {
+    "id": 208,
+    "type": "noun",
+    "de": "Schlag",
+    "en": "strike",
+    "fa": "اِصابَت",
+    "faRm": "esâbat"
+  },
+  {
+    "id": 209,
+    "type": "noun",
+    "de": "Stuhl",
+    "en": "chair",
+    "fa": "صَندَلی",
+    "faRm": "sandali"
+  },
+  {
+    "id": 210,
+    "type": "noun",
+    "de": "Geduld",
+    "en": "patience",
+    "fa": "صَبر",
+    "faRm": "sabr"
+  },
+  {
+    "id": 211,
+    "type": "unclassified",
+    "de": "hundert",
+    "en": "hundred",
+    "fa": "صَد",
+    "faRm": "sad"
+  },
+  {
+    "id": 212,
+    "type": "noun",
+    "de": "Seife",
+    "en": "soap",
+    "fa": "صابون",
+    "faRm": "sâbun"
+  },
+  {
+    "id": 213,
+    "type": "adjective",
+    "de": "besonders",
+    "en": "special",
+    "fa": "مَخصوص",
+    "faRm": "makhsus"
+  },
+  {
+    "id": 214,
+    "type": "noun",
+    "de": "selbst",
+    "en": "self",
+    "fa": "خود",
+    "faRm": "khod"
+  },
+  {
+    "id": 215,
+    "type": "noun",
+    "de": "Geschenk",
+    "en": "present",
+    "fa": "حاضِر",
+    "faRm": "hâzer"
+  },
+  {
+    "id": 216,
+    "type": "noun",
+    "de": "Kopftuch",
+    "en": "veil",
+    "fa": "حِجاب",
+    "faRm": "hejâb"
+  },
+  {
+    "id": 217,
+    "type": "noun",
+    "de": "Wunsch",
+    "en": "wish",
+    "fa": "حاجَت",
+    "faRm": "hâjat"
+  },
+  {
+    "id": 218,
+    "type": "noun",
+    "de": "Blase",
+    "en": "bubble",
+    "fa": "حُباب",
+    "faRm": "hobâb"
+  },
+  {
+    "id": 219,
+    "type": "noun",
+    "de": "morgen",
+    "en": "morning",
+    "fa": "صُبح",
+    "faRm": "sobh"
+  },
+  {
+    "id": 220,
+    "type": "noun",
+    "de": "Frühstück",
+    "en": "breakfast",
+    "fa": "صُبحانِه",
+    "faRm": "sobhâne"
+  },
+  {
+    "id": 221,
+    "type": "noun",
+    "de": "Handtuch",
+    "en": "towel",
+    "fa": "حولِه",
+    "faRm": "hole"
+  },
+  {
+    "id": 222,
+    "type": "verb",
+    "de": "suchen",
+    "en": "search",
+    "fa": "گَشتَن",
+    "faRm": "gashtan"
+  },
+  {
+    "id": 223,
+    "type": "noun",
+    "de": "gekochter Reis",
+    "en": "steamed rice",
+    "fa": "پُلو",
+    "faRm": "polo"
+  },
+  {
+    "id": 224,
+    "type": "noun",
+    "de": "Kräutertee",
+    "en": "herbal tea",
+    "fa": "دَمنوش",
+    "faRm": "damnush"
   }
 ]
