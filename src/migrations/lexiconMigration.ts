@@ -1,3 +1,4 @@
+import { PersistedState } from 'redux-persist';
 import vocabulary from '../data/vocabulary.json';
 import { Word } from '../features/lexicon/model/word';
 import { ProgressAggregate } from '../features/trainer/model/trainingProgress';
@@ -10,7 +11,12 @@ interface LexiconMigration {
   deleted: Word[];
 }
 
-const lexiconMigration = (state: State): State => {
+export default (state: PersistedState): PersistedState => {
+  const _state = state as unknown as State;
+  return migrateLexicon(_state) as unknown as PersistedState;
+};
+
+const migrateLexicon = (state: State): State => {
   const migration = buildMigration(state.lexicon.words);
 
   return {
@@ -67,5 +73,3 @@ const migrateProgress = (persisted: Record<number, ProgressAggregate>, migration
   migration.deleted.forEach(w => delete result[w.id]);
   return result;
 };
-
-export default lexiconMigration;
