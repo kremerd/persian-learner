@@ -129,6 +129,15 @@ describe('German conjugation', () => {
       expect(conjugatePresent('tun', '2p')).toEqual('ihr tut');
       expect(conjugatePresent('tun', '3p')).toEqual('sie tun');
     });
+
+    it('should conjugate the regular spielen', () => {
+      expect(conjugatePresent('spielen', '1s')).toEqual('ich spiele');
+      expect(conjugatePresent('spielen', '2s')).toEqual('du spielst');
+      expect(conjugatePresent('spielen', '3s')).toEqual('er / sie spielt');
+      expect(conjugatePresent('spielen', '1p')).toEqual('wir spielen');
+      expect(conjugatePresent('spielen', '2p')).toEqual('ihr spielt');
+      expect(conjugatePresent('spielen', '3p')).toEqual('sie spielen');
+    });
   });
 
   describe('present conjugation of split verbs', () => {

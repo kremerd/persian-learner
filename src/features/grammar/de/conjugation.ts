@@ -20,11 +20,11 @@ export const conjugateDe = buildConjugator<ConjugationDetails>(
 );
 
 const conjugatePresent = (verb: ConjugationDetails, person: Person): string => {
-  const { prefix, stem } = parseVerb(verb, person);
+  const { hasDeepEOmitOn1s, prefix, stem } = parseVerb(verb, person);
   const suffix = getSuffix(stem, person);
   const appendedPrefix = getAppendedPrefix(prefix);
 
-  if (endsWithAny(stem, 'el') && person === '1s') {
+  if (hasDeepEOmitOn1s && person === '1s') {
     return stem.slice(0, -2) + stem.slice(-1) + suffix + appendedPrefix;
   } else {
     return stem + suffix + appendedPrefix;
@@ -59,6 +59,7 @@ const parseInfinitive = (infinitive: string): VerbStructure => {
   const match = infinitive.match(regex);
   if (match !== null) {
     return {
+      hasDeepEOmitOn1s: match.groups?.elnStem !== undefined,
       prefix: match.groups?.prefix,
       stem: match.groups?.enStem ?? match.groups?.elnStem ?? match.groups?.unStem ?? '',
     };
@@ -74,7 +75,8 @@ const getSuffix = (stem: string, person: Person): string => {
       endsWithAny(stem, 'm', 'n') &&
       !endsWithAny(stem, 'mm', 'nn', 'rm', 'rn', 'lm', 'ln')
     );
-  const omitEExtension = endsWithAny(stem, 'el', 'u');
+  const omitEExtension = endsWithAny(stem, 'el', 'u') &&
+    !endsWithAny(stem, 'iel');
   const omitS = endsWithAny(stem, 's', 'ss', 'ß', 'z', 'tz', 'x', 'chs');
 
   switch (person) {
