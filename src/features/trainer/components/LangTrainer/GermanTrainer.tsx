@@ -1,11 +1,11 @@
 import React from 'react';
-import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { SolutionInputConfig } from '../../model/baseTrainerConfig';
+import { TrainingUnit } from '../../model/trainingUnit';
 import { ToggleText } from '../ToggleText/ToggleText';
 import { BaseTrainer } from './BaseTrainer';
 
 export class GermanTrainer extends BaseTrainer {
-  renderTask(unit: LearningUnit): JSX.Element {
+  renderTask(unit: TrainingUnit): JSX.Element {
     return (
       <div className="mb-3">
         <div>
@@ -21,7 +21,7 @@ export class GermanTrainer extends BaseTrainer {
     );
   }
 
-  renderSolution(unit: LearningUnit, content: JSX.Element): JSX.Element {
+  renderSolution(unit: TrainingUnit, content: JSX.Element): JSX.Element {
     return (
       <div className="mb-3">
         <div>

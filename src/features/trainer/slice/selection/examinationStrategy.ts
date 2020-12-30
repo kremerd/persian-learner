@@ -1,9 +1,9 @@
 import { getDifferenceFromNowInSeconds } from '../../../../util/time';
-import { LangProgress } from '../../model/trainingProgress';
+import { TrainingProgress } from '../../model/trainingProgress';
 import configuration from './examinationStrategy.config';
 import SelectionStrategy from './selectionStrategy';
 
-const getPriority: SelectionStrategy = ({ score, lastTried }: LangProgress): number => {
+const getPriority: SelectionStrategy = ({ score, lastTried }: TrainingProgress): number => {
   const gap = getDifferenceFromNowInSeconds(lastTried);
 
   if (score === configuration.score && gap > configuration.minGap) {

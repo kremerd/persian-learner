@@ -1,12 +1,18 @@
-export interface TrainingUnitWithPriority extends TrainingUnit {
-  priority: number;
+export interface TrainingUnit extends UnscoredTrainingUnit {
+  score: number;
 }
 
-export interface TrainingUnit {
+export interface UnscoredTrainingUnit {
   id: number;
-  lang: TrainingUnitLang;
+  trainer: Trainer;
+  de: string;
+  en: string;
+  fa: string;
+  faRm: string;
 }
 
-export type TrainingUnitLang =
+export type Trainer =
   'de' |
-  'fa';
+  'deConj' |
+  'fa' |
+  'faConj';

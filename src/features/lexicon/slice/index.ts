@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import vocabulary from '../../../data/vocabulary.json';
-import { LearningUnit } from '../model/learningUnit';
+import { Word } from '../model/word';
 
 export interface State {
-  units: Record<number, LearningUnit>;
+  words: Record<number, Word>;
 }
 
 const initialState: State = {
-  units: Object.fromEntries(
-    (vocabulary as LearningUnit[]).map(v => [v.id, v])
+  words: Object.fromEntries(
+    (vocabulary as Word[]).map(w => [w.id, w])
   )
 };
 

@@ -29,9 +29,4 @@ export class Dictionary extends React.Component<{
       </div>
     );
   }
-
-  private updateSearchTerm(): void {
-    const searchTerm = this.searchRef.current?.value ?? null;
-    this.props.search(searchTerm);
-  }
 }

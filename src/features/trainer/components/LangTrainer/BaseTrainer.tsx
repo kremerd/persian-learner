@@ -1,13 +1,11 @@
 import React from 'react';
-import { LearningUnit } from '../../../lexicon/model/learningUnit';
 import { SolutionInputConfig } from '../../model/baseTrainerConfig';
 import { TestStage } from '../../model/testStage';
-import { LangProgress } from '../../model/trainingProgress';
+import { TrainingUnit } from '../../model/trainingUnit';
 import { ScoreBadge } from '../ScoreBadge/ScoreBadge';
 
 export abstract class BaseTrainer extends React.Component<{
-  progress: LangProgress;
-  unit: LearningUnit;
+  unit: TrainingUnit;
   fail: () => void;
   next: () => void;
   pass: () => void;
@@ -45,11 +43,11 @@ export abstract class BaseTrainer extends React.Component<{
     );
   }
 
-  protected abstract renderTask(unit: LearningUnit): JSX.Element;
-  protected abstract renderSolution(unit: LearningUnit, content: JSX.Element): JSX.Element;
+  protected abstract renderTask(unit: TrainingUnit): JSX.Element;
+  protected abstract renderSolution(unit: TrainingUnit, content: JSX.Element): JSX.Element;
 
   private renderSolutionContent(): JSX.Element {
-    const { progress } = this.props;
+    const { unit } = this.props;
     return (
       <React.Fragment>
         {this.isWrongSolution() && (
@@ -62,7 +60,7 @@ export abstract class BaseTrainer extends React.Component<{
         )}
         <span className={this.isCountingAsSuccess() || this.isWrongSolution() ? 'text-success' : 'text-warning'}>
           {this.getCorrectSolution()}
-          <ScoreBadge score={progress.score}
+          <ScoreBadge score={unit.score}
             decreased={this.isCountingAsFailure()}
             increased={this.isCountingAsSuccess()}
           ></ScoreBadge>

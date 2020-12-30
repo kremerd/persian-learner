@@ -1,5 +1,5 @@
-import { LangProgress } from '../../model/trainingProgress';
+import { TrainingProgress } from '../../model/trainingProgress';
 
-type SelectionStrategy = (progress: LangProgress) => number;
+type SelectionStrategy = (progress: TrainingProgress) => number;
 
 export default SelectionStrategy;

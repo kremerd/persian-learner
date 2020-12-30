@@ -4,10 +4,10 @@ import { State } from '../slice';
 const selectSlice = (state: any): State => state.lexicon;
 export default selectSlice;
 
-export const selectLearningUnitRecord = createSelector([selectSlice],
-  ({ units }) => units
+export const selectWordRecord = createSelector([selectSlice],
+  ({ words }) => words
 );
 
-export const selectLearningUnits = createSelector([selectLearningUnitRecord],
-  units => Object.values(units)
+export const selectWords = createSelector([selectWordRecord],
+  words => Object.values(words)
 );

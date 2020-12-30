@@ -6,6 +6,7 @@
   margin: 1.5rem;
 
   .row {
+    align-items: center;
     margin-bottom: 0.5rem;
   }
 
@@ -21,6 +22,38 @@
     @include make-col(12);
     color: var(--c-primary);
     text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .fa-rm {
+    font-style: italic;
+  }
+
+  .fa-main {
+    align-items: baseline;
+
+    p:not(.fa-rm) {
+      font-size: var(--fs-large);
+    }
+  }
+
+  .conj-header {
+    margin: 1.5rem 0 0.5rem 0;
+    text-align: center;
+
+    .key {
+      display: inline;
+      color: inherit;
+      font-weight: bold;
+    }
+
+    .value {
+      display: inline;
+      color: inherit;
+    }
   }
 
   @include media-breakpoint-up(sm) {
@@ -41,17 +74,14 @@
     .score {
       margin-left: 0.5rem;
     }
-  }
 
-  .fa {
-    align-items: baseline;
+    .conj-header {
+      @include make-row();
+      margin: 1.5rem 0 0 0;
 
-    .value {
-      font-size: var(--fs-large);
+      .score {
+        margin-left: 0;
+      }
     }
-  }
-
-  .fa-rm {
-    font-style: italic;
   }
 }

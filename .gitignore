@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# local data files
+src/data/persian-learner-backup*.json
+
 # dependencies
 /node_modules
 /.pnp

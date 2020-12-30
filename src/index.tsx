@@ -22,7 +22,7 @@ const persistedReducer = persistReducer({
   key: 'root',
   migrate,
   storage,
-  version: 1,
+  version: 2,
 }, reducer);
 
 const store = configureStore({

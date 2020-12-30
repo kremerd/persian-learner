@@ -1,6 +1,17 @@
-import { LearningUnit } from '../../lexicon/model/learningUnit';
+import { Word } from '../../lexicon/model/word';
 
-export interface DictionaryEntry extends LearningUnit {
-  scoreDe: number | null;
-  scoreFa: number | null;
+export interface DictionaryEntry {
+  id: number;
+  de: string;
+  fa: string;
+  searchIndex: string[];
+  word: Word;
+  score: DictionaryScore;
+}
+
+export interface DictionaryScore {
+  de?: number;
+  deConj?: number;
+  fa?: number;
+  faConj?: number;
 }
