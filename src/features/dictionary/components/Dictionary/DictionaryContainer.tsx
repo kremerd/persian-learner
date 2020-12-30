@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { selectDictionary, selectFilter } from '../../selectors';
+import { selectFilter, selectFilteredDictionary } from '../../selectors';
 import { searchDictionary } from '../../slice';
 import { Dictionary } from './Dictionary';
 
 const mapStateToProps = (state: any): any => ({
-  entries: selectDictionary(state),
+  entries: selectFilteredDictionary(state),
   filter: selectFilter(state),
 });
 

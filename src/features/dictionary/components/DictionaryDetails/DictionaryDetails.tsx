@@ -1,7 +1,13 @@
 import React from 'react';
-import { WordType } from '../../../lexicon/model/word';
+import { conjugateDe } from '../../../grammar/de/conjugation';
+import { conjugateFa } from '../../../grammar/fa/conjugation';
+import { conjugateFaRm } from '../../../grammar/faRm/conjugation';
+import { SpecificTense } from '../../../grammar/model/verbForm';
+import { Word, WordType } from '../../../lexicon/model/word';
+import { normalizeDe, normalizeEn, normalizeFa, normalizeFaRm } from '../../../lexicon/util';
 import { ScoreBadge } from '../../../trainer/components/ScoreBadge/ScoreBadge';
-import { DictionaryEntry } from '../../model/dictionaryEntry';
+import { DictionaryConjugationDetails } from '../../model/dictionaryConjugationDetails';
+import { DictionaryEntry, DictionaryScore } from '../../model/dictionaryEntry';
 import './DictionaryDetails.scss';
 
 export class DictionaryDetails extends React.Component<{
@@ -11,12 +17,21 @@ export class DictionaryDetails extends React.Component<{
     const { entry } = this.props;
     return (
       <div className="dict-details">
+        {this.renderMasterData(entry.word, entry.score)}
+        {this.renderConjugation(entry.word, entry.score)}
+      </div>
+    );
+  }
+
+  private renderMasterData(word: Word, score: DictionaryScore): JSX.Element {
+    return (
+      <React.Fragment>
         <div className="row">
           <div className="key">
             Wortart
           </div>
           <div className="value">
-            {this.formatType(entry.type)}
+            {this.formatType(word.type)}
           </div>
         </div>
         <div className="row fa-main">
@@ -25,11 +40,11 @@ export class DictionaryDetails extends React.Component<{
           </div>
           <div className="value">
             <p>
-              {entry.fa}
-              {this.renderOptionalBadge(entry.scoreFa)}
+              {normalizeFa(word)}
+              {this.renderOptionalBadge(score.fa)}
             </p>
             <p className="fa-rm">
-              /{entry.faRm}/
+              /{normalizeFaRm(word)}/
             </p>
           </div>
         </div>
@@ -38,8 +53,8 @@ export class DictionaryDetails extends React.Component<{
             Deutsch
           </div>
           <div className="value">
-            {entry.de}
-            {this.renderOptionalBadge(entry.scoreDe)}
+            {normalizeDe(word)}
+            {this.renderOptionalBadge(score.de)}
           </div>
         </div>
         <div className="row">
@@ -47,11 +62,10 @@ export class DictionaryDetails extends React.Component<{
             Englisch
           </div>
           <div className="value">
-            {entry.en}
+            {normalizeEn(word)}
           </div>
         </div>
-        {/* {this.renderConjugation()} */}
-      </div>
+      </React.Fragment>
     );
   }
 
@@ -70,47 +84,12 @@ export class DictionaryDetails extends React.Component<{
     }
   }
 
-  private renderConjugation(): JSX.Element {
-    const conjugation = [
-      {
-        person: '1s',
-        de: 'ich habe',
-        fa: 'مَن دارَم',
-        faRm: 'man dâram',
-      },
-      {
-        person: '2s',
-        de: 'du hast',
-        fa: 'تو داری',
-        faRm: 'to dâri',
-      },
-      {
-        person: '3s',
-        de: 'er / sie hat',
-        fa: 'او دارَد',
-        faRm: 'u dârad',
-      },
-      {
-        person: '1p',
-        de: 'wir haben',
-        fa: 'ما داریم',
-        faRm: 'mâ dârim',
-      },
-      {
-        person: '2p',
-        de: 'ihr habt',
-        fa: 'شُما دارید',
-        faRm: 'shomâ dârid',
-      },
-      {
-        person: '3p',
-        de: 'sie haben',
-        fa: 'آنها دارَند',
-        faRm: 'ânhâ dârand',
-      },
-    ];
-    const scoreFaConj: number | null = 1;
-    const scoreDeConj: number | null = 2;
+  private renderConjugation(word: Word, score: DictionaryScore): JSX.Element | undefined {
+    if (word.type !== 'verb') {
+      return undefined;
+    }
+
+    const conjugationDetails = this.computeConjugationDetails(word);
 
     return (
       <React.Fragment>
@@ -118,44 +97,57 @@ export class DictionaryDetails extends React.Component<{
           <div className="key">
             Konjugation
           </div>
-          {(scoreFaConj || scoreDeConj) && (
+          {(score.faConj || score.deConj) && (
             <div className="value">
-              {scoreFaConj ? this.renderOptionalBadge(scoreFaConj) : ' – '}
+              {score.faConj ? this.renderOptionalBadge(score.faConj) : ' – '}
               /
-              {scoreDeConj ? this.renderOptionalBadge(scoreDeConj) : ' – '}
+              {score.deConj ? this.renderOptionalBadge(score.deConj) : ' – '}
             </div>
           )}
         </div>
-        {
-          conjugation.map(conj => (
-            <div className="row" key={conj.person}>
-              <div className="key">
-                {conj.de}
-              </div>
-              <div className="value">
-                <p>
-                  {conj.fa}
-                </p>
-                <p className="fa-rm">
-                  /{conj.faRm}/
-                </p>
-              </div>
-            </div>
-          ))
-        }
+        {conjugationDetails.map(details => this.renderConjugationDetails(details))}
       </React.Fragment>
     );
   }
 
-  private renderOptionalBadge(score: number | null): JSX.Element | null {
-    if (score === null) {
-      return null;
+  private computeConjugationDetails(word: Word): DictionaryConjugationDetails[] {
+    return ['1s', '2s', '3s', '1p', '2p', '3p']
+      .map(person => ({ person, tense: 'present' }) as SpecificTense)
+      .map(form => ({
+        person: form.person,
+        de: conjugateDe(word.de, form),
+        fa: conjugateFa(word.fa, form),
+        faRm: conjugateFaRm(word.faRm, form),
+      }));
+  }
+
+  private renderOptionalBadge(score: number | undefined): JSX.Element | undefined {
+    if (score === undefined) {
+      return undefined;
     }
 
     return (
       <span className="score">
         <ScoreBadge score={score}></ScoreBadge>
       </span>
+    );
+  }
+
+  private renderConjugationDetails(details: DictionaryConjugationDetails): JSX.Element {
+    return (
+      <div className="row" key={details.person}>
+        <div className="key">
+          {details.de}
+        </div>
+        <div className="value">
+          <p>
+            {details.fa}
+          </p>
+          <p className="fa-rm">
+            /{details.faRm}/
+          </p>
+        </div>
+      </div>
     );
   }
 }
