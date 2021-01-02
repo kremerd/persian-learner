@@ -34,7 +34,7 @@ export class Header extends React.Component {
             className="collapse navbar-collapse"
             ref={this.collapseRef}
           >
-            <ul className="navbar-nav mr-auto mb-0">
+            <ul className="navbar-nav mb-0">
               <li className="nav-item">
                 <Link className="nav-link"
                   to="/trainer/learn"
