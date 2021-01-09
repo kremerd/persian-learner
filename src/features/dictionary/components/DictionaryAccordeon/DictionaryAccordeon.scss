@@ -3,6 +3,8 @@
 
   td {
     vertical-align: middle;
+    hyphens: auto;
+    overflow-wrap: break-word;
 
     &:nth-child(1) {
       text-align: right;
@@ -10,7 +12,7 @@
     }
 
     &:nth-child(3) {
-      width: 0px;
+      width: 32px;
 
       svg {
         transition: 200ms ease-out transform;
