@@ -25,7 +25,7 @@ export class FarsiTrainer extends BaseTrainer {
     return (
       <div className="mb-3">
         <div>Persisch</div>
-        <div className="form-control-plaintext text-large">
+        <div className="form-control-plaintext text-large text-rtl">
           {content}
         </div>
         <div className="form-text">
@@ -39,6 +39,7 @@ export class FarsiTrainer extends BaseTrainer {
     return {
       label: 'Persisch',
       large: true,
+      rtl: true,
     };
   }
 

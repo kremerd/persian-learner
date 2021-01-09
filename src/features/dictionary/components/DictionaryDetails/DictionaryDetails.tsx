@@ -39,9 +39,9 @@ export class DictionaryDetails extends React.Component<{
             Persisch
           </div>
           <div className="value">
-            <p>
+            <p className="text-rtl">
               {normalizeFa(word)}
-              {this.renderOptionalBadge(score.fa)}
+              {this.renderOptionalBadge(score.fa, 'score-left')}
             </p>
             <p className="fa-rm">
               /{normalizeFaRm(word)}/
@@ -54,7 +54,7 @@ export class DictionaryDetails extends React.Component<{
           </div>
           <div className="value">
             {normalizeDe(word)}
-            {this.renderOptionalBadge(score.de)}
+            {this.renderOptionalBadge(score.de, 'score-right')}
           </div>
         </div>
         <div className="row">
@@ -121,16 +121,18 @@ export class DictionaryDetails extends React.Component<{
       }));
   }
 
-  private renderOptionalBadge(score: number | undefined): JSX.Element | undefined {
+  private renderOptionalBadge(score: number | undefined, className?: string): JSX.Element | undefined {
     if (score === undefined) {
       return undefined;
+    } else if (className === undefined) {
+      return <ScoreBadge score={score}></ScoreBadge>;
+    } else {
+      return (
+        <span className={className}>
+          <ScoreBadge score={score}></ScoreBadge>
+        </span>
+      );
     }
-
-    return (
-      <span className="score">
-        <ScoreBadge score={score}></ScoreBadge>
-      </span>
-    );
   }
 
   private renderConjugationDetails(details: DictionaryConjugationDetails): JSX.Element {
@@ -140,7 +142,7 @@ export class DictionaryDetails extends React.Component<{
           {details.de}
         </div>
         <div className="value">
-          <p>
+          <p className="text-rtl">
             {details.fa}
           </p>
           <p className="fa-rm">

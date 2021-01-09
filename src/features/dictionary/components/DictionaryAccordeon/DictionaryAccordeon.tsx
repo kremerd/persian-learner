@@ -31,7 +31,7 @@ export class DictionaryAccordeon extends React.Component<{
         className={`dict-accordeon ${this.state.details === VisibilityState.Visible ? 'show-details' : ''}`}
         onClick={(): void => this.toggleDetails()}
       >
-        <td>{entry.fa}</td>
+        <td className="text-rtl">{entry.fa}</td>
         <td>{entry.de}</td>
         <td><ChevronDown></ChevronDown></td>
       </tr>

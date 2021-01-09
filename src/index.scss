@@ -17,6 +17,10 @@ $primary: #198754;
   font-size: var(--fs-medium);
 }
 
+.text-rtl {
+  direction: rtl;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }

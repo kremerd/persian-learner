@@ -13,6 +13,7 @@ export class DictionarySearch extends React.Component<{
       <div className="dict-search">
         <input className={`form-control ${this.props.currentSearch ? '' : 'empty'}`}
           type="text"
+          dir="auto"
           placeholder="Durchsuchen..."
           ref={this.searchRef}
           value={this.props.currentSearch ?? ''}

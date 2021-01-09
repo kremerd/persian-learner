@@ -70,7 +70,7 @@ export abstract class BaseTrainer extends React.Component<{
   }
 
   private renderSolutionInput(): JSX.Element {
-    const { label, large } = this.getSolutionInputConfig();
+    const { label, large, rtl } = this.getSolutionInputConfig();
     return (
       <div className="mb-3">
         <label htmlFor="solution">
@@ -78,7 +78,7 @@ export abstract class BaseTrainer extends React.Component<{
         </label>
         <input type="text"
           id="solution"
-          className={`form-control${large ? ' text-large' : ''}`}
+          className={`form-control${large ? ' text-large' : ''}${rtl ? ' text-rtl' : ''}`}
           value={this.state.enteredTranslation}
           ref={this.inputRef}
           autoComplete="off"

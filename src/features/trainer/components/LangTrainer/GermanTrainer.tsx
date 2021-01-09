@@ -11,7 +11,7 @@ export class GermanTrainer extends BaseTrainer {
         <div>
           Persisch
         </div>
-        <div className="form-control-plaintext text-large">
+        <div className="form-control-plaintext text-large text-rtl">
           {unit.fa}
         </div>
         <div className="form-text">
@@ -41,6 +41,7 @@ export class GermanTrainer extends BaseTrainer {
     return {
       label: 'Deutsch',
       large: false,
+      rtl: false,
     };
   }
 
