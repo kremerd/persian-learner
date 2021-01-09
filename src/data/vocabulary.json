@@ -2144,5 +2144,141 @@
       "infinitive": "keshidan",
       "presentStem": "kesh"
     }
+  },
+  {
+    "id": 248,
+    "type": "noun",
+    "de": "Zahl",
+    "en": "number",
+    "fa": "عَدَد",
+    "faRm": "'adad"
+  },
+  {
+    "id": 249,
+    "type": "noun",
+    "de": "Freitag",
+    "en": "Friday",
+    "fa": "جُمعِه",
+    "faRm": "jom'e"
+  },
+  {
+    "id": 250,
+    "type": "noun",
+    "de": "Natur",
+    "en": "nature",
+    "fa": "طَبع",
+    "faRm": "tab'"
+  },
+  {
+    "id": 251,
+    "type": "noun",
+    "de": "Anfang",
+    "en": "beginning",
+    "fa": "شُروع",
+    "faRm": "shoru'"
+  },
+  {
+    "id": 252,
+    "type": "noun",
+    "de": "Stunde",
+    "en": "hour",
+    "fa": "ساعَت",
+    "faRm": "sâ'at"
+  },
+  {
+    "id": 253,
+    "type": "noun",
+    "de": "Summe",
+    "en": "total",
+    "fa": "جَمع",
+    "faRm": "jam'"
+  },
+  {
+    "id": 254,
+    "type": "noun",
+    "de": "Zeit",
+    "en": "time",
+    "fa": "موقِع",
+    "faRm": "moghe'"
+  },
+  {
+    "id": 255,
+    "type": "noun",
+    "de": "Unterarm",
+    "en": "forearm",
+    "fa": "ساعِد",
+    "faRm": "sâ'ed"
+  },
+  {
+    "id": 256,
+    "type": "noun",
+    "de": "Aufwand",
+    "en": "effort",
+    "fa": "سَعی",
+    "faRm": "sa'y"
+  },
+  {
+    "id": 257,
+    "type": "adjective",
+    "de": "arabisch",
+    "en": "Arab",
+    "fa": "عَرَب",
+    "faRm": "arab"
+  },
+  {
+    "id": 258,
+    "type": "noun",
+    "de": "heute",
+    "en": "today",
+    "fa": "اِمروز",
+    "faRm": "emruz"
+  },
+  {
+    "id": 259,
+    "type": "noun",
+    "de": "Onkel",
+    "en": "uncle",
+    "fa": "عَمو",
+    "faRm": "'amu"
+  },
+  {
+    "id": 260,
+    "type": "phrase",
+    "de": "auf Wiedersehen",
+    "en": "goodbye",
+    "fa": "خُداحافِظی",
+    "faRm": "khodâhâfezi"
+  },
+  {
+    "id": 261,
+    "type": "noun",
+    "de": "Mittag",
+    "en": "noon",
+    "fa": "ظُهر",
+    "faRm": "zohr"
+  },
+  {
+    "id": 262,
+    "type": "noun",
+    "de": "Auftreten",
+    "en": "appearance",
+    "fa": "ظاهِر",
+    "faRm": "zâher"
+  },
+  {
+    "id": 263,
+    "type": "noun",
+    "de": "grausam",
+    "en": "cruel",
+    "fa": "ظالِم",
+    "faRm": "zâlem"
+  },
+  {
+    "id": 264,
+    "type": "noun",
+    "de": "Schutz",
+    "en": "preservation",
+    "fa": "حِفظ",
+    "faRm": "hefz"
   }
 ]
