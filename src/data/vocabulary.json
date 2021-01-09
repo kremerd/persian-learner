@@ -1984,8 +1984,8 @@
     "type": "unclassified",
     "de": "oder",
     "en": "or",
-    "fa": "نا",
-    "faRm": "iâ"
+    "fa": "یا",
+    "faRm": "yâ"
   },
   {
     "id": 229,
@@ -2000,7 +2000,7 @@
     "type": "noun",
     "de": "Yalda-Nacht",
     "en": "Yalda Night",
-    "fa": "شَبِ یَادا",
+    "fa": "شَبِ یَلدا",
     "faRm": "shabe yaldâ"
   },
   {
@@ -2096,7 +2096,7 @@
     "type": "noun",
     "de": "Plan",
     "en": "plan",
-    "fa": "طَدح",
+    "fa": "طَرح",
     "faRm": "tarh"
   },
   {
@@ -2128,7 +2128,7 @@
     "type": "phrase",
     "de": "Kinder",
     "en": "children",
-    "fa": "بَچِه ها",
+    "fa": "بَچِّه ها",
     "faRm": "bache hâ"
   },
   {
