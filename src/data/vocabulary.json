@@ -102,7 +102,7 @@
     "id": 11,
     "type": "noun",
     "de": "Tür",
-    "en": "dâr",
+    "en": "door",
     "fa": "دَر",
     "faRm": "dar"
   },
@@ -1954,5 +1954,195 @@
     "en": "herbal tea",
     "fa": "دَمنوش",
     "faRm": "damnush"
+  },
+  {
+    "id": 225,
+    "type": "noun",
+    "de": "Intensivierung",
+    "en": "intensification",
+    "fa": "تَشدید",
+    "faRm": "tashdid"
+  },
+  {
+    "id": 226,
+    "type": "phrase",
+    "de": "höher",
+    "en": "higher",
+    "fa": "بُلَندتَر",
+    "faRm": "bolandtar"
+  },
+  {
+    "id": 227,
+    "type": "phrase",
+    "de": "höchster",
+    "en": "highest",
+    "fa": "بُلَندتَرین",
+    "faRm": "bolandtarin"
+  },
+  {
+    "id": 228,
+    "type": "unclassified",
+    "de": "oder",
+    "en": "or",
+    "fa": "نا",
+    "faRm": "iâ"
+  },
+  {
+    "id": 229,
+    "type": "unclassified",
+    "de": "und",
+    "en": "and",
+    "fa": "و",
+    "faRm": "va"
+  },
+  {
+    "id": 230,
+    "type": "noun",
+    "de": "Yalda-Nacht",
+    "en": "Yalda Night",
+    "fa": "شَبِ یَادا",
+    "faRm": "shabe yaldâ"
+  },
+  {
+    "id": 231,
+    "type": "phrase",
+    "de": "Du wirst vermisst.",
+    "en": "You are missed.",
+    "fa": "جایَت خالی اَست.",
+    "faRm": "jâiat khâli ast."
+  },
+  {
+    "id": 232,
+    "type": "adjective",
+    "de": "leer",
+    "en": "empty",
+    "fa": "خالی",
+    "faRm": "khâli"
+  },
+  {
+    "id": 233,
+    "type": "noun",
+    "de": "Platz",
+    "en": "place",
+    "fa": "جا",
+    "faRm": "jâ"
+  },
+  {
+    "id": 234,
+    "type": "phrase",
+    "de": "sehr gut",
+    "en": "very good",
+    "fa": "خیای خوب",
+    "faRm": "khiâi khub"
+  },
+  {
+    "id": 235,
+    "type": "unclassified",
+    "de": "auch",
+    "en": "also",
+    "fa": "هَم",
+    "faRm": "ham"
+  },
+  {
+    "id": 236,
+    "type": "adjective",
+    "de": "froh",
+    "en": "happy",
+    "fa": "مُبارَک",
+    "faRm": "mobârak"
+  },
+  {
+    "id": 237,
+    "type": "phrase",
+    "de": "Hab einen guten Flug!",
+    "en": "Have a good flight!",
+    "fa": "پَروازِ خوبی داشتِه باش!",
+    "faRm": "parvâze khubi dâshte bâsh!"
+  },
+  {
+    "id": 238,
+    "type": "phrase",
+    "de": "sei",
+    "en": "be",
+    "fa": "باش",
+    "faRm": "bâsh"
+  },
+  {
+    "id": 239,
+    "type": "noun",
+    "de": "Garten",
+    "en": "yard",
+    "fa": "حَیاط",
+    "faRm": "hayât"
+  },
+  {
+    "id": 240,
+    "type": "noun",
+    "de": "Seil",
+    "en": "rope",
+    "fa": "طَناب",
+    "faRm": "tanâb"
+  },
+  {
+    "id": 241,
+    "type": "noun",
+    "de": "Sturm",
+    "en": "storm",
+    "fa": "طوفان",
+    "faRm": "tufân"
+  },
+  {
+    "id": 242,
+    "type": "noun",
+    "de": "Plan",
+    "en": "plan",
+    "fa": "طَدح",
+    "faRm": "tarh"
+  },
+  {
+    "id": 243,
+    "type": "noun",
+    "de": "Warnung",
+    "en": "warning",
+    "fa": "اِخطار",
+    "faRm": "ekhtâr"
+  },
+  {
+    "id": 244,
+    "type": "noun",
+    "de": "Gefahr",
+    "en": "danger",
+    "fa": "خَطَر",
+    "faRm": "khatar"
+  },
+  {
+    "id": 245,
+    "type": "noun",
+    "de": "Kind",
+    "en": "child",
+    "fa": "بَچِّه",
+    "faRm": "bache"
+  },
+  {
+    "id": 246,
+    "type": "phrase",
+    "de": "Kinder",
+    "en": "children",
+    "fa": "بَچِه ها",
+    "faRm": "bache hâ"
+  },
+  {
+    "id": 247,
+    "type": "verb",
+    "de": "zeichnen",
+    "en": "draw",
+    "fa": {
+      "infinitive": "کِشیدَن",
+      "presentStem": "کِش"
+    },
+    "faRm": {
+      "infinitive": "keshidan",
+      "presentStem": "kesh"
+    }
   }
 ]
