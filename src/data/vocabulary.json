@@ -2070,7 +2070,7 @@
   {
     "id": 239,
     "type": "noun",
-    "de": "Garten",
+    "de": "Hof",
     "en": "yard",
     "fa": "حَیاط",
     "faRm": "hayât"
@@ -2280,5 +2280,205 @@
     "en": "preservation",
     "fa": "حِفظ",
     "faRm": "hefz"
+  },
+  {
+    "id": 265,
+    "type": "adjective",
+    "de": "positiv",
+    "en": "positive",
+    "fa": "مُثبَت",
+    "faRm": "mosbat"
+  },
+  {
+    "id": 266,
+    "type": "noun",
+    "de": "Beispiel",
+    "en": "example",
+    "fa": "مِثال",
+    "faRm": "mesâl"
+  },
+  {
+    "id": 267,
+    "type": "noun",
+    "de": "Reichtum",
+    "en": "wealth",
+    "fa": "ثِروَت",
+    "faRm": "servat"
+  },
+  {
+    "id": 268,
+    "type": "adjective",
+    "de": "fest",
+    "en": "fixed",
+    "fa": "ثابِت",
+    "faRm": "sâbet"
+  },
+  {
+    "id": 269,
+    "type": "noun",
+    "de": "Datensatz",
+    "en": "record",
+    "fa": "ثَبت",
+    "faRm": "sabt"
+  },
+  {
+    "id": 270,
+    "type": "noun",
+    "de": "Möbel",
+    "en": "furniture",
+    "fa": "اَثاث",
+    "faRm": "asâs"
+  },
+  {
+    "id": 271,
+    "type": "noun",
+    "de": "Dreieck",
+    "en": "triangle",
+    "fa": "مُثَلَث",
+    "faRm": "mosalas"
+  },
+  {
+    "id": 272,
+    "type": "unclassified",
+    "de": "viel",
+    "en": "much",
+    "fa": "زیاد",
+    "faRm": "ziyâd"
+  },
+  {
+    "id": 273,
+    "type": "adjective",
+    "de": "krank",
+    "en": "sick",
+    "fa": "مَریض",
+    "faRm": "mariz"
+  },
+  {
+    "id": 274,
+    "type": "unclassified",
+    "de": "einige",
+    "en": "some",
+    "fa": "بَعضی",
+    "faRm": "ba'zi"
+  },
+  {
+    "id": 275,
+    "type": "noun",
+    "de": "Schaden",
+    "en": "damage",
+    "fa": "ضَرَر",
+    "faRm": "zarar"
+  },
+  {
+    "id": 276,
+    "type": "noun",
+    "de": "Angreifer",
+    "en": "assailant",
+    "fa": "ضارِب",
+    "faRm": "zâreb"
+  },
+  {
+    "id": 277,
+    "type": "noun",
+    "de": "Einschlag",
+    "en": "impact",
+    "fa": "ضَربِه",
+    "faRm": "zarbe"
+  },
+  {
+    "id": 278,
+    "type": "noun",
+    "de": "Mittagessen",
+    "en": "lunch",
+    "fa": "ناهار",
+    "faRm": "nâhâr"
+  },
+  {
+    "id": 279,
+    "type": "adjective",
+    "de": "seltsam",
+    "en": "strange",
+    "fa": "غَریب",
+    "faRm": "gharib"
+  },
+  {
+    "id": 280,
+    "type": "adjective",
+    "de": "beschäftigt",
+    "en": "busy",
+    "fa": "مَشغول",
+    "faRm": "mashghul"
+  },
+  {
+    "id": 281,
+    "type": "noun",
+    "de": "Aufschrei",
+    "en": "scream",
+    "fa": "جیغ",
+    "faRm": "jigh"
+  },
+  {
+    "id": 282,
+    "type": "noun",
+    "de": "Garten",
+    "en": "garden",
+    "fa": "باغ",
+    "faRm": "bâgh"
+  },
+  {
+    "id": 283,
+    "type": "noun",
+    "de": "Klinge",
+    "en": "blade",
+    "fa": "تیغ",
+    "faRm": "tigh"
+  },
+  {
+    "id": 284,
+    "type": "noun",
+    "de": "Gärtner",
+    "en": "gardener",
+    "fa": "باغِبان",
+    "faRm": "bâghebân"
+  },
+  {
+    "id": 285,
+    "type": "adjective",
+    "de": "heiß",
+    "en": "hot",
+    "fa": "داغ",
+    "faRm": "dâgh"
+  },
+  {
+    "id": 286,
+    "type": "noun",
+    "de": "Westen",
+    "en": "west",
+    "fa": "غَرب",
+    "faRm": "gharb"
+  },
+  {
+    "id": 287,
+    "type": "adjective",
+    "de": "konzentriert",
+    "en": "concentrated",
+    "fa": "غَلیظ",
+    "faRm": "ghaliz"
+  },
+  {
+    "id": 288,
+    "type": "noun",
+    "de": "Suppe",
+    "en": "soup",
+    "fa": "سوپ",
+    "faRm": "sup"
+  },
+  {
+    "id": 289,
+    "type": "unclassified",
+    "de": "sehr",
+    "en": "very",
+    "fa": "خِیلی",
+    "faRm": "kheyli"
   }
 ]
