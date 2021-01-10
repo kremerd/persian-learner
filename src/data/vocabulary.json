@@ -1299,7 +1299,7 @@
   {
     "id": 154,
     "type": "phrase",
-    "de": "herzlich willkommen",
+    "de": "herzlich Willkommen",
     "en": "welcome",
     "fa": "خوش آمَدی",
     "faRm": "khosh âmadi"
@@ -2480,5 +2480,123 @@
     "en": "very",
     "fa": "خِیلی",
     "faRm": "kheyli"
+  },
+  {
+    "id": 290,
+    "type": "noun",
+    "de": "Forschung",
+    "en": "research",
+    "fa": "پَژوهِش",
+    "faRm": "pazhuhesh"
+  },
+  {
+    "id": 291,
+    "type": "adjective",
+    "de": "ungepflegt",
+    "en": "unkempt",
+    "fa": "ژولیدِه",
+    "faRm": "zhulideh"
+  },
+  {
+    "id": 292,
+    "type": "noun",
+    "de": "Burg",
+    "en": "castle",
+    "fa": "دِژ",
+    "faRm": "dezh"
+  },
+  {
+    "id": 293,
+    "type": "noun",
+    "de": "Pullover",
+    "en": "sweater",
+    "fa": "ژاکَت",
+    "faRm": "zhâkat"
+  },
+  {
+    "id": 294,
+    "type": "noun",
+    "de": "Geste",
+    "en": "gesture",
+    "fa": "ژِست",
+    "faRm": "zhest"
+  },
+  {
+    "id": 295,
+    "type": "verb",
+    "de": "kaufen",
+    "en": "buy",
+    "fa": {
+      "infinitive": "خَریدَن",
+      "presentStem": "خَر"
+    },
+    "faRm": {
+      "infinitive": "kharidan",
+      "presentStem": "khar"
+    }
+  },
+  {
+    "id": 296,
+    "type": "adjective",
+    "de": "interessant",
+    "en": "interesting",
+    "fa": "جالِب",
+    "faRm": "jâleb"
+  },
+  {
+    "id": 297,
+    "type": "noun",
+    "de": "Haar",
+    "en": "hair",
+    "fa": "مو",
+    "faRm": "mu"
+  },
+  {
+    "id": 298,
+    "type": "unclassified",
+    "de": "wo",
+    "en": "where",
+    "fa": "کُجا",
+    "faRm": "kojâ"
+  },
+  {
+    "id": 299,
+    "type": "unclassified",
+    "de": "wer",
+    "en": "who",
+    "fa": "کی",
+    "faRm": "ki"
+  },
+  {
+    "id": 300,
+    "type": "unclassified",
+    "de": "wann",
+    "en": "when",
+    "fa": "کِی",
+    "faRm": "key"
+  },
+  {
+    "id": 301,
+    "type": "unclassified",
+    "de": "was",
+    "en": "what",
+    "fa": "چِه",
+    "faRm": "che"
+  },
+  {
+    "id": 302,
+    "type": "unclassified",
+    "de": "wie",
+    "en": "how",
+    "fa": "چِطور",
+    "faRm": "chetor"
+  },
+  {
+    "id": 303,
+    "type": "unclassified",
+    "de": "wie viele",
+    "en": "how many",
+    "fa": "چَند",
+    "faRm": "chand"
   }
 ]
